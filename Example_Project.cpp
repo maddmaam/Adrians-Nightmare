@@ -1,7 +1,6 @@
 // Example_Project.cpp : Defines the entry point for the application.
-//
 
-#include "stdafx.h"
+#include "Example_Project.h"
 
 //-----------------------------------------------------------------------------
 // Global variables
@@ -19,26 +18,6 @@ struct CUSTOMVERTEX
 
 // Our custom FVF, which describes our custom vertex structure
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ|D3DFVF_DIFFUSE)
-
-FLOAT fSecsPerTick;
-LARGE_INTEGER qwTime, qwLastTime, qwElapsedTime, qwAppTime, qwElapsedAppTime;
-FLOAT fTime, fElapsedTime, fAppTime, fElapsedAppTime;
-
-VOID InitTime()
-{
-    // Get the frequency of the timer
-	LARGE_INTEGER qwTicksPerSec;
-    QueryPerformanceFrequency( &qwTicksPerSec );
-    fSecsPerTick = 1.0f / (FLOAT)qwTicksPerSec.QuadPart;
-
-    // Save the start time
-    QueryPerformanceCounter( &qwTime );
-    qwLastTime.QuadPart = qwTime.QuadPart;
-
-    qwAppTime.QuadPart        = 0;
-    qwElapsedTime.QuadPart    = 0;
-    qwElapsedAppTime.QuadPart = 0;
-}
 
 
 //-----------------------------------------------------------------------------
@@ -128,28 +107,11 @@ HRESULT InitVB()
     return S_OK;
 }
 
-
-VOID UpdateTime()
-{
-    
-    QueryPerformanceCounter( &qwTime );
-    qwElapsedTime.QuadPart = qwTime.QuadPart - qwLastTime.QuadPart;
-    qwLastTime.QuadPart    = qwTime.QuadPart;
-    qwElapsedAppTime.QuadPart = qwElapsedTime.QuadPart;
-    qwAppTime.QuadPart    += qwElapsedAppTime.QuadPart;
-
-    // Store the current time values as floating point
-    fTime           = fSecsPerTick * ((FLOAT)(qwTime.QuadPart));
-    fElapsedTime    = fSecsPerTick * ((FLOAT)(qwElapsedTime.QuadPart));
-    fAppTime        = fSecsPerTick * ((FLOAT)(qwAppTime.QuadPart));
-    fElapsedAppTime = fSecsPerTick * ((FLOAT)(qwElapsedAppTime.QuadPart));
-}
-
 //-----------------------------------------------------------------------------
 // Name: Update()
 // Desc: Updates the world for the next frame
 //-----------------------------------------------------------------------------
-VOID Update()
+void Update()
 {
 
     D3DXMATRIX matRotate;
@@ -167,7 +129,7 @@ VOID Update()
 // Name: Render()
 // Desc: Draws the scene
 //-----------------------------------------------------------------------------
-VOID Render()
+void Render()
 {
     // Clear the backbuffer to a blue color
     g_pd3dDevice->Clear( 0L, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER|D3DCLEAR_STENCIL, 

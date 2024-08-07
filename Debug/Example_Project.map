@@ -1,12 +1,12 @@
  Example_Project
 
- Timestamp is 66b3f993 (Wed Aug 07 15:47:47 2024)
+ Timestamp is 66b40337 (Wed Aug 07 16:28:55 2024)
 
  Preferred load address is 00400000
 
  Start         Length     Name                   Class
- 0001:00000000 00047359H .textbss                DATA
- 0002:00000000 00029196H .text                   CODE
+ 0001:00000000 00047349H .textbss                DATA
+ 0002:00000000 00029186H .text                   CODE
  0003:00000000 0003e7f4H D3D                     CODE
  0003:0003e7f8 0001f730H D3D_RD                  CODE
  0003:0005df30 00009b80H D3D_URW                 CODE
@@ -15,12 +15,12 @@
  0005:00000000 000077aeH .rdata                  DATA
  0005:000077b0 0000015aH .rdata$debug            DATA
  0005:0000790c 00000104H .rtc$IAA                DATA
- 0005:00007a10 00000104H .rtc$IMZ                DATA
- 0005:00007b14 00000104H .rtc$IZZ                DATA
- 0005:00007c18 00000104H .rtc$TAA                DATA
- 0005:00007d1c 00000104H .rtc$TMZ                DATA
- 0005:00007e20 00000104H .rtc$TZZ                DATA
- 0005:00007f24 00000000H .edata                  DATA
+ 0005:00007a10 00000109H .rtc$IMZ                DATA
+ 0005:00007b1c 00000104H .rtc$IZZ                DATA
+ 0005:00007c20 00000104H .rtc$TAA                DATA
+ 0005:00007d24 00000109H .rtc$TMZ                DATA
+ 0005:00007e30 00000104H .rtc$TZZ                DATA
+ 0005:00007f34 00000000H .edata                  DATA
  0006:00000000 00000104H .CRT$RIA                DATA
  0006:00000104 00000104H .CRT$RII10              DATA
  0006:00000208 00000104H .CRT$RII15              DATA
@@ -58,781 +58,781 @@
  0000:00000000       ___safe_se_handler_table   00000000     <absolute>
  0000:00000004       __tls_array                00000004     <absolute>
  0001:00000000       __enc$textbss$begin        00400360     <linker-defined>
- 0001:00047359       __enc$textbss$end          004476b9     <linker-defined>
- 0002:00004330       ?InitTime@@YAXXZ           0044b9f0 f   Example_Project.obj
- 0002:00004440       ?InitD3D@@YAJXZ            0044bb00 f   Example_Project.obj
- 0002:000046c0       ?CreateDevice@Direct3D@@SGJIW4_D3DDEVTYPE@@PAXKPAU_D3DPRESENT_PARAMETERS_@@PAPAUD3DDevice@@@Z 0044bd80 f i Example_Project.obj
- 0002:00004730       ?SetTransform@D3DDevice@@SGJW4_D3DTRANSFORMSTATETYPE@@PBU_D3DMATRIX@@@Z 0044bdf0 f i Example_Project.obj
- 0002:00004790       ??0D3DXMATRIX@@QAE@XZ      0044be50 f i Example_Project.obj
- 0002:000047d0       ??0D3DXVECTOR3@@QAE@MMM@Z  0044be90 f i Example_Project.obj
- 0002:00004840       ?InitVB@@YAJXZ             0044bf00 f   Example_Project.obj
- 0002:00004a00       ?CreateVertexBuffer@D3DDevice@@SGJIKKKPAPAUD3DVertexBuffer@@@Z 0044c0c0 f i Example_Project.obj
- 0002:00004a70       ?Lock@D3DVertexBuffer@@QAGJIIPAPAEK@Z 0044c130 f i Example_Project.obj
- 0002:00004ad0       ?Unlock@D3DVertexBuffer@@QAGJXZ 0044c190 f i Example_Project.obj
- 0002:00004b50       ?UpdateTime@@YAXXZ         0044c210 f   Example_Project.obj
- 0002:00004c90       ?Update@@YAXXZ             0044c350 f   Example_Project.obj
- 0002:00004dd0       ?GetTransform@D3DDevice@@SGJW4_D3DTRANSFORMSTATETYPE@@PAU_D3DMATRIX@@@Z 0044c490 f i Example_Project.obj
- 0002:00004e30       ?Render@@YAXXZ             0044c4f0 f   Example_Project.obj
- 0002:00004ed0       ?BeginScene@D3DDevice@@SGJXZ 0044c590 f i Example_Project.obj
- 0002:00004f50       ?EndScene@D3DDevice@@SGJXZ 0044c610 f i Example_Project.obj
- 0002:00004fd0       ?Clear@D3DDevice@@SGJKPBU_D3DRECT@@KKMK@Z 0044c690 f i Example_Project.obj
- 0002:00005040       ?SetRenderState@D3DDevice@@SGJW4_D3DRENDERSTATETYPE@@K@Z 0044c700 f i Example_Project.obj
- 0002:000054b0       ?DrawPrimitive@D3DDevice@@SGJW4_D3DPRIMITIVETYPE@@II@Z 0044cb70 f i Example_Project.obj
- 0002:00005530       ?SetVertexShader@D3DDevice@@SGJK@Z 0044cbf0 f i Example_Project.obj
- 0002:00005580       ?SetStreamSource@D3DDevice@@SGJIPAUD3DVertexBuffer@@I@Z 0044cc40 f i Example_Project.obj
- 0002:000055e0       _main                      0044cca0 f   Example_Project.obj
- 0002:00005670       ?Present@D3DDevice@@SGJPBUtagRECT@@0PAX1@Z 0044cd30 f i Example_Project.obj
- 0002:000056bc       _QueryPerformanceCounter@4 0044cd7c f   xapilibd:perfctr.obj
- 0002:000056d1       _QueryPerformanceFrequency@4 0044cd91 f   xapilibd:perfctr.obj
- 0002:00005717       _mainXapiStartup@4         0044cdd7 f   xapilibd:xapi0.obj
- 0002:000057b7       _mainCRTStartup            0044ce77 f   xapilibd:xapi0.obj
- 0002:00005845       _XapiValidateDiskPartitionEx@8 0044cf05 f   xapilibd:xapiinit.obj
- 0002:000058db       _XapiCopySectionToFile@16  0044cf9b f   xapilibd:xapiinit.obj
- 0002:00005a5d       _XapiMapLetterToDirectory@24 0044d11d f   xapilibd:xapiinit.obj
- 0002:00005f91       _XapiSetupPerTitleDriveLetters@8 0044d651 f   xapilibd:xapiinit.obj
- 0002:00005ffb       _XapiBootToDash@12         0044d6bb f   xapilibd:xapiinit.obj
- 0002:00006079       _XapiValidateDiskPartition@4 0044d739 f   xapilibd:xapiinit.obj
- 0002:00006092       _XapiInitProcess@0         0044d752 f   xapilibd:xapiinit.obj
- 0002:00006335       __cinit@0                  0044d9f5 f   xapilibd:xapi0dat.obj
- 0002:00006388       __rtinit@0                 0044da48 f   xapilibd:xapi0dat.obj
- 0002:000063d4       _GetLastError@0            0044da94 f   xapilibd:error.obj
- 0002:00006422       _SetLastError@4            0044dae2 f   xapilibd:error.obj
- 0002:0000647c       _XapiSetLastNTError@4      0044db3c f   xapilibd:error.obj
- 0002:0000649f       _CreateIoCompletionPort@16 0044db5f f   xapilibd:error.obj
- 0002:0000654e       _PostQueuedCompletionStatus@16 0044dc0e f   xapilibd:error.obj
- 0002:00006587       _GetQueuedCompletionStatus@20 0044dc47 f   xapilibd:error.obj
- 0002:00006615       _GetOverlappedResult@16    0044dcd5 f   xapilibd:error.obj
- 0002:0000669a       _XapiRestrictCodeSelectorLimit@0 0044dd5a f   xapilibd:krnlptch.obj
- 0002:00006717       _XapiApplyKernelPatches@0  0044ddd7 f   xapilibd:krnlptch.obj
- 0002:0000680e       _CloseHandle@4             0044dece f   xapilibd:handle.obj
- 0002:00006837       _DuplicateHandle@28        0044def7 f   xapilibd:handle.obj
- 0002:00006867       _XapiCallThreadNotifyRoutines@4 0044df27 f   xapilibd:thread.obj
- 0002:000068b0       _SetThreadPriority@8       0044df70 f   xapilibd:thread.obj
- 0002:00006916       _GetThreadPriority@4       0044dfd6 f   xapilibd:thread.obj
- 0002:0000697f       _SetThreadPriorityBoost@8  0044e03f f   xapilibd:thread.obj
- 0002:000069d6       _GetThreadPriorityBoost@8  0044e096 f   xapilibd:thread.obj
- 0002:00006a27       _SuspendThread@4           0044e0e7 f   xapilibd:thread.obj
- 0002:00006a56       _ResumeThread@4            0044e116 f   xapilibd:thread.obj
- 0002:00006a85       _RaiseException@16         0044e145 f   xapilibd:thread.obj
- 0002:00006af0       _XapiDispatchAPC@12        0044e1b0 f   xapilibd:thread.obj
- 0002:00006b00       _QueueUserAPC@12           0044e1c0 f   xapilibd:thread.obj
- 0002:00006b2f       _SwitchToThread@0          0044e1ef f   xapilibd:thread.obj
- 0002:00006b4d       _ExitThread@4              0044e20d f   xapilibd:thread.obj
- 0002:00006b71       _GetExitCodeThread@8       0044e231 f   xapilibd:thread.obj
- 0002:00006bde       _SetUnhandledExceptionFilter@4 0044e29e f   xapilibd:thread.obj
- 0002:00006bf8       _GetThreadTimes@20         0044e2b8 f   xapilibd:thread.obj
- 0002:00006ca3       _XRegisterThreadNotifyRoutine@8 0044e363 f   xapilibd:thread.obj
- 0002:00006cff       _XSetProcessQuantumLength@4 0044e3bf f   xapilibd:thread.obj
- 0002:00006d41       _XGetProcessQuantumLength@0 0044e401 f   xapilibd:thread.obj
- 0002:00006da2       _UnhandledExceptionFilter@4 0044e462 f   xapilibd:thread.obj
- 0002:00006e2a       _XapiThreadStartup@8       0044e4ea f   xapilibd:thread.obj
- 0002:00006fb2       _CreateThread@24           0044e672 f   xapilibd:thread.obj
- 0002:0000703b       _GetCurrentThreadId@0      0044e6fb f   xapilibd:thread.obj
- 0002:0000704b       _OutputDebugStringA@4      0044e70b f   xapilibd:outputdebugstringa.obj
- 0002:00007089       _vXDebugPrint@16           0044e749 f   xapilibd:outputdebugstringa.obj
- 0002:0000710b       _XDebugPrint               0044e7cb f   xapilibd:outputdebugstringa.obj
- 0002:00007127       _XDebugError               0044e7e7 f   xapilibd:outputdebugstringa.obj
- 0002:00007142       _XDebugWarning             0044e802 f   xapilibd:outputdebugstringa.obj
- 0002:0000715d       _XDebugTrace               0044e81d f   xapilibd:outputdebugstringa.obj
- 0002:00007178       _XDebugEntry               0044e838 f   xapilibd:outputdebugstringa.obj
- 0002:00007193       _XDebugExit                0044e853 f   xapilibd:outputdebugstringa.obj
- 0002:000071ae       _XGetSectionHandleA@4      0044e86e f   xapilibd:xemodule.obj
- 0002:0000724b       _XLoadSectionByHandle@4    0044e90b f   xapilibd:xemodule.obj
- 0002:000072ab       _XFreeSectionByHandle@4    0044e96b f   xapilibd:xemodule.obj
- 0002:0000730a       _XLoadSectionA@4           0044e9ca f   xapilibd:xemodule.obj
- 0002:0000734c       _XFreeSectionA@4           0044ea0c f   xapilibd:xemodule.obj
- 0002:0000738e       _XGetSectionSize@4         0044ea4e f   xapilibd:xemodule.obj
- 0002:000073d4       _lstrcmpA@8                0044ea94 f   xapilibd:lcompata.obj
- 0002:00007451       _lstrcmpiA@8               0044eb11 f   xapilibd:lcompata.obj
- 0002:000074a7       _lstrcpyA@8                0044eb67 f   xapilibd:lcompata.obj
- 0002:000074f4       _lstrcpynA@12              0044ebb4 f   xapilibd:lcompata.obj
- 0002:00007572       _lstrcatA@8                0044ec32 f   xapilibd:lcompata.obj
- 0002:000075e2       _lstrlenA@4                0044eca2 f   xapilibd:lcompata.obj
- 0002:0000762f       _XLaunchNewImageA@8        0044ecef f   xapilibd:launch.obj
- 0002:00007681       _XWriteTitleInfoNoReboot@24 0044ed41 f   xapilibd:launch.obj
- 0002:0000779a       _XGetLaunchInfo@8          0044ee5a f   xapilibd:launch.obj
- 0002:00007876       _XWriteTitleInfoAndRebootA@20 0044ef36 f   xapilibd:launch.obj
- 0002:000078f1       _BuildUpdateFilePath@12    0044efb1 f   xapilibd:bootutil.obj
- 0002:0000794d       _XapipUpdateMountDashPartition@0 0044f00d f   xapilibd:bootutil.obj
- 0002:000079eb       _XoUpdateLoadXBEInfo@8     0044f0ab f   xapilibd:bootutil.obj
- 0002:00007aea       _XoRebootToUpdaterWhilePreservingDDrive@12 0044f1aa f   xapilibd:bootutil.obj
- 0002:00007be0       _XoUpdateGetSavedDataFromLaunchPage@12 0044f2a0 f   xapilibd:bootutil.obj
- 0002:00007caf       _XapipUpdateGetCurrentDDriveMapping@8 0044f36f f   xapilibd:bootutil.obj
- 0002:00007da5       _XapipUpdateSaveDDriveMappingToLaunchPage@8 0044f465 f   xapilibd:bootutil.obj
- 0002:00007ea9       _XapipUpdateDetectAndVerify@16 0044f569 f   xapilibd:bootutil.obj
- 0002:00008145       _XapipUpdateDashIfNecessary@4 0044f805 f   xapilibd:bootutil.obj
- 0002:000081fd       _XapipLaunchNewImageInternal@16 0044f8bd f   xapilibd:bootutil.obj
- 0002:00008441       _XapipUpdateRebootIfNecessary@0 0044fb01 f   xapilibd:bootutil.obj
- 0002:00008709       _XGetParentalControlSetting@0 0044fdc9 f   xapilibd:xgetparentalcontrolsetting.obj
- 0002:00008737       _GetDiskFreeSpaceExA@16    0044fdf7 f   xapilibd:pathmisc.obj
- 0002:00008882       _GetVolumeInformationA@32  0044ff42 f   xapilibd:pathmisc.obj
- 0002:00008b89       _XapiSelectCachePartition@12 00450249 f   xapilibd:pathmisc.obj
- 0002:00008efe       _XMountUtilityDrive@4      004505be f   xapilibd:pathmisc.obj
- 0002:00009072       _XFormatUtilityDrive@0     00450732 f   xapilibd:pathmisc.obj
- 0002:00009140       _XMountSecondaryUtilityDrive@0 00450800 f   xapilibd:pathmisc.obj
- 0002:000094a1       _XSwapUtilityDrives@0      00450b61 f   xapilibd:pathmisc.obj
- 0002:00009764       _XFormatSecondaryUtilityDrive@0 00450e24 f   xapilibd:pathmisc.obj
- 0002:00009832       _XMountAlternateTitleA@12  00450ef2 f   xapilibd:pathmisc.obj
- 0002:00009b4e       _XUnmountAlternateTitleA@4 0045120e f   xapilibd:pathmisc.obj
- 0002:00009be2       _XGetDiskClusterSizeA@4    004512a2 f   xapilibd:pathmisc.obj
- 0002:00009cf0       _XGetDiskSectorSizeA@4     004513b0 f   xapilibd:pathmisc.obj
- 0002:00009df2       _XMUNameFromDriveLetter@12 004514b2 f   xapilibd:pathmisc.obj
- 0002:00009f1b       _HeapCreate@12             004515db f   xapilibd:xapiheap.obj
- 0002:00009f7d       _HeapDestroy@4             0045163d f   xapilibd:xapiheap.obj
- 0002:00009fa3       _HeapFree@12               00451663 f   xapilibd:xapiheap.obj
- 0002:00009fc1       _HeapValidate@12           00451681 f   xapilibd:xapiheap.obj
- 0002:00009fdf       _GetProcessHeap@0          0045169f f   xapilibd:xapiheap.obj
- 0002:00009fe5       _HeapCompact@8             004516a5 f   xapilibd:xapiheap.obj
- 0002:00009ff0       _HeapLock@4                004516b0 f   xapilibd:xapiheap.obj
- 0002:0000a006       _HeapUnlock@4              004516c6 f   xapilibd:xapiheap.obj
- 0002:0000a01c       _HeapWalk@8                004516dc f   xapilibd:xapiheap.obj
- 0002:0000a130       _LocalAlloc@8              004517f0 f   xapilibd:xapiheap.obj
- 0002:0000a173       _LocalReAlloc@12           00451833 f   xapilibd:xapiheap.obj
- 0002:0000a1cb       _LocalSize@4               0045188b f   xapilibd:xapiheap.obj
- 0002:0000a1e7       _LocalFree@4               004518a7 f   xapilibd:xapiheap.obj
- 0002:0000a20f       _LocalLock@4               004518cf f   xapilibd:xapiheap.obj
- 0002:0000a21b       _LocalHandle@4             004518db f   xapilibd:xapiheap.obj
- 0002:0000a227       _LocalUnlock@4             004518e7 f   xapilibd:xapiheap.obj
- 0002:0000a22d       _GlobalAlloc@8             004518ed f   xapilibd:xapiheap.obj
- 0002:0000a270       _GlobalReAlloc@12          00451930 f   xapilibd:xapiheap.obj
- 0002:0000a2c8       _XSetAttributesOnHeapAlloc@8 00451988 f   xapilibd:xapiheap.obj
- 0002:0000a2dc       _XGetAttributesOnHeapAlloc@4 0045199c f   xapilibd:xapiheap.obj
- 0002:0000a3aa       _RtlZeroHeap@8             00451a6a f   xapilibd:heap.obj
- 0002:0000a55e       _RtlpCreateUnCommittedRange@4 00451c1e f   xapilibd:heap.obj
- 0002:0000a70e       _RtlpDestroyUnCommittedRange@8 00451dce f   xapilibd:heap.obj
- 0002:0000a783       _RtlpInsertUnCommittedPages@12 00451e43 f   xapilibd:heap.obj
- 0002:0000a89c       _RtlpFindAndCommitPages@16 00451f5c f   xapilibd:heap.obj
- 0002:0000aaff       _RtlpDestroyHeapSegment@4  004521bf f   xapilibd:heap.obj
- 0002:0000ab88       _RtlpCoalesceFreeBlocks@16 00452248 f   xapilibd:heap.obj
- 0002:0000b1ab       _RtlpInsertFreeBlock@12    0045286b f   xapilibd:heap.obj
- 0002:0000b3bd       _RtlpGetExtraStuffPointer@4 00452a7d f   xapilibd:heap.obj
- 0002:0000b3e3       _RtlpGetSizeOfBigBlock@4   00452aa3 f   xapilibd:heap.obj
- 0002:0000b443       _RtlpCheckBusyBlockTail@4  00452b03 f   xapilibd:heap.obj
- 0002:0000b510       _RtlpCheckHeapSignature@8  00452bd0 f   xapilibd:heap.obj
- 0002:0000b579       _RtlpValidateHeapHeaders@8 00452c39 f   xapilibd:heap.obj
- 0002:0000b68a       _RtlpValidateHeapSegment@32 00452d4a f   xapilibd:heap.obj
- 0002:0000b96a       _RtlpValidateHeapEntry@12  0045302a f   xapilibd:heap.obj
- 0002:0000ba5b       _RtlpValidateHeap@8        0045311b f   xapilibd:heap.obj
- 0002:0000be9b       _RtlDebugWalkHeap@8        0045355b f   xapilibd:heap.obj
- 0002:0000bef6       _RtlWalkHeap@8             004535b6 f   xapilibd:heap.obj
- 0002:0000c1ec       _RtlLockHeap@4             004538ac f   xapilibd:heap.obj
- 0002:0000c270       _RtlUnlockHeap@4           00453930 f   xapilibd:heap.obj
- 0002:0000c2f4       _RtlValidateHeap@12        004539b4 f   xapilibd:heap.obj
- 0002:0000c3c7       _RtlDebugCompactHeap@8     00453a87 f   xapilibd:heap.obj
- 0002:0000c4a0       _RtlDestroyHeap@4          00453b60 f   xapilibd:heap.obj
- 0002:0000c5ae       _RtlpGrowBlockInPlace@20   00453c6e f   xapilibd:heap.obj
- 0002:0000ce47       _RtlSizeHeap@12            00454507 f   xapilibd:heap.obj
- 0002:0000ce84       _RtlpInitializeHeapSegment@28 00454544 f   xapilibd:heap.obj
- 0002:0000d033       _RtlpExtendHeap@8          004546f3 f   xapilibd:heap.obj
- 0002:0000d265       _RtlpDeCommitFreeBlock@12  00454925 f   xapilibd:heap.obj
- 0002:0000d757       _RtlpCoalesceHeap@4        00454e17 f   xapilibd:heap.obj
- 0002:0000d881       _RtlCompactHeap@8          00454f41 f   xapilibd:heap.obj
- 0002:0000d963       _RtlCreateHeap@24          00455023 f   xapilibd:heap.obj
- 0002:0000df30       _RtlAllocateHeapSlowly@12  004555f0 f   xapilibd:heap.obj
- 0002:0000ee45       _RtlFreeHeapSlowly@12      00456505 f   xapilibd:heap.obj
- 0002:0000f197       _RtlAllocateHeap@12        00456857 f   xapilibd:heap.obj
- 0002:00010010       _RtlFreeHeap@12            004576d0 f   xapilibd:heap.obj
- 0002:0001050d       _RtlReAllocateHeap@16      00457bcd f   xapilibd:heap.obj
- 0002:00011148       _XAutoPowerDownResetTimer@0 00458808 f   xapilibd:powerdwn.obj
- 0002:0001116c       _XAutoPowerDownTimeRemaining@0 0045882c f   xapilibd:powerdwn.obj
- 0002:000111dc       _XapiAutoPowerDownTimeout@16 0045889c f   xapilibd:powerdwn.obj
- 0002:000111f2       _XapiInitAutoPowerDown@0   004588b2 f   xapilibd:powerdwn.obj
- 0002:000112a7       _XapiShutdownChannelStartNextPacket@0 00458967 f   xapilibd:xapiterm.obj
- 0002:000112ee       _XapiShutdownChannelStartPacket@8 004589ae f   xapilibd:xapiterm.obj
- 0002:00011303       _XapiShutdownNotification@4 004589c3 f   xapilibd:xapiterm.obj
- 0002:0001136e       _XapiFormatObjectAttributes@12 00458a2e f   xapilibd:support.obj
- 0002:000113a1       _XapiFormatTimeOut@8       00458a61 f   xapilibd:support.obj
- 0002:000113dd       _CreateEventA@16           00458a9d f   xapilibd:synch.obj
- 0002:00011456       _OpenEventA@12             00458b16 f   xapilibd:synch.obj
- 0002:000114c9       _SetEvent@4                00458b89 f   xapilibd:synch.obj
- 0002:000114f4       _ResetEvent@4              00458bb4 f   xapilibd:synch.obj
- 0002:0001151d       _PulseEvent@4              00458bdd f   xapilibd:synch.obj
- 0002:00011548       _CreateSemaphoreA@16       00458c08 f   xapilibd:synch.obj
- 0002:000115b9       _OpenSemaphoreA@12         00458c79 f   xapilibd:synch.obj
- 0002:0001162c       _ReleaseSemaphore@12       00458cec f   xapilibd:synch.obj
- 0002:0001165c       _CreateMutexA@12           00458d1c f   xapilibd:synch.obj
- 0002:000116ca       _OpenMutexA@12             00458d8a f   xapilibd:synch.obj
- 0002:0001173d       _ReleaseMutex@4            00458dfd f   xapilibd:synch.obj
- 0002:00011768       _WaitForSingleObjectEx@12  00458e28 f   xapilibd:synch.obj
- 0002:000117bd       _SignalObjectAndWait@16    00458e7d f   xapilibd:synch.obj
- 0002:00011815       _WaitForMultipleObjectsEx@20 00458ed5 f   xapilibd:synch.obj
- 0002:000118b5       _SleepEx@8                 00458f75 f   xapilibd:synch.obj
- 0002:0001191b       _CreateWaitableTimerA@12   00458fdb f   xapilibd:synch.obj
- 0002:00011990       _OpenWaitableTimerA@12     00459050 f   xapilibd:synch.obj
- 0002:00011a03       _SetWaitableTimer@24       004590c3 f   xapilibd:synch.obj
- 0002:00011a5a       _CancelWaitableTimer@4     0045911a f   xapilibd:synch.obj
- 0002:00011a85       _WaitForSingleObject@8     00459145 f   xapilibd:synch.obj
- 0002:00011a9e       _WaitForMultipleObjects@16 0045915e f   xapilibd:synch.obj
- 0002:00011abe       _Sleep@4                   0045917e f   xapilibd:synch.obj
- 0002:00011ad4       _XapiChangeCodeSelectorLimit@8 00459194 f   xapilibd:xapidlla.obj
- 0002:00011b02       _xCompareStringA@20        004591c2 f   xapilibd:compstra.obj
- 0002:00011ced       _ReadFile@20               004593ad f   xapilibd:filehops.obj
- 0002:00011e15       _WriteFile@20              004594d5 f   xapilibd:filehops.obj
- 0002:00011f20       _SetEndOfFile@4            004595e0 f   xapilibd:filehops.obj
- 0002:00011fc5       _SetFilePointer@16         00459685 f   xapilibd:filehops.obj
- 0002:00012111       _SetFilePointerEx@20       004597d1 f   xapilibd:filehops.obj
- 0002:0001221c       _GetFileInformationByHandle@8 004598dc f   xapilibd:filehops.obj
- 0002:0001232b       _GetFileTime@16            004599eb f   xapilibd:filehops.obj
- 0002:000123aa       _SetFileTime@16            00459a6a f   xapilibd:filehops.obj
- 0002:00012438       _FlushFileBuffers@4        00459af8 f   xapilibd:filehops.obj
- 0002:00012468       _GetFileSizeEx@8           00459b28 f   xapilibd:filehops.obj
- 0002:000124b5       _ReadFileEx@20             00459b75 f   xapilibd:filehops.obj
- 0002:0001251a       _WriteFileEx@20            00459bda f   xapilibd:filehops.obj
- 0002:0001257f       _DeviceIoControl@32        00459c3f f   xapilibd:filehops.obj
- 0002:000126bc       _ReadFileScatter@20        00459d7c f   xapilibd:filehops.obj
- 0002:000127e4       _WriteFileGather@20        00459ea4 f   xapilibd:filehops.obj
- 0002:000128ef       _XGetFilePhysicalSortKey@4 00459faf f   xapilibd:filehops.obj
- 0002:000129bf       _GetFileSize@8             0045a07f f   xapilibd:filehops.obj
- 0002:00012a08       _CreateFileA@28            0045a0c8 f   xapilibd:fileopcr.obj
- 0002:00012c0d       _CopyFileExA@24            0045a2cd f   xapilibd:fileopcr.obj
- 0002:00012fc3       _CopyFileA@12              0045a683 f   xapilibd:fileopcr.obj
- 0002:00012feb       _XapiComputeContentMetadataFileName@8 0045a6ab f   xapilibd:contsig.obj
- 0002:0001305b       _XComputeContentSignatureKey@8 0045a71b f   xapilibd:contsig.obj
- 0002:00013084       _XapiComputeContentHeaderSignature@16 0045a744 f   xapilibd:contsig.obj
- 0002:000131ab       _XapiLoadContentMetadataHeader@16 0045a86b f   xapilibd:contsig.obj
- 0002:000132c4       _XapiVerifyAndLoadOptionalSectionData@12 0045a984 f   xapilibd:contsig.obj
- 0002:000133c3       _XapipGetAlternateTitleID@0 0045aa83 f   xapilibd:contsig.obj
- 0002:000134c7       _XGetContentInstallLocationFromIDs@16 0045ab87 f   xapilibd:contsig.obj
- 0002:00013544       _XGetContentInstallLocation@12 0045ac04 f   xapilibd:contsig.obj
- 0002:000135c6       _XInstallContentSignaturesWithFileName@16 0045ac86 f   xapilibd:contsig.obj
- 0002:00013878       _XInstallContentSignaturesEx@16 0045af38 f   xapilibd:contsig.obj
- 0002:000138b5       _XInstallContentSignatures@12 0045af75 f   xapilibd:contsig.obj
- 0002:000138ef       _XCreateContentSimple@24   0045afaf f   xapilibd:contsig.obj
- 0002:00013b35       _XRemoveContent@4          0045b1f5 f   xapilibd:contsig.obj
- 0002:00013ba1       _XLoadContentSignaturesWithFileName@8 0045b261 f   xapilibd:contsig.obj
- 0002:00013d68       _XLoadContentSignaturesEx@8 0045b428 f   xapilibd:contsig.obj
- 0002:00013d9d       _XLocateSignatureByIndex@16 0045b45d f   xapilibd:contsig.obj
- 0002:00013e56       _XLocateSignatureByNameEx@24 0045b516 f   xapilibd:contsig.obj
- 0002:00013fbf       _XLocateSignatureByName@24 0045b67f f   xapilibd:contsig.obj
- 0002:00013fe5       _XLocateNextSignature@28   0045b6a5 f   xapilibd:contsig.obj
- 0002:0001410e       _XCalculateContentSignature@16 0045b7ce f   xapilibd:contsig.obj
- 0002:00014198       _XLocateLiveSignature@12   0045b858 f   xapilibd:contsig.obj
- 0002:00014215       _XCloseContentSignatures@4 0045b8d5 f   xapilibd:contsig.obj
- 0002:00014256       _XMemAlloc@8               0045b916 f   xapilibd:xmem.obj
- 0002:00014384       _XMemFree@8                0045ba44 f   xapilibd:xmem.obj
- 0002:00014515       _XMemSize@8                0045bbd5 f   xapilibd:xmem.obj
- 0002:00014538       _XapiFormatFATVolumeEx@8   0045bbf8 f   xapilibd:format.obj
- 0002:00014925       _XapiFormatFATVolume@4     0045bfe5 f   xapilibd:format.obj
- 0002:0001493e       _lstrcmpW@8                0045bffe f   xapilibd:lcompat.obj
- 0002:00014994       _lstrcmpiW@8               0045c054 f   xapilibd:lcompat.obj
- 0002:000149ea       _lstrcpyW@8                0045c0aa f   xapilibd:lcompat.obj
- 0002:00014a30       _lstrcpynW@12              0045c0f0 f   xapilibd:lcompat.obj
- 0002:00014ab7       _lstrcatW@8                0045c177 f   xapilibd:lcompat.obj
- 0002:00014afd       _lstrlenW@4                0045c1bd f   xapilibd:lcompat.obj
- 0002:00014b50       @RtlFindFirstSetRightMember@4 0045c210 f   xapilibd:bitmapa.obj
- 0002:00014b54       _XQueryValue@20            0045c214 f   xapilibd:xqueryvalue.obj
- 0002:00014b7e       _XShaHmacInitialize@12     0045c23e f   xapilibd:xcalcsig.obj
- 0002:00014c3f       _XShaHmacUpdate@12         0045c2ff f   xapilibd:xcalcsig.obj
- 0002:00014c97       _XShaHmacComputeFinal@16   0045c357 f   xapilibd:xcalcsig.obj
- 0002:00014d5a       _XapiConvertSignatureToNonRoamable@12 0045c41a f   xapilibd:xcalcsig.obj
- 0002:00014e15       _XapipCalculateSaveGameSignatureBegin@8 0045c4d5 f   xapilibd:xcalcsig.obj
- 0002:00014efd       _XapipCalculateSaveGameSignatureUpdate@12 0045c5bd f   xapilibd:xcalcsig.obj
- 0002:00014f3e       _XapipCalculateSaveGameSignatureEnd@8 0045c5fe f   xapilibd:xcalcsig.obj
- 0002:00014fe1       _XapipCalculateContentSignatureBegin@0 0045c6a1 f   xapilibd:xcalcsig.obj
- 0002:00015024       _XapipCalculateContentSignatureUpdate@12 0045c6e4 f   xapilibd:xcalcsig.obj
- 0002:00015045       _XapipCalculateContentSignatureEnd@8 0045c705 f   xapilibd:xcalcsig.obj
- 0002:0001507a       _XCalculateSignatureGetSize@4 0045c73a f   xapilibd:xcalcsig.obj
- 0002:000150b8       _XCalculateSignatureBeginEx@8 0045c778 f   xapilibd:xcalcsig.obj
- 0002:0001513f       _XCalculateSignatureBegin@4 0045c7ff f   xapilibd:xcalcsig.obj
- 0002:0001515b       _XCalculateSignatureUpdate@12 0045c81b f   xapilibd:xcalcsig.obj
- 0002:00015229       _XCalculateSignatureEnd@8  0045c8e9 f   xapilibd:xcalcsig.obj
- 0002:000152cc       _XapiNukeDirectoryFromHandle@8 0045c98c f   xapilibd:xclndrv.obj
- 0002:000154a8       _XapiNukeDirectory@8       0045cb68 f   xapilibd:xclndrv.obj
- 0002:00015557       _SetFileAttributesA@8      0045cc17 f   xapilibd:filemisc.obj
- 0002:00015626       _GetFileAttributesA@4      0045cce6 f   xapilibd:filemisc.obj
- 0002:00015683       _GetFileAttributesExA@12   0045cd43 f   xapilibd:filemisc.obj
- 0002:00015749       _MoveFileA@8               0045ce09 f   xapilibd:filemisc.obj
- 0002:00015804       _DeleteFileA@4             0045cec4 f   xapilibd:filemisc.obj
- 0002:000158b5       _XSetFileCacheSize@4       0045cf75 f   xapilibd:filemisc.obj
- 0002:000158ee       _XGetFileCacheSize@0       0045cfae f   xapilibd:filemisc.obj
- 0002:000158fa       _XapiGetDirectoryDisplayBlocks@12 0045cfba f   xapilibd:filemisc.obj
- 0002:00015a7c       _XGetDisplayBlocks@4       0045d13c f   xapilibd:filemisc.obj
- 0002:00015b8a       _MoveFileWithProgressA@20  0045d24a f   xapilibd:filemisc.obj
- 0002:00015cb6       _MoveFileExA@12            0045d376 f   xapilibd:filemisc.obj
- 0002:00015cd5       _XPhysicalAlloc@16         0045d395 f   xapilibd:physical.obj
- 0002:00015d98       _XPhysicalAllocEx@20       0045d458 f   xapilibd:physical.obj
- 0002:00015e26       _XPhysicalSize@4           0045d4e6 f   xapilibd:physical.obj
- 0002:00015e53       _XPhysicalProtect@12       0045d513 f   xapilibd:physical.obj
- 0002:00015eab       _XPhysicalFree@4           0045d56b f   xapilibd:physical.obj
- 0002:00015ed8       _XQueryMemoryProtect@4     0045d598 f   xapilibd:physical.obj
- 0002:00015ee4       _xCompareStringW@20        0045d5a4 f   xapilibd:compstr.obj
- 0002:000160e4       _RtlRip@12                 0045d7a4 f   xboxkrnl:xboxkrnl.exe
- 0002:000160ea       _NtClose@4                 0045d7aa f   xboxkrnl:xboxkrnl.exe
- 0002:000160f0       _NtQueryVolumeInformationFile@20 0045d7b0 f   xboxkrnl:xboxkrnl.exe
- 0002:000160f6       _NtOpenFile@24             0045d7b6 f   xboxkrnl:xboxkrnl.exe
- 0002:000160fc       _NtWriteFile@32            0045d7bc f   xboxkrnl:xboxkrnl.exe
- 0002:00016102       _NtQueryInformationFile@20 0045d7c2 f   xboxkrnl:xboxkrnl.exe
- 0002:00016108       _NtCreateFile@36           0045d7c8 f   xboxkrnl:xboxkrnl.exe
- 0002:0001610e       _RtlInitAnsiString@8       0045d7ce f   xboxkrnl:xboxkrnl.exe
- 0002:00016114       _RtlAssert@16              0045d7d4 f   xboxkrnl:xboxkrnl.exe
- 0002:0001611a       _IoCreateSymbolicLink@8    0045d7da f   xboxkrnl:xboxkrnl.exe
- 0002:00016120       _NtSetInformationFile@20   0045d7e0 f   xboxkrnl:xboxkrnl.exe
- 0002:00016126       _KeQuerySystemTime@4       0045d7e6 f   xboxkrnl:xboxkrnl.exe
- 0002:0001612c       _HalReturnToFirmware@4     0045d7ec f   xboxkrnl:xboxkrnl.exe
- 0002:00016132       _MmFreeContiguousMemory@4  0045d7f2 f   xboxkrnl:xboxkrnl.exe
- 0002:00016138       _HalRegisterShutdownNotification@8 0045d7f8 f   xboxkrnl:xboxkrnl.exe
- 0002:0001613e       _RtlNtStatusToDosError@4   0045d7fe f   xboxkrnl:xboxkrnl.exe
- 0002:00016144       _NtCreateIoCompletion@16   0045d804 f   xboxkrnl:xboxkrnl.exe
- 0002:0001614a       _NtSetIoCompletion@20      0045d80a f   xboxkrnl:xboxkrnl.exe
- 0002:00016150       _NtRemoveIoCompletion@20   0045d810 f   xboxkrnl:xboxkrnl.exe
- 0002:00016156       _MmSetAddressProtect@12    0045d816 f   xboxkrnl:xboxkrnl.exe
- 0002:0001615c       _MmQueryAddressProtect@4   0045d81c f   xboxkrnl:xboxkrnl.exe
- 0002:00016162       _NtDuplicateObject@12      0045d822 f   xboxkrnl:xboxkrnl.exe
- 0002:00016168       _RtlLeaveCriticalSection@4 0045d828 f   xboxkrnl:xboxkrnl.exe
- 0002:0001616e       _RtlEnterCriticalSection@4 0045d82e f   xboxkrnl:xboxkrnl.exe
- 0002:00016174       @ObfDereferenceObject@4    0045d834 f   xboxkrnl:xboxkrnl.exe
- 0002:0001617a       _KeSetBasePriorityThread@8 0045d83a f   xboxkrnl:xboxkrnl.exe
- 0002:00016180       _ObReferenceObjectByHandle@12 0045d840 f   xboxkrnl:xboxkrnl.exe
- 0002:00016186       _KeQueryBasePriorityThread@4 0045d846 f   xboxkrnl:xboxkrnl.exe
- 0002:0001618c       _KeSetDisableBoostThread@8 0045d84c f   xboxkrnl:xboxkrnl.exe
- 0002:00016192       _NtSuspendThread@8         0045d852 f   xboxkrnl:xboxkrnl.exe
- 0002:00016198       _NtResumeThread@8          0045d858 f   xboxkrnl:xboxkrnl.exe
- 0002:0001619e       _RtlRaiseException@4       0045d85e f   xboxkrnl:xboxkrnl.exe
- 0002:000161a4       _NtQueueApcThread@20       0045d864 f   xboxkrnl:xboxkrnl.exe
- 0002:000161aa       _NtYieldExecution@0        0045d86a f   xboxkrnl:xboxkrnl.exe
- 0002:000161b0       _PsTerminateSystemThread@4 0045d870 f   xboxkrnl:xboxkrnl.exe
- 0002:000161b6       _DbgPrint                  0045d876 f   xboxkrnl:xboxkrnl.exe
- 0002:000161bc       _PsCreateSystemThreadEx@40 0045d87c f   xboxkrnl:xboxkrnl.exe
- 0002:000161c2       _RtlEqualString@12         0045d882 f   xboxkrnl:xboxkrnl.exe
- 0002:000161c8       _XeLoadSection@4           0045d888 f   xboxkrnl:xboxkrnl.exe
- 0002:000161ce       _XeUnloadSection@4         0045d88e f   xboxkrnl:xboxkrnl.exe
- 0002:000161d4       _MmPersistContiguousMemory@12 0045d894 f   xboxkrnl:xboxkrnl.exe
- 0002:000161da       _MmAllocateContiguousMemory@4 0045d89a f   xboxkrnl:xboxkrnl.exe
- 0002:000161e0       _IoDeleteSymbolicLink@4    0045d8a0 f   xboxkrnl:xboxkrnl.exe
- 0002:000161e6       _NtQuerySymbolicLinkObject@12 0045d8a6 f   xboxkrnl:xboxkrnl.exe
- 0002:000161ec       _NtOpenSymbolicLinkObject@8 0045d8ac f   xboxkrnl:xboxkrnl.exe
- 0002:000161f2       _XcSHAFinal@8              0045d8b2 f   xboxkrnl:xboxkrnl.exe
- 0002:000161f8       _XcSHAUpdate@12            0045d8b8 f   xboxkrnl:xboxkrnl.exe
- 0002:000161fe       _XcSHAInit@4               0045d8be f   xboxkrnl:xboxkrnl.exe
- 0002:00016204       _ExQueryNonVolatileSetting@20 0045d8c4 f   xboxkrnl:xboxkrnl.exe
- 0002:0001620a       _NtReadFile@32             0045d8ca f   xboxkrnl:xboxkrnl.exe
- 0002:00016210       _NtFsControlFile@40        0045d8d0 f   xboxkrnl:xboxkrnl.exe
- 0002:00016216       _RtlFillMemoryUlong@12     0045d8d6 f   xboxkrnl:xboxkrnl.exe
- 0002:0001621c       _NtFreeVirtualMemory@12    0045d8dc f   xboxkrnl:xboxkrnl.exe
- 0002:00016222       _NtAllocateVirtualMemory@20 0045d8e2 f   xboxkrnl:xboxkrnl.exe
- 0002:00016228       _DbgBreakPoint@0           0045d8e8 f   xboxkrnl:xboxkrnl.exe
- 0002:0001622e       _RtlCompareMemoryUlong@12  0045d8ee f   xboxkrnl:xboxkrnl.exe
- 0002:00016234       _RtlCompareMemory@12       0045d8f4 f   xboxkrnl:xboxkrnl.exe
- 0002:0001623a       _RtlInitializeCriticalSection@4 0045d8fa f   xboxkrnl:xboxkrnl.exe
- 0002:00016240       _NtQueryVirtualMemory@8    0045d900 f   xboxkrnl:xboxkrnl.exe
- 0002:00016246       _KeSetTimer@16             0045d906 f   xboxkrnl:xboxkrnl.exe
- 0002:0001624c       @KfLowerIrql@4             0045d90c f   xboxkrnl:xboxkrnl.exe
- 0002:00016252       _KeQueryInterruptTime@0    0045d912 f   xboxkrnl:xboxkrnl.exe
- 0002:00016258       _KeRaiseIrqlToDpcLevel@0   0045d918 f   xboxkrnl:xboxkrnl.exe
- 0002:0001625e       _HalInitiateShutdown@0     0045d91e f   xboxkrnl:xboxkrnl.exe
- 0002:00016264       _KeInitializeTimerEx@8     0045d924 f   xboxkrnl:xboxkrnl.exe
- 0002:0001626a       _KeInitializeDpc@12        0045d92a f   xboxkrnl:xboxkrnl.exe
- 0002:00016270       _KeSetEvent@12             0045d930 f   xboxkrnl:xboxkrnl.exe
- 0002:00016276       _KeWaitForSingleObject@20  0045d936 f   xboxkrnl:xboxkrnl.exe
- 0002:0001627c       _NtCreateEvent@16          0045d93c f   xboxkrnl:xboxkrnl.exe
- 0002:00016282       _ObOpenObjectByName@16     0045d942 f   xboxkrnl:xboxkrnl.exe
- 0002:00016288       _NtSetEvent@8              0045d948 f   xboxkrnl:xboxkrnl.exe
- 0002:0001628e       _NtClearEvent@4            0045d94e f   xboxkrnl:xboxkrnl.exe
- 0002:00016294       _NtPulseEvent@8            0045d954 f   xboxkrnl:xboxkrnl.exe
- 0002:0001629a       _NtCreateSemaphore@16      0045d95a f   xboxkrnl:xboxkrnl.exe
- 0002:000162a0       _NtReleaseSemaphore@12     0045d960 f   xboxkrnl:xboxkrnl.exe
- 0002:000162a6       _NtCreateMutant@12         0045d966 f   xboxkrnl:xboxkrnl.exe
- 0002:000162ac       _NtReleaseMutant@8         0045d96c f   xboxkrnl:xboxkrnl.exe
- 0002:000162b2       _NtWaitForSingleObjectEx@16 0045d972 f   xboxkrnl:xboxkrnl.exe
- 0002:000162b8       _NtSignalAndWaitForSingleObjectEx@20 0045d978 f   xboxkrnl:xboxkrnl.exe
- 0002:000162be       _NtWaitForMultipleObjectsEx@24 0045d97e f   xboxkrnl:xboxkrnl.exe
- 0002:000162c4       _KeDelayExecutionThread@12 0045d984 f   xboxkrnl:xboxkrnl.exe
- 0002:000162ca       _NtCreateTimer@12          0045d98a f   xboxkrnl:xboxkrnl.exe
- 0002:000162d0       _NtSetTimerEx@32           0045d990 f   xboxkrnl:xboxkrnl.exe
- 0002:000162d6       _NtCancelTimer@8           0045d996 f   xboxkrnl:xboxkrnl.exe
- 0002:000162dc       _NtWaitForSingleObject@12  0045d99c f   xboxkrnl:xboxkrnl.exe
- 0002:000162e2       _NtFlushBuffersFile@8      0045d9a2 f   xboxkrnl:xboxkrnl.exe
- 0002:000162e8       _NtUserIoApcDispatcher@12  0045d9a8 f   xboxkrnl:xboxkrnl.exe
- 0002:000162ee       _NtDeviceIoControlFile@40  0045d9ae f   xboxkrnl:xboxkrnl.exe
- 0002:000162f4       _NtReadFileScatter@32      0045d9b4 f   xboxkrnl:xboxkrnl.exe
- 0002:000162fa       _NtWriteFileGather@32      0045d9ba f   xboxkrnl:xboxkrnl.exe
- 0002:00016300       _IoQueryVolumeInformation@20 0045d9c0 f   xboxkrnl:xboxkrnl.exe
- 0002:00016306       _MmFreeSystemMemory@8      0045d9c6 f   xboxkrnl:xboxkrnl.exe
- 0002:0001630c       _MmAllocateSystemMemory@8  0045d9cc f   xboxkrnl:xboxkrnl.exe
- 0002:00016312       _XcHMAC@28                 0045d9d2 f   xboxkrnl:xboxkrnl.exe
- 0002:00016318       _RtlCompareString@12       0045d9d8 f   xboxkrnl:xboxkrnl.exe
- 0002:0001631e       _NtQueryDirectoryFile@40   0045d9de f   xboxkrnl:xboxkrnl.exe
- 0002:00016324       _NtQueryFullAttributesFile@8 0045d9e4 f   xboxkrnl:xboxkrnl.exe
- 0002:0001632a       _FscSetCacheSize@4         0045d9ea f   xboxkrnl:xboxkrnl.exe
- 0002:00016330       _FscGetCacheSize@0         0045d9f0 f   xboxkrnl:xboxkrnl.exe
- 0002:00016336       _MmAllocateContiguousMemoryEx@20 0045d9f6 f   xboxkrnl:xboxkrnl.exe
- 0002:0001633c       _MmQueryAllocationSize@4   0045d9fc f   xboxkrnl:xboxkrnl.exe
- 0002:00016342       _AvGetSavedDataAddress@0   0045da02 f   xboxkrnl:xboxkrnl.exe
- 0002:00016348       _AvSendTVEncoderOption@16  0045da08 f   xboxkrnl:xboxkrnl.exe
- 0002:0001634e       _AvSetDisplayMode@24       0045da0e f   xboxkrnl:xboxkrnl.exe
- 0002:00016354       _AvSetSavedDataAddress@4   0045da14 f   xboxkrnl:xboxkrnl.exe
- 0002:0001635a       _MmQueryStatistics@4       0045da1a f   xboxkrnl:xboxkrnl.exe
- 0002:00016360       _RtlWalkFrameChain@12      0045da20 f   xboxkrnl:xboxkrnl.exe
- 0002:00016366       _NtDeleteFile@4            0045da26 f   xboxkrnl:xboxkrnl.exe
- 0002:0001636c       _KeInsertQueueDpc@12       0045da2c f   xboxkrnl:xboxkrnl.exe
- 0002:00016372       _HalReadWritePCISpace@24   0045da32 f   xboxkrnl:xboxkrnl.exe
- 0002:00016378       _KeConnectInterrupt@4      0045da38 f   xboxkrnl:xboxkrnl.exe
- 0002:0001637e       _KeInitializeInterrupt@28  0045da3e f   xboxkrnl:xboxkrnl.exe
- 0002:00016384       _HalGetInterruptVector@8   0045da44 f   xboxkrnl:xboxkrnl.exe
- 0002:0001638a       _KeDisconnectInterrupt@4   0045da4a f   xboxkrnl:xboxkrnl.exe
- 0002:00016390       _MmClaimGpuInstanceMemory@8 0045da50 f   xboxkrnl:xboxkrnl.exe
- 0002:00016396       _KeStallExecutionProcessor@4 0045da56 f   xboxkrnl:xboxkrnl.exe
- 0002:0001639c       __fpclear                  0045da5c f   LIBCMTD:fpinit.obj
- 0002:0001639d       __cfltcvt_init             0045da5d f   LIBCMTD:fpinit.obj
- 0002:000163e3       ___setfflag                0045daa3 f   LIBCMTD:fpinit.obj
- 0002:000163fa       __fpmath                   0045daba f   LIBCMTD:fpinit.obj
- 0002:00016420       __RTC_CheckEsp             0045dae0 f   LIBCMTD:stack.obj
- 0002:00016450       @_RTC_CheckStackVars@8     0045db10 f   LIBCMTD:stack.obj
- 0002:000164d0       __RTC_InitBase             0045db90 f   LIBCMTD:init.obj
- 0002:00016510       __RTC_Shutdown             0045dbd0 f   LIBCMTD:init.obj
- 0002:00016530       _memset                    0045dbf0 f   LIBCMTD:memset.obj
- 0002:000165b0       _memcpy                    0045dc70 f   LIBCMTD:memcpy.obj
- 0002:000169c0       __snwprintf                0045e080 f   LIBCMTD:snwprint.obj
- 0002:00016b50       _sprintf                   0045e210 f   LIBCMTD:sprintf.obj
- 0002:00016c80       __scprintf                 0045e340 f   LIBCMTD:sprintf.obj
- 0002:00016d20       __RTC_Initialize           0045e3e0 f   LIBCMTD:initsect.obj
- 0002:00016dc0       __RTC_Terminate            0045e480 f   LIBCMTD:initsect.obj
- 0002:00016e58       __SEH_prolog               0045e518 f   LIBCMTD:sehprolg.obj
- 0002:00016e93       __SEH_epilog               0045e553 f   LIBCMTD:sehprolg.obj
- 0002:00016ec0       __except_handler3          0045e580 f   LIBCMTD:exsup3.obj
- 0002:00016f92       __seh_longjmp_unwind@4     0045e652 f   LIBCMTD:exsup3.obj
- 0002:00016ff0       __vsnprintf                0045e6b0 f   LIBCMTD:vsnprint.obj
- 0002:000170f0       __stricmp                  0045e7b0 f   LIBCMTD:stricmp.obj
- 0002:00017190       __snprintf                 0045e850 f   LIBCMTD:snprintf.obj
- 0002:000172c0       _strncpy                   0045e980 f   LIBCMTD:strncpy.obj
- 0002:00017430       __strnicmp                 0045eaf0 f   LIBCMTD:strnicmp.obj
- 0002:000174f0       __alloca_probe             0045ebb0     LIBCMTD:chkstk.obj
- 0002:000174f0       __chkstk                   0045ebb0 f   LIBCMTD:chkstk.obj
- 0002:00017550       __allmul                   0045ec10 f   LIBCMTD:llmul.obj
- 0002:000175a0       _memmove                   0045ec60 f   LIBCMTD:memmove.obj
- 0002:000179ac       __global_unwind2           0045f06c f   LIBCMTD:exsup.obj
- 0002:000179ee       __local_unwind2            0045f0ae f   LIBCMTD:exsup.obj
- 0002:00017a46       __NLG_Return2              0045f106     LIBCMTD:exsup.obj
- 0002:00017a56       __abnormal_termination     0045f116 f   LIBCMTD:exsup.obj
- 0002:00017a79       __NLG_Notify1              0045f139 f   LIBCMTD:exsup.obj
- 0002:00017a82       __NLG_Notify               0045f142 f   LIBCMTD:exsup.obj
- 0002:00017a95       __NLG_Dispatch             0045f155     LIBCMTD:exsup.obj
- 0002:00017ae0       __aulldiv                  0045f1a0 f   LIBCMTD:ulldiv.obj
- 0002:00017b70       _wcsncpy                   0045f230 f   LIBCMTD:wcsncpy.obj
- 0002:00017c00       _wcscat                    0045f2c0 f   LIBCMTD:wcscat.obj
- 0002:00017c70       _wcscpy                    0045f330 f   LIBCMTD:wcscat.obj
- 0002:00017cc0       _wcslen                    0045f380 f   LIBCMTD:wcslen.obj
- 0002:00017d00       __alldiv                   0045f3c0 f   LIBCMTD:lldiv.obj
- 0002:00017de0       _wcscmp                    0045f4a0 f   LIBCMTD:wcscmp.obj
- 0002:00017e60       __wcsicmp                  0045f520 f   LIBCMTD:wcsicmp.obj
- 0002:00017fb8       __ftol2                    0045f678 f   LIBCMTD:ftol2.obj
- 0002:00018050       _malloc                    0045f710 f   LIBCMTD:dbgheap.obj
- 0002:00018080       __malloc_dbg               0045f740 f   LIBCMTD:dbgheap.obj
- 0002:000180c0       __nh_malloc                0045f780 f   LIBCMTD:dbgheap.obj
- 0002:000180f0       __nh_malloc_dbg            0045f7b0 f   LIBCMTD:dbgheap.obj
- 0002:000181c0       __heap_alloc               0045f880 f   LIBCMTD:dbgheap.obj
- 0002:000181e0       __heap_alloc_dbg           0045f8a0 f   LIBCMTD:dbgheap.obj
- 0002:000185c0       _calloc                    0045fc80 f   LIBCMTD:dbgheap.obj
- 0002:000185f0       __calloc_dbg               0045fcb0 f   LIBCMTD:dbgheap.obj
- 0002:00018670       _realloc                   0045fd30 f   LIBCMTD:dbgheap.obj
- 0002:000186a0       __realloc_dbg              0045fd60 f   LIBCMTD:dbgheap.obj
- 0002:00018db0       __expand                   00460470 f   LIBCMTD:dbgheap.obj
- 0002:00018de0       __expand_dbg               004604a0 f   LIBCMTD:dbgheap.obj
- 0002:00018e90       _free                      00460550 f   LIBCMTD:dbgheap.obj
- 0002:00018eb0       __free_lk                  00460570 f   LIBCMTD:dbgheap.obj
- 0002:00018ed0       __free_dbg                 00460590 f   LIBCMTD:dbgheap.obj
- 0002:00018f60       __free_dbg_lk              00460620 f   LIBCMTD:dbgheap.obj
- 0002:00019480       __msize                    00460b40 f   LIBCMTD:dbgheap.obj
- 0002:000194a0       __msize_dbg                00460b60 f   LIBCMTD:dbgheap.obj
- 0002:00019670       __CrtSetBreakAlloc         00460d30 f   LIBCMTD:dbgheap.obj
- 0002:000196a0       __CrtSetDbgBlockType       00460d60 f   LIBCMTD:dbgheap.obj
- 0002:000197b0       __CrtSetAllocHook          00460e70 f   LIBCMTD:dbgheap.obj
- 0002:00019840       __CrtCheckMemory           00460f00 f   LIBCMTD:dbgheap.obj
- 0002:00019c80       __CrtSetDbgFlag            00461340 f   LIBCMTD:dbgheap.obj
- 0002:00019d50       __CrtDoForAllClientObjects 00461410 f   LIBCMTD:dbgheap.obj
- 0002:00019e20       __CrtIsValidPointer        004614e0 f   LIBCMTD:dbgheap.obj
- 0002:00019e80       __CrtIsValidHeapPointer    00461540 f   LIBCMTD:dbgheap.obj
- 0002:00019f00       __CrtIsMemoryBlock         004615c0 f   LIBCMTD:dbgheap.obj
- 0002:0001a070       __CrtReportBlockType       00461730 f   LIBCMTD:dbgheap.obj
- 0002:0001a0b0       __CrtSetDumpClient         00461770 f   LIBCMTD:dbgheap.obj
- 0002:0001a0e0       __CrtMemCheckpoint         004617a0 f   LIBCMTD:dbgheap.obj
- 0002:0001a2e0       __CrtMemDifference         004619a0 f   LIBCMTD:dbgheap.obj
- 0002:0001a440       __CrtMemDumpAllObjectsSince 00461b00 f   LIBCMTD:dbgheap.obj
- 0002:0001a8f0       __CrtDumpMemoryLeaks       00461fb0 f   LIBCMTD:dbgheap.obj
- 0002:0001a970       __CrtMemDumpStatistics     00462030 f   LIBCMTD:dbgheap.obj
- 0002:0001aa50       __aligned_malloc           00462110 f   LIBCMTD:dbgheap.obj
- 0002:0001aa80       __aligned_malloc_dbg       00462140 f   LIBCMTD:dbgheap.obj
- 0002:0001aab0       __aligned_realloc          00462170 f   LIBCMTD:dbgheap.obj
- 0002:0001aae0       __aligned_realloc_dbg      004621a0 f   LIBCMTD:dbgheap.obj
- 0002:0001ab10       __aligned_offset_malloc    004621d0 f   LIBCMTD:dbgheap.obj
- 0002:0001ab40       __aligned_offset_malloc_dbg 00462200 f   LIBCMTD:dbgheap.obj
- 0002:0001acd0       __aligned_offset_realloc   00462390 f   LIBCMTD:dbgheap.obj
- 0002:0001ad00       __aligned_offset_realloc_dbg 004623c0 f   LIBCMTD:dbgheap.obj
- 0002:0001aff0       __aligned_free             004626b0 f   LIBCMTD:dbgheap.obj
- 0002:0001b010       __aligned_free_dbg         004626d0 f   LIBCMTD:dbgheap.obj
- 0002:0001b0f0       _strchr                    004627b0 f   LIBCMTD:strchr.obj
- 0002:0001b0f6       ___from_strstr_to_strchr   004627b6     LIBCMTD:strchr.obj
- 0002:0001b1e1       __copysign                 004628a1 f   LIBCMTD:ieeemisc.obj
- 0002:0001b20a       __chgsign                  004628ca f   LIBCMTD:ieeemisc.obj
- 0002:0001b239       __scalb                    004628f9 f   LIBCMTD:ieeemisc.obj
- 0002:0001b257       __logb                     00462917 f   LIBCMTD:ieeemisc.obj
- 0002:0001b37c       __nextafter                00462a3c f   LIBCMTD:ieeemisc.obj
- 0002:0001b6a9       __finite                   00462d69 f   LIBCMTD:ieeemisc.obj
- 0002:0001b6c7       __isnan                    00462d87 f   LIBCMTD:ieeemisc.obj
- 0002:0001b703       __fpclass                  00462dc3 f   LIBCMTD:ieeemisc.obj
- 0002:0001b7c8       __CIacos                   00462e88 f   LIBCMTD:acos.obj
- 0002:0001b7dc       _acos                      00462e9c     LIBCMTD:acos.obj
- 0002:0001b8c5       __forcdecpt                00462f85 f   LIBCMTD:cvt.obj
- 0002:0001b92b       __cropzeros                00462feb f   LIBCMTD:cvt.obj
- 0002:0001b98c       __positive                 0046304c f   LIBCMTD:cvt.obj
- 0002:0001b9b1       __fassign                  00463071 f   LIBCMTD:cvt.obj
- 0002:0001bafc       __cftoe                    004631bc f   LIBCMTD:cvt.obj
- 0002:0001bc41       __cftof                    00463301 f   LIBCMTD:cvt.obj
- 0002:0001bca7       __cftog                    00463367 f   LIBCMTD:cvt.obj
- 0002:0001bd57       __cfltcvt                  00463417 f   LIBCMTD:cvt.obj
- 0002:0001bdc0       __setdefaultprecision      00463480 f   LIBCMTD:fp8.obj
- 0002:0001bde0       ?_RTC_GetSrcLine@@YAHKPADHPAHPAPAD@Z 004634a0 f   LIBCMTD:error.obj
- 0002:0001be30       ?_RTC_Failure@@YAXPAXH@Z   004634f0 f   LIBCMTD:error.obj
- 0002:0001c110       ?_RTC_MemFailure@@YAXPAXHPBX@Z 004637d0 f   LIBCMTD:error.obj
- 0002:0001c3f0       ?_RTC_StackFailure@@YAXPAXPBD@Z 00463ab0 f   LIBCMTD:error.obj
- 0002:0001c4e0       __RTC_UninitUse            00463ba0 f   LIBCMTD:error.obj
- 0002:0001c600       __RTC_NumErrors            00463cc0 f   LIBCMTD:userapi.obj
- 0002:0001c610       __RTC_GetErrDesc           00463cd0 f   LIBCMTD:userapi.obj
- 0002:0001c640       __RTC_SetErrorType         00463d00 f   LIBCMTD:userapi.obj
- 0002:0001c670       __RTC_SetErrorFunc         00463d30 f   LIBCMTD:userapi.obj
- 0002:0001c690       ?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z 00463d50 f   LIBCMTD:userapi.obj
- 0002:0001c6a0       __chkesp                   00463d60 f   LIBCMTD:chkesp.obj
- 0002:0001c6f0       __CRT_RTC_INIT             00463db0 f   LIBCMTD:chkesp.obj
- 0002:0001c700       __flsbuf                   00463dc0 f   LIBCMTD:_flsbuf.obj
- 0002:0001c9f0       __woutput                  004640b0 f   LIBCMTD:woutput.obj
- 0002:0001dc60       __CrtDbgBreak              00465320 f   LIBCMTD:dbgrpt.obj
- 0002:0001dc70       __CrtSetReportMode         00465330 f   LIBCMTD:dbgrpt.obj
- 0002:0001dce0       __CrtSetReportFile         004653a0 f   LIBCMTD:dbgrpt.obj
- 0002:0001dd40       __CrtSetReportHook         00465400 f   LIBCMTD:dbgrpt.obj
- 0002:0001dd70       __CrtSetReportHook2        00465430 f   LIBCMTD:dbgrpt.obj
- 0002:0001e050       __CrtDbgReport             00465710 f   LIBCMTD:dbgrpt.obj
- 0002:0001ea10       __output                   004660d0 f   LIBCMTD:output.obj
- 0002:0001fd60       __tolower                  00467420 f   LIBCMTD:tolower.obj
- 0002:0001fd70       _tolower                   00467430 f   LIBCMTD:tolower.obj
- 0002:0001fde0       ___ascii_stricmp           004674a0 f   LIBCMTD:_stricmp.obj
- 0002:0001fe50       ___ascii_strnicmp          00467510 f   LIBCMTD:_strnicm.obj
- 0002:0001fed0       _towlower                  00467590 f   LIBCMTD:towlower.obj
- 0002:0001ff70       ?_set_new_handler@@YAP6AHI@ZP6AHI@Z@Z 00467630 f   LIBCMTD:handler.obj
- 0002:0001ffb0       ?_query_new_handler@@YAP6AHI@ZXZ 00467670 f   LIBCMTD:handler.obj
- 0002:0001ffc0       __callnewh                 00467680 f   LIBCMTD:handler.obj
- 0002:00020000       __mtinitlocks              004676c0 f   LIBCMTD:mlock.obj
- 0002:000200b0       __mtdeletelocks            00467770 f   LIBCMTD:mlock.obj
- 0002:00020190       __mtinitlocknum            00467850 f   LIBCMTD:mlock.obj
- 0002:00020300       __lock                     004679c0 f   LIBCMTD:mlock.obj
- 0002:00020350       __unlock                   00467a10 f   LIBCMTD:mlock.obj
- 0002:00020370       __lockerr_exit             00467a30 f   LIBCMTD:mlock.obj
- 0002:00020390       __malloc_base              00467a50 f   LIBCMTD:malloc.obj
- 0002:000203c0       __nh_malloc_base           00467a80 f   LIBCMTD:malloc.obj
- 0002:00020430       __heap_alloc_base          00467af0 f   LIBCMTD:malloc.obj
- 0002:00020480       __CrtDefaultAllocHook      00467b40 f   LIBCMTD:dbghook.obj
- 0002:00020490       __expand_base              00467b50 f   LIBCMTD:expand.obj
- 0002:000205b0       __realloc_base             00467c70 f   LIBCMTD:realloc.obj
- 0002:00020790       __free_base                00467e50 f   LIBCMTD:free.obj
- 0002:00020860       __heapchk                  00467f20 f   LIBCMTD:heapchk.obj
- 0002:00020940       __heapset                  00468000 f   LIBCMTD:heapchk.obj
- 0002:00020950       ___heap_select             00468010 f   LIBCMTD:heapinit.obj
- 0002:00020970       __get_heap_handle          00468030 f   LIBCMTD:heapinit.obj
- 0002:00020980       __chvalidator              00468040 f   LIBCMTD:isctype.obj
- 0002:000209d0       __isctype                  00468090 f   LIBCMTD:isctype.obj
- 0002:00020a10       __dosmaperr                004680d0 f   LIBCMTD:dosmap.obj
- 0002:00020ad0       __errno                    00468190 f   LIBCMTD:dosmap.obj
- 0002:00020ae0       ___doserrno                004681a0 f   LIBCMTD:dosmap.obj
- 0002:00020af0       _ldexp                     004681b0 f   LIBCMTD:ldexp.obj
- 0002:00020d04       __set_exp                  004683c4 f   LIBCMTD:util.obj
- 0002:00020d38       __get_exp                  004683f8 f   LIBCMTD:util.obj
- 0002:00020d56       __add_exp                  00468416 f   LIBCMTD:util.obj
- 0002:00020d8b       __set_bexp                 0046844b f   LIBCMTD:util.obj
- 0002:00020db9       __sptype                   00468479 f   LIBCMTD:util.obj
- 0002:00020e2a       __decomp                   004684ea f   LIBCMTD:util.obj
- 0002:00020f0b       __raise_exc                004685cb f   LIBCMTD:fpexcept.obj
- 0002:00021258       __handle_exc               00468918 f   LIBCMTD:fpexcept.obj
- 0002:000214c0       __set_errno                00468b80 f   LIBCMTD:fpexcept.obj
- 0002:00021522       __errcode                  00468be2 f   LIBCMTD:fpexcept.obj
- 0002:00021560       __umatherr                 00468c20 f   LIBCMTD:fpexcept.obj
- 0002:00021625       __handle_qnan1             00468ce5 f   LIBCMTD:fpexcept.obj
- 0002:0002168c       __handle_qnan2             00468d4c f   LIBCMTD:fpexcept.obj
- 0002:00021702       __except1                  00468dc2 f   LIBCMTD:fpexcept.obj
- 0002:000217de       __except2                  00468e9e f   LIBCMTD:fpexcept.obj
- 0002:000218cc       __statfp                   00468f8c f   LIBCMTD:fpctrl.obj
- 0002:000218dd       __clrfp                    00468f9d f   LIBCMTD:fpctrl.obj
- 0002:000218ef       __ctrlfp                   00468faf f   LIBCMTD:fpctrl.obj
- 0002:0002191c       __set_statfp               00468fdc f   LIBCMTD:fpctrl.obj
- 0002:00021988       __trandisp1                00469048 f   LIBCMTD:87disp.obj
- 0002:000219ef       __trandisp2                004690af f   LIBCMTD:87disp.obj
- 0002:00021a7b       __rttospopde               0046913b     LIBCMTD:87disp.obj
- 0002:00021a80       __rttospop                 00469140     LIBCMTD:87disp.obj
- 0002:00021a82       __rtnospop                 00469142     LIBCMTD:87disp.obj
- 0002:00021a84       __rttosnpop                00469144     LIBCMTD:87disp.obj
- 0002:00021a85       __rtnospopde               00469145     LIBCMTD:87disp.obj
- 0002:00021a8c       __rtzeropop                0046914c     LIBCMTD:87disp.obj
- 0002:00021a8e       __rtzeronpop               0046914e     LIBCMTD:87disp.obj
- 0002:00021a93       __rtonepop                 00469153     LIBCMTD:87disp.obj
- 0002:00021a95       __rtonenpop                00469155     LIBCMTD:87disp.obj
- 0002:00021a9a       __tosnan1                  0046915a     LIBCMTD:87disp.obj
- 0002:00021ac5       __nosnan2                  00469185     LIBCMTD:87disp.obj
- 0002:00021ac7       __tosnan2                  00469187     LIBCMTD:87disp.obj
- 0002:00021aef       __nan2                     004691af     LIBCMTD:87disp.obj
- 0002:00021b2e       __rtindfpop                004691ee     LIBCMTD:87disp.obj
- 0002:00021b30       __rtindfnpop               004691f0     LIBCMTD:87disp.obj
- 0002:00021b41       __rttosnpopde              00469201     LIBCMTD:87disp.obj
- 0002:00021b4b       __rtchsifneg               0046920b     LIBCMTD:87disp.obj
- 0002:00021bc4       __startTwoArgErrorHandling 00469284 f   LIBCMTD:genexcep.obj
- 0002:00021bdb       __startOneArgErrorHandling 0046929b f   LIBCMTD:genexcep.obj
- 0002:00021c2c       __twoToTOS                 004692ec f   LIBCMTD:common.obj
- 0002:00021c41       __load_CW                  00469301 f   LIBCMTD:common.obj
- 0002:00021c58       __convertTOStoQNaN         00469318 f   LIBCMTD:common.obj
- 0002:00021c71       __fload_withFB             00469331 f   LIBCMTD:common.obj
- 0002:00021cb4       __checkTOS_withFB          00469374 f   LIBCMTD:common.obj
- 0002:00021cca       __fast_exit                0046938a f   LIBCMTD:common.obj
- 0002:00021cd7       __math_exit                00469397 f   LIBCMTD:common.obj
- 0002:00021d01       __check_overflow_exit      004693c1 f   LIBCMTD:common.obj
- 0002:00021d15       __check_range_exit         004693d5 f   LIBCMTD:common.obj
- 0002:00021e1b       __ZeroTail                 004694db f   LIBCMTD:intrncvt.obj
- 0002:00021e5d       __IncMan                   0046951d f   LIBCMTD:intrncvt.obj
- 0002:00021ebf       __RoundMan                 0046957f f   LIBCMTD:intrncvt.obj
- 0002:00021f4d       __CopyMan                  0046960d f   LIBCMTD:intrncvt.obj
- 0002:00021f71       __FillZeroMan              00469631 f   LIBCMTD:intrncvt.obj
- 0002:00021f83       __IsZeroMan                00469643 f   LIBCMTD:intrncvt.obj
- 0002:00021fa7       __ShrMan                   00469667 f   LIBCMTD:intrncvt.obj
- 0002:00022040       __ld12cvt                  00469700 f   LIBCMTD:intrncvt.obj
- 0002:000221ee       __ld12tod                  004698ae f   LIBCMTD:intrncvt.obj
- 0002:0002220c       __ld12tof                  004698cc f   LIBCMTD:intrncvt.obj
- 0002:0002222a       __ld12told                 004698ea f   LIBCMTD:intrncvt.obj
- 0002:000222c5       __atodbl                   00469985 f   LIBCMTD:intrncvt.obj
- 0002:000222fd       __atoldbl                  004699bd f   LIBCMTD:intrncvt.obj
- 0002:00022336       __atoflt                   004699f6 f   LIBCMTD:intrncvt.obj
- 0002:00022370       __fptostr                  00469a30 f   LIBCMTD:_fptostr.obj
- 0002:000224a9       ___dtold                   00469b69 f   LIBCMTD:cfout.obj
- 0002:00022591       __fltout2                  00469c51 f   LIBCMTD:cfout.obj
- 0002:00022610       __fptrap                   00469cd0 f   LIBCMTD:crt0fp.obj
- 0002:00022622       __fpreset                  00469ce2 f   LIBCMTD:ieee87.obj
- 0002:00022813       __statusfp                 00469ed3 f   LIBCMTD:ieee87.obj
- 0002:0002282a       __clearfp                  00469eea f   LIBCMTD:ieee87.obj
- 0002:00022843       __control87                00469f03 f   LIBCMTD:ieee87.obj
- 0002:00022882       __controlfp                00469f42 f   LIBCMTD:ieee87.obj
- 0002:000228a0       __lseek                    00469f60 f   LIBCMTD:lseek.obj
- 0002:000229f0       __lseek_lk                 0046a0b0 f   LIBCMTD:lseek.obj
- 0002:00022ad0       __ioinit                   0046a190 f   LIBCMTD:ioinit.obj
- 0002:00022bd0       __ioterm                   0046a290 f   LIBCMTD:ioinit.obj
- 0002:00022c80       __write                    0046a340 f   LIBCMTD:write.obj
- 0002:00022dd0       __write_lk                 0046a490 f   LIBCMTD:write.obj
- 0002:00023160       __getbuf                   0046a820 f   LIBCMTD:_getbuf.obj
- 0002:00023250       __isatty                   0046a910 f   LIBCMTD:isatty.obj
- 0002:00023290       ___iob_func                0046a950 f   LIBCMTD:_file.obj
- 0002:000232a0       ___initstdio               0046a960 f   LIBCMTD:_file.obj
- 0002:00023420       ___endstdio                0046aae0 f   LIBCMTD:_file.obj
- 0002:00023440       __lock_file                0046ab00 f   LIBCMTD:_file.obj
- 0002:00023490       __lock_file2               0046ab50 f   LIBCMTD:_file.obj
- 0002:000234d0       __unlock_file              0046ab90 f   LIBCMTD:_file.obj
- 0002:00023520       __unlock_file2             0046abe0 f   LIBCMTD:_file.obj
- 0002:00023560       ___pwctype_func            0046ac20 f   LIBCMTD:ctype.obj
- 0002:00023570       ___pctype_func             0046ac30 f   LIBCMTD:ctype.obj
- 0002:00023580       _strlen                    0046ac40 f   LIBCMTD:strlen.obj
- 0002:00023630       _mbtowc                    0046acf0 f   LIBCMTD:mbtowc.obj
- 0002:000236d0       __aullrem                  0046ad90 f   LIBCMTD:ullrem.obj
- 0002:00023770       _fputwc                    0046ae30 f   LIBCMTD:fputwc.obj
- 0002:00023840       __putwc_lk                 0046af00 f   LIBCMTD:fputwc.obj
- 0002:00023a10       _putwc                     0046b0d0 f   LIBCMTD:fputwc.obj
- 0002:00023a30       __itoa                     0046b0f0 f   LIBCMTD:xtoa.obj
- 0002:00023b90       __ltoa                     0046b250 f   LIBCMTD:xtoa.obj
- 0002:00023be0       __ultoa                    0046b2a0 f   LIBCMTD:xtoa.obj
- 0002:00023c10       __i64toa                   0046b2d0 f   LIBCMTD:xtoa.obj
- 0002:00023da0       __ui64toa                  0046b460 f   LIBCMTD:xtoa.obj
- 0002:00023dd0       _strcpy                    0046b490 f   LIBCMTD:strcat.obj
- 0002:00023de0       _strcat                    0046b4a0 f   LIBCMTD:strcat.obj
- 0002:00023f10       _exit                      0046b5d0 f   LIBCMTD:crt0dat.obj
- 0002:00023f30       __exit                     0046b5f0 f   LIBCMTD:crt0dat.obj
- 0002:00023f50       __cexit                    0046b610 f   LIBCMTD:crt0dat.obj
- 0002:00023f70       __c_exit                   0046b630 f   LIBCMTD:crt0dat.obj
- 0002:000240f0       __lockexit                 0046b7b0 f   LIBCMTD:crt0dat.obj
- 0002:00024110       __unlockexit               0046b7d0 f   LIBCMTD:crt0dat.obj
- 0002:00024160       _signal                    0046b820 f   LIBCMTD:winsig.obj
- 0002:00024400       _raise                     0046bac0 f   LIBCMTD:winsig.obj
- 0002:00024760       ___fpecode                 0046be20 f   LIBCMTD:winsig.obj
- 0002:00024770       ___pxcptinfoptrs           0046be30 f   LIBCMTD:winsig.obj
- 0002:00024780       _wctomb                    0046be40 f   LIBCMTD:wctomb.obj
- 0002:000247d0       _iswctype                  0046be90 f   LIBCMTD:iswctype.obj
- 0002:00024830       _is_wctype                 0046bef0 f   LIBCMTD:iswctype.obj
- 0002:00024850       ___crtInitCritSecAndSpinCount 0046bf10 f   LIBCMTD:initcrit.obj
- 0002:00024940       __amsg_exit                0046c000 f   LIBCMTD:crt0.obj
- 0002:00024970       ___crtTlsAlloc@4           0046c030 f   LIBCMTD:tidtable.obj
- 0002:00024980       __mtinit                   0046c040 f   LIBCMTD:tidtable.obj
- 0002:00024a40       __mtterm                   0046c100 f   LIBCMTD:tidtable.obj
- 0002:00024a50       __initptd                  0046c110 f   LIBCMTD:tidtable.obj
- 0002:00024a70       __getptd                   0046c130 f   LIBCMTD:tidtable.obj
- 0002:00024b80       __freefls@4                0046c240 f   LIBCMTD:tidtable.obj
- 0002:00024d60       __freeptd                  0046c420 f   LIBCMTD:tidtable.obj
- 0002:00024df0       ___threadid                0046c4b0 f   LIBCMTD:tidtable.obj
- 0002:00024e00       ___threadhandle            0046c4c0 f   LIBCMTD:tidtable.obj
- 0002:00024e0c       __matherr                  0046c4cc f   LIBCMTD:matherr.obj
- 0002:00024e0f       __87except                 0046c4cf f   LIBCMTD:87except.obj
- 0002:00024f59       ___addl                    0046c619 f   LIBCMTD:mantold.obj
- 0002:00024f83       ___add_12                  0046c643 f   LIBCMTD:mantold.obj
- 0002:00024ffb       ___shl_12                  0046c6bb f   LIBCMTD:mantold.obj
- 0002:00025038       ___shr_12                  0046c6f8 f   LIBCMTD:mantold.obj
- 0002:00025074       ___mtold12                 0046c734 f   LIBCMTD:mantold.obj
- 0002:00025175       ___strgtold12              0046c835 f   LIBCMTD:strgtold.obj
- 0002:0002570e       ___STRINGTOLD              0046cdce f   LIBCMTD:strgtold.obj
- 0002:00025759       _$I10_OUTPUT               0046ce19 f   LIBCMTD:x10fout.obj
- 0002:00025a70       __alloc_osfhnd             0046d130 f   LIBCMTD:osfinfo.obj
- 0002:00025d90       __set_osfhnd               0046d450 f   LIBCMTD:osfinfo.obj
- 0002:00025e10       __free_osfhnd              0046d4d0 f   LIBCMTD:osfinfo.obj
- 0002:00025ec0       __get_osfhandle            0046d580 f   LIBCMTD:osfinfo.obj
- 0002:00025f40       __open_osfhandle           0046d600 f   LIBCMTD:osfinfo.obj
- 0002:00026080       __lock_fhandle             0046d740 f   LIBCMTD:osfinfo.obj
- 0002:000261b0       __unlock_fhandle           0046d870 f   LIBCMTD:osfinfo.obj
- 0002:000261e0       __lseeki64                 0046d8a0 f   LIBCMTD:lseeki64.obj
- 0002:00026340       __lseeki64_lk              0046da00 f   LIBCMTD:lseeki64.obj
- 0002:00026430       __fcloseall                0046daf0 f   LIBCMTD:closeall.obj
- 0002:00026570       _fflush                    0046dc30 f   LIBCMTD:fflush.obj
- 0002:00026620       __fflush_lk                0046dce0 f   LIBCMTD:fflush.obj
- 0002:00026670       __flush                    0046dd30 f   LIBCMTD:fflush.obj
- 0002:00026750       __flushall                 0046de10 f   LIBCMTD:fflush.obj
- 0002:00026970       __flswbuf                  0046e030 f   LIBCMTD:_flswbuf.obj
- 0002:00026c80       ___CppXcptFilter           0046e340 f   LIBCMTD:winxfltr.obj
- 0002:00026cb0       __XcptFilter               0046e370 f   LIBCMTD:winxfltr.obj
- 0002:00026f50       __FF_MSGBANNER             0046e610 f   LIBCMTD:crt0msg.obj
- 0002:00026f90       __NMSG_WRITE               0046e650 f   LIBCMTD:crt0msg.obj
- 0002:00027040       __GET_RTERRMSG             0046e700 f   LIBCMTD:crt0msg.obj
- 0002:000270b0       __beginthread              0046e770 f   LIBCMTD:thread.obj
- 0002:00027310       __endthread                0046e9d0 f   LIBCMTD:thread.obj
- 0002:00027360       __mtxthreadnotification@4  0046ea20 f   LIBCMTD:thread.obj
- 0002:000273b0       ___updatetmbcinfo          0046ea70 f   LIBCMTD:mbctype.obj
- 0002:000274b0       __setmbcp                  0046eb70 f   LIBCMTD:mbctype.obj
- 0002:00027a80       __getmbcp                  0046f140 f   LIBCMTD:mbctype.obj
- 0002:00027aa0       ___initmbctable            0046f160 f   LIBCMTD:mbctype.obj
- 0002:00027ad9       ___ld12mul                 0046f199 f   LIBCMTD:tenpow.obj
- 0002:00027d83       ___multtenpow12            0046f443 f   LIBCMTD:tenpow.obj
- 0002:00027e20       _fclose                    0046f4e0 f   LIBCMTD:fclose.obj
- 0002:00027f10       __fclose_lk                0046f5d0 f   LIBCMTD:fclose.obj
- 0002:00027ff0       __commit                   0046f6b0 f   LIBCMTD:commit.obj
- 0002:00028150       __close                    0046f810 f   LIBCMTD:close.obj
- 0002:00028280       __close_lk                 0046f940 f   LIBCMTD:close.obj
- 0002:00028360       __freebuf                  0046fa20 f   LIBCMTD:_freebuf.obj
- 0002:00028402       _XapiGetKernelExportAddress@4 0046fac2 f   xapilibd:delaybnd.obj
- 0002:0002844a       _DebugBreak@0              0046fb0a f   xapilibd:kthunks.obj
- 0002:0002844f       _GetSystemTimeAsFileTime@4 0046fb0f f   xapilibd:kthunks.obj
- 0002:0002845b       _wvsprintfW@12             0046fb1b f   xapilibd:kthunks.obj
- 0002:00028479       _wvsprintfA@12             0046fb39 f   xapilibd:kthunks.obj
- 0002:00028497       _DebugPrint                0046fb57 f   xapilibd:kthunks.obj
- 0002:000284dd       _wsprintfW                 0046fb9d f   xapilibd:kthunks.obj
- 0002:000284f6       _wsprintfA                 0046fbb6 f   xapilibd:kthunks.obj
- 0002:0002850f       _UTF8ToUnicode@16          0046fbcf f   xapilibd:widechar.obj
- 0002:000286ba       _UnicodeToUTF8@16          0046fd7a f   xapilibd:widechar.obj
- 0002:000287a0       _MultiByteToWideChar@24    0046fe60 f   xapilibd:widechar.obj
- 0002:000288a2       _WideCharToMultiByte@32    0046ff62 f   xapilibd:widechar.obj
- 0002:000289da       _IsBadReadPtr@8            0047009a f   xapilibd:process.obj
- 0002:00028a58       _IsBadWritePtr@8           00470118 f   xapilibd:process.obj
- 0002:00028adb       _IsBadCodePtr@4            0047019b f   xapilibd:process.obj
- 0002:00028af0       _IsBadStringPtrW@8         004701b0 f   xapilibd:process.obj
- 0002:00028b64       _IsBadStringPtrA@8         00470224 f   xapilibd:process.obj
- 0002:00028bd0       _TlsAlloc@0                00470290 f   xapilibd:tls.obj
- 0002:00028c39       _TlsGetValue@4             004702f9 f   xapilibd:tls.obj
- 0002:00028c7f       _TlsSetValue@8             0047033f f   xapilibd:tls.obj
- 0002:00028cd3       _TlsFree@4                 00470393 f   xapilibd:tls.obj
- 0002:00028da6       _RtlUnwind@16              00470466 f   xboxkrnl:xboxkrnl.exe
- 0002:00028dac       _KeBugCheck@4              0047046c f   xboxkrnl:xboxkrnl.exe
- 0002:00028db2       _RtlAnsiStringToUnicodeString@12 00470472 f   xboxkrnl:xboxkrnl.exe
- 0002:00028db8       _RtlUnicodeStringToAnsiString@12 00470478 f   xboxkrnl:xboxkrnl.exe
- 0002:00028dc0       _vswprintf                 00470480 f   LIBCMTD:vswprint.obj
- 0002:00028f40       __vscwprintf               00470600 f   LIBCMTD:vswprint.obj
- 0002:00028fe0       _vsprintf                  004706a0 f   LIBCMTD:vsprintf.obj
- 0002:00029100       __vscprintf                004707c0 f   LIBCMTD:vsprintf.obj
+ 0001:00047349       __enc$textbss$end          004476a9     <linker-defined>
+ 0002:00004330       ?InitD3D@@YAJXZ            0044b9f0 f   Example_Project.obj
+ 0002:000045b0       ?CreateDevice@Direct3D@@SGJIW4_D3DDEVTYPE@@PAXKPAU_D3DPRESENT_PARAMETERS_@@PAPAUD3DDevice@@@Z 0044bc70 f i Example_Project.obj
+ 0002:00004620       ?SetTransform@D3DDevice@@SGJW4_D3DTRANSFORMSTATETYPE@@PBU_D3DMATRIX@@@Z 0044bce0 f i Example_Project.obj
+ 0002:00004680       ??0D3DXMATRIX@@QAE@XZ      0044bd40 f i Example_Project.obj
+ 0002:000046c0       ??0D3DXVECTOR3@@QAE@MMM@Z  0044bd80 f i Example_Project.obj
+ 0002:00004730       ?InitVB@@YAJXZ             0044bdf0 f   Example_Project.obj
+ 0002:000048f0       ?CreateVertexBuffer@D3DDevice@@SGJIKKKPAPAUD3DVertexBuffer@@@Z 0044bfb0 f i Example_Project.obj
+ 0002:00004960       ?Lock@D3DVertexBuffer@@QAGJIIPAPAEK@Z 0044c020 f i Example_Project.obj
+ 0002:000049c0       ?Unlock@D3DVertexBuffer@@QAGJXZ 0044c080 f i Example_Project.obj
+ 0002:00004a40       ?Update@@YAXXZ             0044c100 f   Example_Project.obj
+ 0002:00004b80       ?GetTransform@D3DDevice@@SGJW4_D3DTRANSFORMSTATETYPE@@PAU_D3DMATRIX@@@Z 0044c240 f i Example_Project.obj
+ 0002:00004be0       ?Render@@YAXXZ             0044c2a0 f   Example_Project.obj
+ 0002:00004c80       ?BeginScene@D3DDevice@@SGJXZ 0044c340 f i Example_Project.obj
+ 0002:00004d00       ?EndScene@D3DDevice@@SGJXZ 0044c3c0 f i Example_Project.obj
+ 0002:00004d80       ?Clear@D3DDevice@@SGJKPBU_D3DRECT@@KKMK@Z 0044c440 f i Example_Project.obj
+ 0002:00004df0       ?SetRenderState@D3DDevice@@SGJW4_D3DRENDERSTATETYPE@@K@Z 0044c4b0 f i Example_Project.obj
+ 0002:00005260       ?DrawPrimitive@D3DDevice@@SGJW4_D3DPRIMITIVETYPE@@II@Z 0044c920 f i Example_Project.obj
+ 0002:000052e0       ?SetVertexShader@D3DDevice@@SGJK@Z 0044c9a0 f i Example_Project.obj
+ 0002:00005330       ?SetStreamSource@D3DDevice@@SGJIPAUD3DVertexBuffer@@I@Z 0044c9f0 f i Example_Project.obj
+ 0002:00005390       _main                      0044ca50 f   Example_Project.obj
+ 0002:00005420       ?Present@D3DDevice@@SGJPBUtagRECT@@0PAX1@Z 0044cae0 f i Example_Project.obj
+ 0002:00005470       ?InitTime@@YAXXZ           0044cb30 f   Time.obj
+ 0002:00005580       ?UpdateTime@@YAXXZ         0044cc40 f   Time.obj
+ 0002:000056b1       _QueryPerformanceCounter@4 0044cd71 f   xapilibd:perfctr.obj
+ 0002:000056c6       _QueryPerformanceFrequency@4 0044cd86 f   xapilibd:perfctr.obj
+ 0002:0000570c       _mainXapiStartup@4         0044cdcc f   xapilibd:xapi0.obj
+ 0002:000057ac       _mainCRTStartup            0044ce6c f   xapilibd:xapi0.obj
+ 0002:0000583a       _XapiValidateDiskPartitionEx@8 0044cefa f   xapilibd:xapiinit.obj
+ 0002:000058d0       _XapiCopySectionToFile@16  0044cf90 f   xapilibd:xapiinit.obj
+ 0002:00005a52       _XapiMapLetterToDirectory@24 0044d112 f   xapilibd:xapiinit.obj
+ 0002:00005f86       _XapiSetupPerTitleDriveLetters@8 0044d646 f   xapilibd:xapiinit.obj
+ 0002:00005ff0       _XapiBootToDash@12         0044d6b0 f   xapilibd:xapiinit.obj
+ 0002:0000606e       _XapiValidateDiskPartition@4 0044d72e f   xapilibd:xapiinit.obj
+ 0002:00006087       _XapiInitProcess@0         0044d747 f   xapilibd:xapiinit.obj
+ 0002:0000632a       __cinit@0                  0044d9ea f   xapilibd:xapi0dat.obj
+ 0002:0000637d       __rtinit@0                 0044da3d f   xapilibd:xapi0dat.obj
+ 0002:000063c9       _GetLastError@0            0044da89 f   xapilibd:error.obj
+ 0002:00006417       _SetLastError@4            0044dad7 f   xapilibd:error.obj
+ 0002:00006471       _XapiSetLastNTError@4      0044db31 f   xapilibd:error.obj
+ 0002:00006494       _CreateIoCompletionPort@16 0044db54 f   xapilibd:error.obj
+ 0002:00006543       _PostQueuedCompletionStatus@16 0044dc03 f   xapilibd:error.obj
+ 0002:0000657c       _GetQueuedCompletionStatus@20 0044dc3c f   xapilibd:error.obj
+ 0002:0000660a       _GetOverlappedResult@16    0044dcca f   xapilibd:error.obj
+ 0002:0000668f       _XapiRestrictCodeSelectorLimit@0 0044dd4f f   xapilibd:krnlptch.obj
+ 0002:0000670c       _XapiApplyKernelPatches@0  0044ddcc f   xapilibd:krnlptch.obj
+ 0002:00006802       _CloseHandle@4             0044dec2 f   xapilibd:handle.obj
+ 0002:0000682b       _DuplicateHandle@28        0044deeb f   xapilibd:handle.obj
+ 0002:0000685b       _XapiCallThreadNotifyRoutines@4 0044df1b f   xapilibd:thread.obj
+ 0002:000068a4       _SetThreadPriority@8       0044df64 f   xapilibd:thread.obj
+ 0002:0000690a       _GetThreadPriority@4       0044dfca f   xapilibd:thread.obj
+ 0002:00006973       _SetThreadPriorityBoost@8  0044e033 f   xapilibd:thread.obj
+ 0002:000069ca       _GetThreadPriorityBoost@8  0044e08a f   xapilibd:thread.obj
+ 0002:00006a1b       _SuspendThread@4           0044e0db f   xapilibd:thread.obj
+ 0002:00006a4a       _ResumeThread@4            0044e10a f   xapilibd:thread.obj
+ 0002:00006a79       _RaiseException@16         0044e139 f   xapilibd:thread.obj
+ 0002:00006ae4       _XapiDispatchAPC@12        0044e1a4 f   xapilibd:thread.obj
+ 0002:00006af4       _QueueUserAPC@12           0044e1b4 f   xapilibd:thread.obj
+ 0002:00006b23       _SwitchToThread@0          0044e1e3 f   xapilibd:thread.obj
+ 0002:00006b41       _ExitThread@4              0044e201 f   xapilibd:thread.obj
+ 0002:00006b65       _GetExitCodeThread@8       0044e225 f   xapilibd:thread.obj
+ 0002:00006bd2       _SetUnhandledExceptionFilter@4 0044e292 f   xapilibd:thread.obj
+ 0002:00006bec       _GetThreadTimes@20         0044e2ac f   xapilibd:thread.obj
+ 0002:00006c97       _XRegisterThreadNotifyRoutine@8 0044e357 f   xapilibd:thread.obj
+ 0002:00006cf3       _XSetProcessQuantumLength@4 0044e3b3 f   xapilibd:thread.obj
+ 0002:00006d35       _XGetProcessQuantumLength@0 0044e3f5 f   xapilibd:thread.obj
+ 0002:00006d96       _UnhandledExceptionFilter@4 0044e456 f   xapilibd:thread.obj
+ 0002:00006e1e       _XapiThreadStartup@8       0044e4de f   xapilibd:thread.obj
+ 0002:00006fa6       _CreateThread@24           0044e666 f   xapilibd:thread.obj
+ 0002:0000702f       _GetCurrentThreadId@0      0044e6ef f   xapilibd:thread.obj
+ 0002:0000703f       _OutputDebugStringA@4      0044e6ff f   xapilibd:outputdebugstringa.obj
+ 0002:0000707d       _vXDebugPrint@16           0044e73d f   xapilibd:outputdebugstringa.obj
+ 0002:000070ff       _XDebugPrint               0044e7bf f   xapilibd:outputdebugstringa.obj
+ 0002:0000711b       _XDebugError               0044e7db f   xapilibd:outputdebugstringa.obj
+ 0002:00007136       _XDebugWarning             0044e7f6 f   xapilibd:outputdebugstringa.obj
+ 0002:00007151       _XDebugTrace               0044e811 f   xapilibd:outputdebugstringa.obj
+ 0002:0000716c       _XDebugEntry               0044e82c f   xapilibd:outputdebugstringa.obj
+ 0002:00007187       _XDebugExit                0044e847 f   xapilibd:outputdebugstringa.obj
+ 0002:000071a2       _XGetSectionHandleA@4      0044e862 f   xapilibd:xemodule.obj
+ 0002:0000723f       _XLoadSectionByHandle@4    0044e8ff f   xapilibd:xemodule.obj
+ 0002:0000729f       _XFreeSectionByHandle@4    0044e95f f   xapilibd:xemodule.obj
+ 0002:000072fe       _XLoadSectionA@4           0044e9be f   xapilibd:xemodule.obj
+ 0002:00007340       _XFreeSectionA@4           0044ea00 f   xapilibd:xemodule.obj
+ 0002:00007382       _XGetSectionSize@4         0044ea42 f   xapilibd:xemodule.obj
+ 0002:000073c8       _lstrcmpA@8                0044ea88 f   xapilibd:lcompata.obj
+ 0002:00007445       _lstrcmpiA@8               0044eb05 f   xapilibd:lcompata.obj
+ 0002:0000749b       _lstrcpyA@8                0044eb5b f   xapilibd:lcompata.obj
+ 0002:000074e8       _lstrcpynA@12              0044eba8 f   xapilibd:lcompata.obj
+ 0002:00007566       _lstrcatA@8                0044ec26 f   xapilibd:lcompata.obj
+ 0002:000075d6       _lstrlenA@4                0044ec96 f   xapilibd:lcompata.obj
+ 0002:00007623       _XLaunchNewImageA@8        0044ece3 f   xapilibd:launch.obj
+ 0002:00007675       _XWriteTitleInfoNoReboot@24 0044ed35 f   xapilibd:launch.obj
+ 0002:0000778e       _XGetLaunchInfo@8          0044ee4e f   xapilibd:launch.obj
+ 0002:0000786a       _XWriteTitleInfoAndRebootA@20 0044ef2a f   xapilibd:launch.obj
+ 0002:000078e5       _BuildUpdateFilePath@12    0044efa5 f   xapilibd:bootutil.obj
+ 0002:00007941       _XapipUpdateMountDashPartition@0 0044f001 f   xapilibd:bootutil.obj
+ 0002:000079df       _XoUpdateLoadXBEInfo@8     0044f09f f   xapilibd:bootutil.obj
+ 0002:00007ade       _XoRebootToUpdaterWhilePreservingDDrive@12 0044f19e f   xapilibd:bootutil.obj
+ 0002:00007bd4       _XoUpdateGetSavedDataFromLaunchPage@12 0044f294 f   xapilibd:bootutil.obj
+ 0002:00007ca3       _XapipUpdateGetCurrentDDriveMapping@8 0044f363 f   xapilibd:bootutil.obj
+ 0002:00007d99       _XapipUpdateSaveDDriveMappingToLaunchPage@8 0044f459 f   xapilibd:bootutil.obj
+ 0002:00007e9d       _XapipUpdateDetectAndVerify@16 0044f55d f   xapilibd:bootutil.obj
+ 0002:00008139       _XapipUpdateDashIfNecessary@4 0044f7f9 f   xapilibd:bootutil.obj
+ 0002:000081f1       _XapipLaunchNewImageInternal@16 0044f8b1 f   xapilibd:bootutil.obj
+ 0002:00008435       _XapipUpdateRebootIfNecessary@0 0044faf5 f   xapilibd:bootutil.obj
+ 0002:000086fd       _XGetParentalControlSetting@0 0044fdbd f   xapilibd:xgetparentalcontrolsetting.obj
+ 0002:0000872b       _GetDiskFreeSpaceExA@16    0044fdeb f   xapilibd:pathmisc.obj
+ 0002:00008876       _GetVolumeInformationA@32  0044ff36 f   xapilibd:pathmisc.obj
+ 0002:00008b7d       _XapiSelectCachePartition@12 0045023d f   xapilibd:pathmisc.obj
+ 0002:00008ef2       _XMountUtilityDrive@4      004505b2 f   xapilibd:pathmisc.obj
+ 0002:00009066       _XFormatUtilityDrive@0     00450726 f   xapilibd:pathmisc.obj
+ 0002:00009134       _XMountSecondaryUtilityDrive@0 004507f4 f   xapilibd:pathmisc.obj
+ 0002:00009495       _XSwapUtilityDrives@0      00450b55 f   xapilibd:pathmisc.obj
+ 0002:00009758       _XFormatSecondaryUtilityDrive@0 00450e18 f   xapilibd:pathmisc.obj
+ 0002:00009826       _XMountAlternateTitleA@12  00450ee6 f   xapilibd:pathmisc.obj
+ 0002:00009b42       _XUnmountAlternateTitleA@4 00451202 f   xapilibd:pathmisc.obj
+ 0002:00009bd6       _XGetDiskClusterSizeA@4    00451296 f   xapilibd:pathmisc.obj
+ 0002:00009ce4       _XGetDiskSectorSizeA@4     004513a4 f   xapilibd:pathmisc.obj
+ 0002:00009de6       _XMUNameFromDriveLetter@12 004514a6 f   xapilibd:pathmisc.obj
+ 0002:00009f0f       _HeapCreate@12             004515cf f   xapilibd:xapiheap.obj
+ 0002:00009f71       _HeapDestroy@4             00451631 f   xapilibd:xapiheap.obj
+ 0002:00009f97       _HeapFree@12               00451657 f   xapilibd:xapiheap.obj
+ 0002:00009fb5       _HeapValidate@12           00451675 f   xapilibd:xapiheap.obj
+ 0002:00009fd3       _GetProcessHeap@0          00451693 f   xapilibd:xapiheap.obj
+ 0002:00009fd9       _HeapCompact@8             00451699 f   xapilibd:xapiheap.obj
+ 0002:00009fe4       _HeapLock@4                004516a4 f   xapilibd:xapiheap.obj
+ 0002:00009ffa       _HeapUnlock@4              004516ba f   xapilibd:xapiheap.obj
+ 0002:0000a010       _HeapWalk@8                004516d0 f   xapilibd:xapiheap.obj
+ 0002:0000a124       _LocalAlloc@8              004517e4 f   xapilibd:xapiheap.obj
+ 0002:0000a167       _LocalReAlloc@12           00451827 f   xapilibd:xapiheap.obj
+ 0002:0000a1bf       _LocalSize@4               0045187f f   xapilibd:xapiheap.obj
+ 0002:0000a1db       _LocalFree@4               0045189b f   xapilibd:xapiheap.obj
+ 0002:0000a203       _LocalLock@4               004518c3 f   xapilibd:xapiheap.obj
+ 0002:0000a20f       _LocalHandle@4             004518cf f   xapilibd:xapiheap.obj
+ 0002:0000a21b       _LocalUnlock@4             004518db f   xapilibd:xapiheap.obj
+ 0002:0000a221       _GlobalAlloc@8             004518e1 f   xapilibd:xapiheap.obj
+ 0002:0000a264       _GlobalReAlloc@12          00451924 f   xapilibd:xapiheap.obj
+ 0002:0000a2bc       _XSetAttributesOnHeapAlloc@8 0045197c f   xapilibd:xapiheap.obj
+ 0002:0000a2d0       _XGetAttributesOnHeapAlloc@4 00451990 f   xapilibd:xapiheap.obj
+ 0002:0000a39e       _RtlZeroHeap@8             00451a5e f   xapilibd:heap.obj
+ 0002:0000a552       _RtlpCreateUnCommittedRange@4 00451c12 f   xapilibd:heap.obj
+ 0002:0000a702       _RtlpDestroyUnCommittedRange@8 00451dc2 f   xapilibd:heap.obj
+ 0002:0000a777       _RtlpInsertUnCommittedPages@12 00451e37 f   xapilibd:heap.obj
+ 0002:0000a890       _RtlpFindAndCommitPages@16 00451f50 f   xapilibd:heap.obj
+ 0002:0000aaf3       _RtlpDestroyHeapSegment@4  004521b3 f   xapilibd:heap.obj
+ 0002:0000ab7c       _RtlpCoalesceFreeBlocks@16 0045223c f   xapilibd:heap.obj
+ 0002:0000b19f       _RtlpInsertFreeBlock@12    0045285f f   xapilibd:heap.obj
+ 0002:0000b3b1       _RtlpGetExtraStuffPointer@4 00452a71 f   xapilibd:heap.obj
+ 0002:0000b3d7       _RtlpGetSizeOfBigBlock@4   00452a97 f   xapilibd:heap.obj
+ 0002:0000b437       _RtlpCheckBusyBlockTail@4  00452af7 f   xapilibd:heap.obj
+ 0002:0000b504       _RtlpCheckHeapSignature@8  00452bc4 f   xapilibd:heap.obj
+ 0002:0000b56d       _RtlpValidateHeapHeaders@8 00452c2d f   xapilibd:heap.obj
+ 0002:0000b67e       _RtlpValidateHeapSegment@32 00452d3e f   xapilibd:heap.obj
+ 0002:0000b95e       _RtlpValidateHeapEntry@12  0045301e f   xapilibd:heap.obj
+ 0002:0000ba4f       _RtlpValidateHeap@8        0045310f f   xapilibd:heap.obj
+ 0002:0000be8f       _RtlDebugWalkHeap@8        0045354f f   xapilibd:heap.obj
+ 0002:0000beea       _RtlWalkHeap@8             004535aa f   xapilibd:heap.obj
+ 0002:0000c1e0       _RtlLockHeap@4             004538a0 f   xapilibd:heap.obj
+ 0002:0000c264       _RtlUnlockHeap@4           00453924 f   xapilibd:heap.obj
+ 0002:0000c2e8       _RtlValidateHeap@12        004539a8 f   xapilibd:heap.obj
+ 0002:0000c3bb       _RtlDebugCompactHeap@8     00453a7b f   xapilibd:heap.obj
+ 0002:0000c494       _RtlDestroyHeap@4          00453b54 f   xapilibd:heap.obj
+ 0002:0000c5a2       _RtlpGrowBlockInPlace@20   00453c62 f   xapilibd:heap.obj
+ 0002:0000ce3b       _RtlSizeHeap@12            004544fb f   xapilibd:heap.obj
+ 0002:0000ce78       _RtlpInitializeHeapSegment@28 00454538 f   xapilibd:heap.obj
+ 0002:0000d027       _RtlpExtendHeap@8          004546e7 f   xapilibd:heap.obj
+ 0002:0000d259       _RtlpDeCommitFreeBlock@12  00454919 f   xapilibd:heap.obj
+ 0002:0000d74b       _RtlpCoalesceHeap@4        00454e0b f   xapilibd:heap.obj
+ 0002:0000d875       _RtlCompactHeap@8          00454f35 f   xapilibd:heap.obj
+ 0002:0000d957       _RtlCreateHeap@24          00455017 f   xapilibd:heap.obj
+ 0002:0000df24       _RtlAllocateHeapSlowly@12  004555e4 f   xapilibd:heap.obj
+ 0002:0000ee39       _RtlFreeHeapSlowly@12      004564f9 f   xapilibd:heap.obj
+ 0002:0000f18b       _RtlAllocateHeap@12        0045684b f   xapilibd:heap.obj
+ 0002:00010004       _RtlFreeHeap@12            004576c4 f   xapilibd:heap.obj
+ 0002:00010501       _RtlReAllocateHeap@16      00457bc1 f   xapilibd:heap.obj
+ 0002:0001113c       _XAutoPowerDownResetTimer@0 004587fc f   xapilibd:powerdwn.obj
+ 0002:00011160       _XAutoPowerDownTimeRemaining@0 00458820 f   xapilibd:powerdwn.obj
+ 0002:000111d0       _XapiAutoPowerDownTimeout@16 00458890 f   xapilibd:powerdwn.obj
+ 0002:000111e6       _XapiInitAutoPowerDown@0   004588a6 f   xapilibd:powerdwn.obj
+ 0002:0001129b       _XapiShutdownChannelStartNextPacket@0 0045895b f   xapilibd:xapiterm.obj
+ 0002:000112e2       _XapiShutdownChannelStartPacket@8 004589a2 f   xapilibd:xapiterm.obj
+ 0002:000112f7       _XapiShutdownNotification@4 004589b7 f   xapilibd:xapiterm.obj
+ 0002:00011362       _XapiFormatObjectAttributes@12 00458a22 f   xapilibd:support.obj
+ 0002:00011395       _XapiFormatTimeOut@8       00458a55 f   xapilibd:support.obj
+ 0002:000113d1       _CreateEventA@16           00458a91 f   xapilibd:synch.obj
+ 0002:0001144a       _OpenEventA@12             00458b0a f   xapilibd:synch.obj
+ 0002:000114bd       _SetEvent@4                00458b7d f   xapilibd:synch.obj
+ 0002:000114e8       _ResetEvent@4              00458ba8 f   xapilibd:synch.obj
+ 0002:00011511       _PulseEvent@4              00458bd1 f   xapilibd:synch.obj
+ 0002:0001153c       _CreateSemaphoreA@16       00458bfc f   xapilibd:synch.obj
+ 0002:000115ad       _OpenSemaphoreA@12         00458c6d f   xapilibd:synch.obj
+ 0002:00011620       _ReleaseSemaphore@12       00458ce0 f   xapilibd:synch.obj
+ 0002:00011650       _CreateMutexA@12           00458d10 f   xapilibd:synch.obj
+ 0002:000116be       _OpenMutexA@12             00458d7e f   xapilibd:synch.obj
+ 0002:00011731       _ReleaseMutex@4            00458df1 f   xapilibd:synch.obj
+ 0002:0001175c       _WaitForSingleObjectEx@12  00458e1c f   xapilibd:synch.obj
+ 0002:000117b1       _SignalObjectAndWait@16    00458e71 f   xapilibd:synch.obj
+ 0002:00011809       _WaitForMultipleObjectsEx@20 00458ec9 f   xapilibd:synch.obj
+ 0002:000118a9       _SleepEx@8                 00458f69 f   xapilibd:synch.obj
+ 0002:0001190f       _CreateWaitableTimerA@12   00458fcf f   xapilibd:synch.obj
+ 0002:00011984       _OpenWaitableTimerA@12     00459044 f   xapilibd:synch.obj
+ 0002:000119f7       _SetWaitableTimer@24       004590b7 f   xapilibd:synch.obj
+ 0002:00011a4e       _CancelWaitableTimer@4     0045910e f   xapilibd:synch.obj
+ 0002:00011a79       _WaitForSingleObject@8     00459139 f   xapilibd:synch.obj
+ 0002:00011a92       _WaitForMultipleObjects@16 00459152 f   xapilibd:synch.obj
+ 0002:00011ab2       _Sleep@4                   00459172 f   xapilibd:synch.obj
+ 0002:00011ac8       _XapiChangeCodeSelectorLimit@8 00459188 f   xapilibd:xapidlla.obj
+ 0002:00011af6       _xCompareStringA@20        004591b6 f   xapilibd:compstra.obj
+ 0002:00011ce1       _ReadFile@20               004593a1 f   xapilibd:filehops.obj
+ 0002:00011e09       _WriteFile@20              004594c9 f   xapilibd:filehops.obj
+ 0002:00011f14       _SetEndOfFile@4            004595d4 f   xapilibd:filehops.obj
+ 0002:00011fb9       _SetFilePointer@16         00459679 f   xapilibd:filehops.obj
+ 0002:00012105       _SetFilePointerEx@20       004597c5 f   xapilibd:filehops.obj
+ 0002:00012210       _GetFileInformationByHandle@8 004598d0 f   xapilibd:filehops.obj
+ 0002:0001231f       _GetFileTime@16            004599df f   xapilibd:filehops.obj
+ 0002:0001239e       _SetFileTime@16            00459a5e f   xapilibd:filehops.obj
+ 0002:0001242c       _FlushFileBuffers@4        00459aec f   xapilibd:filehops.obj
+ 0002:0001245c       _GetFileSizeEx@8           00459b1c f   xapilibd:filehops.obj
+ 0002:000124a9       _ReadFileEx@20             00459b69 f   xapilibd:filehops.obj
+ 0002:0001250e       _WriteFileEx@20            00459bce f   xapilibd:filehops.obj
+ 0002:00012573       _DeviceIoControl@32        00459c33 f   xapilibd:filehops.obj
+ 0002:000126b0       _ReadFileScatter@20        00459d70 f   xapilibd:filehops.obj
+ 0002:000127d8       _WriteFileGather@20        00459e98 f   xapilibd:filehops.obj
+ 0002:000128e3       _XGetFilePhysicalSortKey@4 00459fa3 f   xapilibd:filehops.obj
+ 0002:000129b3       _GetFileSize@8             0045a073 f   xapilibd:filehops.obj
+ 0002:000129fc       _CreateFileA@28            0045a0bc f   xapilibd:fileopcr.obj
+ 0002:00012c01       _CopyFileExA@24            0045a2c1 f   xapilibd:fileopcr.obj
+ 0002:00012fb7       _CopyFileA@12              0045a677 f   xapilibd:fileopcr.obj
+ 0002:00012fdf       _XapiComputeContentMetadataFileName@8 0045a69f f   xapilibd:contsig.obj
+ 0002:0001304f       _XComputeContentSignatureKey@8 0045a70f f   xapilibd:contsig.obj
+ 0002:00013078       _XapiComputeContentHeaderSignature@16 0045a738 f   xapilibd:contsig.obj
+ 0002:0001319f       _XapiLoadContentMetadataHeader@16 0045a85f f   xapilibd:contsig.obj
+ 0002:000132b8       _XapiVerifyAndLoadOptionalSectionData@12 0045a978 f   xapilibd:contsig.obj
+ 0002:000133b7       _XapipGetAlternateTitleID@0 0045aa77 f   xapilibd:contsig.obj
+ 0002:000134bb       _XGetContentInstallLocationFromIDs@16 0045ab7b f   xapilibd:contsig.obj
+ 0002:00013538       _XGetContentInstallLocation@12 0045abf8 f   xapilibd:contsig.obj
+ 0002:000135ba       _XInstallContentSignaturesWithFileName@16 0045ac7a f   xapilibd:contsig.obj
+ 0002:0001386c       _XInstallContentSignaturesEx@16 0045af2c f   xapilibd:contsig.obj
+ 0002:000138a9       _XInstallContentSignatures@12 0045af69 f   xapilibd:contsig.obj
+ 0002:000138e3       _XCreateContentSimple@24   0045afa3 f   xapilibd:contsig.obj
+ 0002:00013b29       _XRemoveContent@4          0045b1e9 f   xapilibd:contsig.obj
+ 0002:00013b95       _XLoadContentSignaturesWithFileName@8 0045b255 f   xapilibd:contsig.obj
+ 0002:00013d5c       _XLoadContentSignaturesEx@8 0045b41c f   xapilibd:contsig.obj
+ 0002:00013d91       _XLocateSignatureByIndex@16 0045b451 f   xapilibd:contsig.obj
+ 0002:00013e4a       _XLocateSignatureByNameEx@24 0045b50a f   xapilibd:contsig.obj
+ 0002:00013fb3       _XLocateSignatureByName@24 0045b673 f   xapilibd:contsig.obj
+ 0002:00013fd9       _XLocateNextSignature@28   0045b699 f   xapilibd:contsig.obj
+ 0002:00014102       _XCalculateContentSignature@16 0045b7c2 f   xapilibd:contsig.obj
+ 0002:0001418c       _XLocateLiveSignature@12   0045b84c f   xapilibd:contsig.obj
+ 0002:00014209       _XCloseContentSignatures@4 0045b8c9 f   xapilibd:contsig.obj
+ 0002:0001424a       _XMemAlloc@8               0045b90a f   xapilibd:xmem.obj
+ 0002:00014378       _XMemFree@8                0045ba38 f   xapilibd:xmem.obj
+ 0002:00014509       _XMemSize@8                0045bbc9 f   xapilibd:xmem.obj
+ 0002:0001452c       _XapiFormatFATVolumeEx@8   0045bbec f   xapilibd:format.obj
+ 0002:00014919       _XapiFormatFATVolume@4     0045bfd9 f   xapilibd:format.obj
+ 0002:00014932       _lstrcmpW@8                0045bff2 f   xapilibd:lcompat.obj
+ 0002:00014988       _lstrcmpiW@8               0045c048 f   xapilibd:lcompat.obj
+ 0002:000149de       _lstrcpyW@8                0045c09e f   xapilibd:lcompat.obj
+ 0002:00014a24       _lstrcpynW@12              0045c0e4 f   xapilibd:lcompat.obj
+ 0002:00014aab       _lstrcatW@8                0045c16b f   xapilibd:lcompat.obj
+ 0002:00014af1       _lstrlenW@4                0045c1b1 f   xapilibd:lcompat.obj
+ 0002:00014b40       @RtlFindFirstSetRightMember@4 0045c200 f   xapilibd:bitmapa.obj
+ 0002:00014b44       _XQueryValue@20            0045c204 f   xapilibd:xqueryvalue.obj
+ 0002:00014b6e       _XShaHmacInitialize@12     0045c22e f   xapilibd:xcalcsig.obj
+ 0002:00014c2f       _XShaHmacUpdate@12         0045c2ef f   xapilibd:xcalcsig.obj
+ 0002:00014c87       _XShaHmacComputeFinal@16   0045c347 f   xapilibd:xcalcsig.obj
+ 0002:00014d4a       _XapiConvertSignatureToNonRoamable@12 0045c40a f   xapilibd:xcalcsig.obj
+ 0002:00014e05       _XapipCalculateSaveGameSignatureBegin@8 0045c4c5 f   xapilibd:xcalcsig.obj
+ 0002:00014eed       _XapipCalculateSaveGameSignatureUpdate@12 0045c5ad f   xapilibd:xcalcsig.obj
+ 0002:00014f2e       _XapipCalculateSaveGameSignatureEnd@8 0045c5ee f   xapilibd:xcalcsig.obj
+ 0002:00014fd1       _XapipCalculateContentSignatureBegin@0 0045c691 f   xapilibd:xcalcsig.obj
+ 0002:00015014       _XapipCalculateContentSignatureUpdate@12 0045c6d4 f   xapilibd:xcalcsig.obj
+ 0002:00015035       _XapipCalculateContentSignatureEnd@8 0045c6f5 f   xapilibd:xcalcsig.obj
+ 0002:0001506a       _XCalculateSignatureGetSize@4 0045c72a f   xapilibd:xcalcsig.obj
+ 0002:000150a8       _XCalculateSignatureBeginEx@8 0045c768 f   xapilibd:xcalcsig.obj
+ 0002:0001512f       _XCalculateSignatureBegin@4 0045c7ef f   xapilibd:xcalcsig.obj
+ 0002:0001514b       _XCalculateSignatureUpdate@12 0045c80b f   xapilibd:xcalcsig.obj
+ 0002:00015219       _XCalculateSignatureEnd@8  0045c8d9 f   xapilibd:xcalcsig.obj
+ 0002:000152bc       _XapiNukeDirectoryFromHandle@8 0045c97c f   xapilibd:xclndrv.obj
+ 0002:00015498       _XapiNukeDirectory@8       0045cb58 f   xapilibd:xclndrv.obj
+ 0002:00015547       _SetFileAttributesA@8      0045cc07 f   xapilibd:filemisc.obj
+ 0002:00015616       _GetFileAttributesA@4      0045ccd6 f   xapilibd:filemisc.obj
+ 0002:00015673       _GetFileAttributesExA@12   0045cd33 f   xapilibd:filemisc.obj
+ 0002:00015739       _MoveFileA@8               0045cdf9 f   xapilibd:filemisc.obj
+ 0002:000157f4       _DeleteFileA@4             0045ceb4 f   xapilibd:filemisc.obj
+ 0002:000158a5       _XSetFileCacheSize@4       0045cf65 f   xapilibd:filemisc.obj
+ 0002:000158de       _XGetFileCacheSize@0       0045cf9e f   xapilibd:filemisc.obj
+ 0002:000158ea       _XapiGetDirectoryDisplayBlocks@12 0045cfaa f   xapilibd:filemisc.obj
+ 0002:00015a6c       _XGetDisplayBlocks@4       0045d12c f   xapilibd:filemisc.obj
+ 0002:00015b7a       _MoveFileWithProgressA@20  0045d23a f   xapilibd:filemisc.obj
+ 0002:00015ca6       _MoveFileExA@12            0045d366 f   xapilibd:filemisc.obj
+ 0002:00015cc5       _XPhysicalAlloc@16         0045d385 f   xapilibd:physical.obj
+ 0002:00015d88       _XPhysicalAllocEx@20       0045d448 f   xapilibd:physical.obj
+ 0002:00015e16       _XPhysicalSize@4           0045d4d6 f   xapilibd:physical.obj
+ 0002:00015e43       _XPhysicalProtect@12       0045d503 f   xapilibd:physical.obj
+ 0002:00015e9b       _XPhysicalFree@4           0045d55b f   xapilibd:physical.obj
+ 0002:00015ec8       _XQueryMemoryProtect@4     0045d588 f   xapilibd:physical.obj
+ 0002:00015ed4       _xCompareStringW@20        0045d594 f   xapilibd:compstr.obj
+ 0002:000160d4       _RtlRip@12                 0045d794 f   xboxkrnl:xboxkrnl.exe
+ 0002:000160da       _NtClose@4                 0045d79a f   xboxkrnl:xboxkrnl.exe
+ 0002:000160e0       _NtQueryVolumeInformationFile@20 0045d7a0 f   xboxkrnl:xboxkrnl.exe
+ 0002:000160e6       _NtOpenFile@24             0045d7a6 f   xboxkrnl:xboxkrnl.exe
+ 0002:000160ec       _NtWriteFile@32            0045d7ac f   xboxkrnl:xboxkrnl.exe
+ 0002:000160f2       _NtQueryInformationFile@20 0045d7b2 f   xboxkrnl:xboxkrnl.exe
+ 0002:000160f8       _NtCreateFile@36           0045d7b8 f   xboxkrnl:xboxkrnl.exe
+ 0002:000160fe       _RtlInitAnsiString@8       0045d7be f   xboxkrnl:xboxkrnl.exe
+ 0002:00016104       _RtlAssert@16              0045d7c4 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001610a       _IoCreateSymbolicLink@8    0045d7ca f   xboxkrnl:xboxkrnl.exe
+ 0002:00016110       _NtSetInformationFile@20   0045d7d0 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016116       _KeQuerySystemTime@4       0045d7d6 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001611c       _HalReturnToFirmware@4     0045d7dc f   xboxkrnl:xboxkrnl.exe
+ 0002:00016122       _MmFreeContiguousMemory@4  0045d7e2 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016128       _HalRegisterShutdownNotification@8 0045d7e8 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001612e       _RtlNtStatusToDosError@4   0045d7ee f   xboxkrnl:xboxkrnl.exe
+ 0002:00016134       _NtCreateIoCompletion@16   0045d7f4 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001613a       _NtSetIoCompletion@20      0045d7fa f   xboxkrnl:xboxkrnl.exe
+ 0002:00016140       _NtRemoveIoCompletion@20   0045d800 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016146       _MmSetAddressProtect@12    0045d806 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001614c       _MmQueryAddressProtect@4   0045d80c f   xboxkrnl:xboxkrnl.exe
+ 0002:00016152       _NtDuplicateObject@12      0045d812 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016158       _RtlLeaveCriticalSection@4 0045d818 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001615e       _RtlEnterCriticalSection@4 0045d81e f   xboxkrnl:xboxkrnl.exe
+ 0002:00016164       @ObfDereferenceObject@4    0045d824 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001616a       _KeSetBasePriorityThread@8 0045d82a f   xboxkrnl:xboxkrnl.exe
+ 0002:00016170       _ObReferenceObjectByHandle@12 0045d830 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016176       _KeQueryBasePriorityThread@4 0045d836 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001617c       _KeSetDisableBoostThread@8 0045d83c f   xboxkrnl:xboxkrnl.exe
+ 0002:00016182       _NtSuspendThread@8         0045d842 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016188       _NtResumeThread@8          0045d848 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001618e       _RtlRaiseException@4       0045d84e f   xboxkrnl:xboxkrnl.exe
+ 0002:00016194       _NtQueueApcThread@20       0045d854 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001619a       _NtYieldExecution@0        0045d85a f   xboxkrnl:xboxkrnl.exe
+ 0002:000161a0       _PsTerminateSystemThread@4 0045d860 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161a6       _DbgPrint                  0045d866 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161ac       _PsCreateSystemThreadEx@40 0045d86c f   xboxkrnl:xboxkrnl.exe
+ 0002:000161b2       _RtlEqualString@12         0045d872 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161b8       _XeLoadSection@4           0045d878 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161be       _XeUnloadSection@4         0045d87e f   xboxkrnl:xboxkrnl.exe
+ 0002:000161c4       _MmPersistContiguousMemory@12 0045d884 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161ca       _MmAllocateContiguousMemory@4 0045d88a f   xboxkrnl:xboxkrnl.exe
+ 0002:000161d0       _IoDeleteSymbolicLink@4    0045d890 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161d6       _NtQuerySymbolicLinkObject@12 0045d896 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161dc       _NtOpenSymbolicLinkObject@8 0045d89c f   xboxkrnl:xboxkrnl.exe
+ 0002:000161e2       _XcSHAFinal@8              0045d8a2 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161e8       _XcSHAUpdate@12            0045d8a8 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161ee       _XcSHAInit@4               0045d8ae f   xboxkrnl:xboxkrnl.exe
+ 0002:000161f4       _ExQueryNonVolatileSetting@20 0045d8b4 f   xboxkrnl:xboxkrnl.exe
+ 0002:000161fa       _NtReadFile@32             0045d8ba f   xboxkrnl:xboxkrnl.exe
+ 0002:00016200       _NtFsControlFile@40        0045d8c0 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016206       _RtlFillMemoryUlong@12     0045d8c6 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001620c       _NtFreeVirtualMemory@12    0045d8cc f   xboxkrnl:xboxkrnl.exe
+ 0002:00016212       _NtAllocateVirtualMemory@20 0045d8d2 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016218       _DbgBreakPoint@0           0045d8d8 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001621e       _RtlCompareMemoryUlong@12  0045d8de f   xboxkrnl:xboxkrnl.exe
+ 0002:00016224       _RtlCompareMemory@12       0045d8e4 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001622a       _RtlInitializeCriticalSection@4 0045d8ea f   xboxkrnl:xboxkrnl.exe
+ 0002:00016230       _NtQueryVirtualMemory@8    0045d8f0 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016236       _KeSetTimer@16             0045d8f6 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001623c       @KfLowerIrql@4             0045d8fc f   xboxkrnl:xboxkrnl.exe
+ 0002:00016242       _KeQueryInterruptTime@0    0045d902 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016248       _KeRaiseIrqlToDpcLevel@0   0045d908 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001624e       _HalInitiateShutdown@0     0045d90e f   xboxkrnl:xboxkrnl.exe
+ 0002:00016254       _KeInitializeTimerEx@8     0045d914 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001625a       _KeInitializeDpc@12        0045d91a f   xboxkrnl:xboxkrnl.exe
+ 0002:00016260       _KeSetEvent@12             0045d920 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016266       _KeWaitForSingleObject@20  0045d926 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001626c       _NtCreateEvent@16          0045d92c f   xboxkrnl:xboxkrnl.exe
+ 0002:00016272       _ObOpenObjectByName@16     0045d932 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016278       _NtSetEvent@8              0045d938 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001627e       _NtClearEvent@4            0045d93e f   xboxkrnl:xboxkrnl.exe
+ 0002:00016284       _NtPulseEvent@8            0045d944 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001628a       _NtCreateSemaphore@16      0045d94a f   xboxkrnl:xboxkrnl.exe
+ 0002:00016290       _NtReleaseSemaphore@12     0045d950 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016296       _NtCreateMutant@12         0045d956 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001629c       _NtReleaseMutant@8         0045d95c f   xboxkrnl:xboxkrnl.exe
+ 0002:000162a2       _NtWaitForSingleObjectEx@16 0045d962 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162a8       _NtSignalAndWaitForSingleObjectEx@20 0045d968 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162ae       _NtWaitForMultipleObjectsEx@24 0045d96e f   xboxkrnl:xboxkrnl.exe
+ 0002:000162b4       _KeDelayExecutionThread@12 0045d974 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162ba       _NtCreateTimer@12          0045d97a f   xboxkrnl:xboxkrnl.exe
+ 0002:000162c0       _NtSetTimerEx@32           0045d980 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162c6       _NtCancelTimer@8           0045d986 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162cc       _NtWaitForSingleObject@12  0045d98c f   xboxkrnl:xboxkrnl.exe
+ 0002:000162d2       _NtFlushBuffersFile@8      0045d992 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162d8       _NtUserIoApcDispatcher@12  0045d998 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162de       _NtDeviceIoControlFile@40  0045d99e f   xboxkrnl:xboxkrnl.exe
+ 0002:000162e4       _NtReadFileScatter@32      0045d9a4 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162ea       _NtWriteFileGather@32      0045d9aa f   xboxkrnl:xboxkrnl.exe
+ 0002:000162f0       _IoQueryVolumeInformation@20 0045d9b0 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162f6       _MmFreeSystemMemory@8      0045d9b6 f   xboxkrnl:xboxkrnl.exe
+ 0002:000162fc       _MmAllocateSystemMemory@8  0045d9bc f   xboxkrnl:xboxkrnl.exe
+ 0002:00016302       _XcHMAC@28                 0045d9c2 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016308       _RtlCompareString@12       0045d9c8 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001630e       _NtQueryDirectoryFile@40   0045d9ce f   xboxkrnl:xboxkrnl.exe
+ 0002:00016314       _NtQueryFullAttributesFile@8 0045d9d4 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001631a       _FscSetCacheSize@4         0045d9da f   xboxkrnl:xboxkrnl.exe
+ 0002:00016320       _FscGetCacheSize@0         0045d9e0 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016326       _MmAllocateContiguousMemoryEx@20 0045d9e6 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001632c       _MmQueryAllocationSize@4   0045d9ec f   xboxkrnl:xboxkrnl.exe
+ 0002:00016332       _AvGetSavedDataAddress@0   0045d9f2 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016338       _AvSendTVEncoderOption@16  0045d9f8 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001633e       _AvSetDisplayMode@24       0045d9fe f   xboxkrnl:xboxkrnl.exe
+ 0002:00016344       _AvSetSavedDataAddress@4   0045da04 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001634a       _MmQueryStatistics@4       0045da0a f   xboxkrnl:xboxkrnl.exe
+ 0002:00016350       _RtlWalkFrameChain@12      0045da10 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016356       _NtDeleteFile@4            0045da16 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001635c       _KeInsertQueueDpc@12       0045da1c f   xboxkrnl:xboxkrnl.exe
+ 0002:00016362       _HalReadWritePCISpace@24   0045da22 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016368       _KeConnectInterrupt@4      0045da28 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001636e       _KeInitializeInterrupt@28  0045da2e f   xboxkrnl:xboxkrnl.exe
+ 0002:00016374       _HalGetInterruptVector@8   0045da34 f   xboxkrnl:xboxkrnl.exe
+ 0002:0001637a       _KeDisconnectInterrupt@4   0045da3a f   xboxkrnl:xboxkrnl.exe
+ 0002:00016380       _MmClaimGpuInstanceMemory@8 0045da40 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016386       _KeStallExecutionProcessor@4 0045da46 f   xboxkrnl:xboxkrnl.exe
+ 0002:00016390       _memset                    0045da50 f   LIBCMTD:memset.obj
+ 0002:00016408       __fpclear                  0045dac8 f   LIBCMTD:fpinit.obj
+ 0002:00016409       __cfltcvt_init             0045dac9 f   LIBCMTD:fpinit.obj
+ 0002:0001644f       ___setfflag                0045db0f f   LIBCMTD:fpinit.obj
+ 0002:00016466       __fpmath                   0045db26 f   LIBCMTD:fpinit.obj
+ 0002:00016490       __RTC_CheckEsp             0045db50 f   LIBCMTD:stack.obj
+ 0002:000164c0       @_RTC_CheckStackVars@8     0045db80 f   LIBCMTD:stack.obj
+ 0002:00016540       __RTC_InitBase             0045dc00 f   LIBCMTD:init.obj
+ 0002:00016580       __RTC_Shutdown             0045dc40 f   LIBCMTD:init.obj
+ 0002:000165a0       _memcpy                    0045dc60 f   LIBCMTD:memcpy.obj
+ 0002:000169b0       __snwprintf                0045e070 f   LIBCMTD:snwprint.obj
+ 0002:00016b40       _sprintf                   0045e200 f   LIBCMTD:sprintf.obj
+ 0002:00016c70       __scprintf                 0045e330 f   LIBCMTD:sprintf.obj
+ 0002:00016d10       __RTC_Initialize           0045e3d0 f   LIBCMTD:initsect.obj
+ 0002:00016db0       __RTC_Terminate            0045e470 f   LIBCMTD:initsect.obj
+ 0002:00016e48       __SEH_prolog               0045e508 f   LIBCMTD:sehprolg.obj
+ 0002:00016e83       __SEH_epilog               0045e543 f   LIBCMTD:sehprolg.obj
+ 0002:00016eb0       __except_handler3          0045e570 f   LIBCMTD:exsup3.obj
+ 0002:00016f82       __seh_longjmp_unwind@4     0045e642 f   LIBCMTD:exsup3.obj
+ 0002:00016fe0       __vsnprintf                0045e6a0 f   LIBCMTD:vsnprint.obj
+ 0002:000170e0       __stricmp                  0045e7a0 f   LIBCMTD:stricmp.obj
+ 0002:00017180       __snprintf                 0045e840 f   LIBCMTD:snprintf.obj
+ 0002:000172b0       _strncpy                   0045e970 f   LIBCMTD:strncpy.obj
+ 0002:00017420       __strnicmp                 0045eae0 f   LIBCMTD:strnicmp.obj
+ 0002:000174e0       __chkstk                   0045eba0 f   LIBCMTD:chkstk.obj
+ 0002:000174e0       __alloca_probe             0045eba0     LIBCMTD:chkstk.obj
+ 0002:00017540       __allmul                   0045ec00 f   LIBCMTD:llmul.obj
+ 0002:00017590       _memmove                   0045ec50 f   LIBCMTD:memmove.obj
+ 0002:0001799c       __global_unwind2           0045f05c f   LIBCMTD:exsup.obj
+ 0002:000179de       __local_unwind2            0045f09e f   LIBCMTD:exsup.obj
+ 0002:00017a36       __NLG_Return2              0045f0f6     LIBCMTD:exsup.obj
+ 0002:00017a46       __abnormal_termination     0045f106 f   LIBCMTD:exsup.obj
+ 0002:00017a69       __NLG_Notify1              0045f129 f   LIBCMTD:exsup.obj
+ 0002:00017a72       __NLG_Notify               0045f132 f   LIBCMTD:exsup.obj
+ 0002:00017a85       __NLG_Dispatch             0045f145     LIBCMTD:exsup.obj
+ 0002:00017ad0       __aulldiv                  0045f190 f   LIBCMTD:ulldiv.obj
+ 0002:00017b60       _wcsncpy                   0045f220 f   LIBCMTD:wcsncpy.obj
+ 0002:00017bf0       _wcscat                    0045f2b0 f   LIBCMTD:wcscat.obj
+ 0002:00017c60       _wcscpy                    0045f320 f   LIBCMTD:wcscat.obj
+ 0002:00017cb0       _wcslen                    0045f370 f   LIBCMTD:wcslen.obj
+ 0002:00017cf0       __alldiv                   0045f3b0 f   LIBCMTD:lldiv.obj
+ 0002:00017dd0       _wcscmp                    0045f490 f   LIBCMTD:wcscmp.obj
+ 0002:00017e50       __wcsicmp                  0045f510 f   LIBCMTD:wcsicmp.obj
+ 0002:00017fa8       __ftol2                    0045f668 f   LIBCMTD:ftol2.obj
+ 0002:00018040       _malloc                    0045f700 f   LIBCMTD:dbgheap.obj
+ 0002:00018070       __malloc_dbg               0045f730 f   LIBCMTD:dbgheap.obj
+ 0002:000180b0       __nh_malloc                0045f770 f   LIBCMTD:dbgheap.obj
+ 0002:000180e0       __nh_malloc_dbg            0045f7a0 f   LIBCMTD:dbgheap.obj
+ 0002:000181b0       __heap_alloc               0045f870 f   LIBCMTD:dbgheap.obj
+ 0002:000181d0       __heap_alloc_dbg           0045f890 f   LIBCMTD:dbgheap.obj
+ 0002:000185b0       _calloc                    0045fc70 f   LIBCMTD:dbgheap.obj
+ 0002:000185e0       __calloc_dbg               0045fca0 f   LIBCMTD:dbgheap.obj
+ 0002:00018660       _realloc                   0045fd20 f   LIBCMTD:dbgheap.obj
+ 0002:00018690       __realloc_dbg              0045fd50 f   LIBCMTD:dbgheap.obj
+ 0002:00018da0       __expand                   00460460 f   LIBCMTD:dbgheap.obj
+ 0002:00018dd0       __expand_dbg               00460490 f   LIBCMTD:dbgheap.obj
+ 0002:00018e80       _free                      00460540 f   LIBCMTD:dbgheap.obj
+ 0002:00018ea0       __free_lk                  00460560 f   LIBCMTD:dbgheap.obj
+ 0002:00018ec0       __free_dbg                 00460580 f   LIBCMTD:dbgheap.obj
+ 0002:00018f50       __free_dbg_lk              00460610 f   LIBCMTD:dbgheap.obj
+ 0002:00019470       __msize                    00460b30 f   LIBCMTD:dbgheap.obj
+ 0002:00019490       __msize_dbg                00460b50 f   LIBCMTD:dbgheap.obj
+ 0002:00019660       __CrtSetBreakAlloc         00460d20 f   LIBCMTD:dbgheap.obj
+ 0002:00019690       __CrtSetDbgBlockType       00460d50 f   LIBCMTD:dbgheap.obj
+ 0002:000197a0       __CrtSetAllocHook          00460e60 f   LIBCMTD:dbgheap.obj
+ 0002:00019830       __CrtCheckMemory           00460ef0 f   LIBCMTD:dbgheap.obj
+ 0002:00019c70       __CrtSetDbgFlag            00461330 f   LIBCMTD:dbgheap.obj
+ 0002:00019d40       __CrtDoForAllClientObjects 00461400 f   LIBCMTD:dbgheap.obj
+ 0002:00019e10       __CrtIsValidPointer        004614d0 f   LIBCMTD:dbgheap.obj
+ 0002:00019e70       __CrtIsValidHeapPointer    00461530 f   LIBCMTD:dbgheap.obj
+ 0002:00019ef0       __CrtIsMemoryBlock         004615b0 f   LIBCMTD:dbgheap.obj
+ 0002:0001a060       __CrtReportBlockType       00461720 f   LIBCMTD:dbgheap.obj
+ 0002:0001a0a0       __CrtSetDumpClient         00461760 f   LIBCMTD:dbgheap.obj
+ 0002:0001a0d0       __CrtMemCheckpoint         00461790 f   LIBCMTD:dbgheap.obj
+ 0002:0001a2d0       __CrtMemDifference         00461990 f   LIBCMTD:dbgheap.obj
+ 0002:0001a430       __CrtMemDumpAllObjectsSince 00461af0 f   LIBCMTD:dbgheap.obj
+ 0002:0001a8e0       __CrtDumpMemoryLeaks       00461fa0 f   LIBCMTD:dbgheap.obj
+ 0002:0001a960       __CrtMemDumpStatistics     00462020 f   LIBCMTD:dbgheap.obj
+ 0002:0001aa40       __aligned_malloc           00462100 f   LIBCMTD:dbgheap.obj
+ 0002:0001aa70       __aligned_malloc_dbg       00462130 f   LIBCMTD:dbgheap.obj
+ 0002:0001aaa0       __aligned_realloc          00462160 f   LIBCMTD:dbgheap.obj
+ 0002:0001aad0       __aligned_realloc_dbg      00462190 f   LIBCMTD:dbgheap.obj
+ 0002:0001ab00       __aligned_offset_malloc    004621c0 f   LIBCMTD:dbgheap.obj
+ 0002:0001ab30       __aligned_offset_malloc_dbg 004621f0 f   LIBCMTD:dbgheap.obj
+ 0002:0001acc0       __aligned_offset_realloc   00462380 f   LIBCMTD:dbgheap.obj
+ 0002:0001acf0       __aligned_offset_realloc_dbg 004623b0 f   LIBCMTD:dbgheap.obj
+ 0002:0001afe0       __aligned_free             004626a0 f   LIBCMTD:dbgheap.obj
+ 0002:0001b000       __aligned_free_dbg         004626c0 f   LIBCMTD:dbgheap.obj
+ 0002:0001b0e0       _strchr                    004627a0 f   LIBCMTD:strchr.obj
+ 0002:0001b0e6       ___from_strstr_to_strchr   004627a6     LIBCMTD:strchr.obj
+ 0002:0001b1d1       __copysign                 00462891 f   LIBCMTD:ieeemisc.obj
+ 0002:0001b1fa       __chgsign                  004628ba f   LIBCMTD:ieeemisc.obj
+ 0002:0001b229       __scalb                    004628e9 f   LIBCMTD:ieeemisc.obj
+ 0002:0001b247       __logb                     00462907 f   LIBCMTD:ieeemisc.obj
+ 0002:0001b36c       __nextafter                00462a2c f   LIBCMTD:ieeemisc.obj
+ 0002:0001b699       __finite                   00462d59 f   LIBCMTD:ieeemisc.obj
+ 0002:0001b6b7       __isnan                    00462d77 f   LIBCMTD:ieeemisc.obj
+ 0002:0001b6f3       __fpclass                  00462db3 f   LIBCMTD:ieeemisc.obj
+ 0002:0001b7b8       __CIacos                   00462e78 f   LIBCMTD:acos.obj
+ 0002:0001b7cc       _acos                      00462e8c     LIBCMTD:acos.obj
+ 0002:0001b8b5       __forcdecpt                00462f75 f   LIBCMTD:cvt.obj
+ 0002:0001b91b       __cropzeros                00462fdb f   LIBCMTD:cvt.obj
+ 0002:0001b97c       __positive                 0046303c f   LIBCMTD:cvt.obj
+ 0002:0001b9a1       __fassign                  00463061 f   LIBCMTD:cvt.obj
+ 0002:0001baec       __cftoe                    004631ac f   LIBCMTD:cvt.obj
+ 0002:0001bc31       __cftof                    004632f1 f   LIBCMTD:cvt.obj
+ 0002:0001bc97       __cftog                    00463357 f   LIBCMTD:cvt.obj
+ 0002:0001bd47       __cfltcvt                  00463407 f   LIBCMTD:cvt.obj
+ 0002:0001bdb0       __setdefaultprecision      00463470 f   LIBCMTD:fp8.obj
+ 0002:0001bdd0       ?_RTC_GetSrcLine@@YAHKPADHPAHPAPAD@Z 00463490 f   LIBCMTD:error.obj
+ 0002:0001be20       ?_RTC_Failure@@YAXPAXH@Z   004634e0 f   LIBCMTD:error.obj
+ 0002:0001c100       ?_RTC_MemFailure@@YAXPAXHPBX@Z 004637c0 f   LIBCMTD:error.obj
+ 0002:0001c3e0       ?_RTC_StackFailure@@YAXPAXPBD@Z 00463aa0 f   LIBCMTD:error.obj
+ 0002:0001c4d0       __RTC_UninitUse            00463b90 f   LIBCMTD:error.obj
+ 0002:0001c5f0       __RTC_NumErrors            00463cb0 f   LIBCMTD:userapi.obj
+ 0002:0001c600       __RTC_GetErrDesc           00463cc0 f   LIBCMTD:userapi.obj
+ 0002:0001c630       __RTC_SetErrorType         00463cf0 f   LIBCMTD:userapi.obj
+ 0002:0001c660       __RTC_SetErrorFunc         00463d20 f   LIBCMTD:userapi.obj
+ 0002:0001c680       ?_RTC_GetErrorFunc@@YAP6AHHPBDH00ZZPBX@Z 00463d40 f   LIBCMTD:userapi.obj
+ 0002:0001c690       __chkesp                   00463d50 f   LIBCMTD:chkesp.obj
+ 0002:0001c6e0       __CRT_RTC_INIT             00463da0 f   LIBCMTD:chkesp.obj
+ 0002:0001c6f0       __flsbuf                   00463db0 f   LIBCMTD:_flsbuf.obj
+ 0002:0001c9e0       __woutput                  004640a0 f   LIBCMTD:woutput.obj
+ 0002:0001dc50       __CrtDbgBreak              00465310 f   LIBCMTD:dbgrpt.obj
+ 0002:0001dc60       __CrtSetReportMode         00465320 f   LIBCMTD:dbgrpt.obj
+ 0002:0001dcd0       __CrtSetReportFile         00465390 f   LIBCMTD:dbgrpt.obj
+ 0002:0001dd30       __CrtSetReportHook         004653f0 f   LIBCMTD:dbgrpt.obj
+ 0002:0001dd60       __CrtSetReportHook2        00465420 f   LIBCMTD:dbgrpt.obj
+ 0002:0001e040       __CrtDbgReport             00465700 f   LIBCMTD:dbgrpt.obj
+ 0002:0001ea00       __output                   004660c0 f   LIBCMTD:output.obj
+ 0002:0001fd50       __tolower                  00467410 f   LIBCMTD:tolower.obj
+ 0002:0001fd60       _tolower                   00467420 f   LIBCMTD:tolower.obj
+ 0002:0001fdd0       ___ascii_stricmp           00467490 f   LIBCMTD:_stricmp.obj
+ 0002:0001fe40       ___ascii_strnicmp          00467500 f   LIBCMTD:_strnicm.obj
+ 0002:0001fec0       _towlower                  00467580 f   LIBCMTD:towlower.obj
+ 0002:0001ff60       ?_set_new_handler@@YAP6AHI@ZP6AHI@Z@Z 00467620 f   LIBCMTD:handler.obj
+ 0002:0001ffa0       ?_query_new_handler@@YAP6AHI@ZXZ 00467660 f   LIBCMTD:handler.obj
+ 0002:0001ffb0       __callnewh                 00467670 f   LIBCMTD:handler.obj
+ 0002:0001fff0       __mtinitlocks              004676b0 f   LIBCMTD:mlock.obj
+ 0002:000200a0       __mtdeletelocks            00467760 f   LIBCMTD:mlock.obj
+ 0002:00020180       __mtinitlocknum            00467840 f   LIBCMTD:mlock.obj
+ 0002:000202f0       __lock                     004679b0 f   LIBCMTD:mlock.obj
+ 0002:00020340       __unlock                   00467a00 f   LIBCMTD:mlock.obj
+ 0002:00020360       __lockerr_exit             00467a20 f   LIBCMTD:mlock.obj
+ 0002:00020380       __malloc_base              00467a40 f   LIBCMTD:malloc.obj
+ 0002:000203b0       __nh_malloc_base           00467a70 f   LIBCMTD:malloc.obj
+ 0002:00020420       __heap_alloc_base          00467ae0 f   LIBCMTD:malloc.obj
+ 0002:00020470       __CrtDefaultAllocHook      00467b30 f   LIBCMTD:dbghook.obj
+ 0002:00020480       __expand_base              00467b40 f   LIBCMTD:expand.obj
+ 0002:000205a0       __realloc_base             00467c60 f   LIBCMTD:realloc.obj
+ 0002:00020780       __free_base                00467e40 f   LIBCMTD:free.obj
+ 0002:00020850       __heapchk                  00467f10 f   LIBCMTD:heapchk.obj
+ 0002:00020930       __heapset                  00467ff0 f   LIBCMTD:heapchk.obj
+ 0002:00020940       ___heap_select             00468000 f   LIBCMTD:heapinit.obj
+ 0002:00020960       __get_heap_handle          00468020 f   LIBCMTD:heapinit.obj
+ 0002:00020970       __chvalidator              00468030 f   LIBCMTD:isctype.obj
+ 0002:000209c0       __isctype                  00468080 f   LIBCMTD:isctype.obj
+ 0002:00020a00       __dosmaperr                004680c0 f   LIBCMTD:dosmap.obj
+ 0002:00020ac0       __errno                    00468180 f   LIBCMTD:dosmap.obj
+ 0002:00020ad0       ___doserrno                00468190 f   LIBCMTD:dosmap.obj
+ 0002:00020ae0       _ldexp                     004681a0 f   LIBCMTD:ldexp.obj
+ 0002:00020cf4       __set_exp                  004683b4 f   LIBCMTD:util.obj
+ 0002:00020d28       __get_exp                  004683e8 f   LIBCMTD:util.obj
+ 0002:00020d46       __add_exp                  00468406 f   LIBCMTD:util.obj
+ 0002:00020d7b       __set_bexp                 0046843b f   LIBCMTD:util.obj
+ 0002:00020da9       __sptype                   00468469 f   LIBCMTD:util.obj
+ 0002:00020e1a       __decomp                   004684da f   LIBCMTD:util.obj
+ 0002:00020efb       __raise_exc                004685bb f   LIBCMTD:fpexcept.obj
+ 0002:00021248       __handle_exc               00468908 f   LIBCMTD:fpexcept.obj
+ 0002:000214b0       __set_errno                00468b70 f   LIBCMTD:fpexcept.obj
+ 0002:00021512       __errcode                  00468bd2 f   LIBCMTD:fpexcept.obj
+ 0002:00021550       __umatherr                 00468c10 f   LIBCMTD:fpexcept.obj
+ 0002:00021615       __handle_qnan1             00468cd5 f   LIBCMTD:fpexcept.obj
+ 0002:0002167c       __handle_qnan2             00468d3c f   LIBCMTD:fpexcept.obj
+ 0002:000216f2       __except1                  00468db2 f   LIBCMTD:fpexcept.obj
+ 0002:000217ce       __except2                  00468e8e f   LIBCMTD:fpexcept.obj
+ 0002:000218bc       __statfp                   00468f7c f   LIBCMTD:fpctrl.obj
+ 0002:000218cd       __clrfp                    00468f8d f   LIBCMTD:fpctrl.obj
+ 0002:000218df       __ctrlfp                   00468f9f f   LIBCMTD:fpctrl.obj
+ 0002:0002190c       __set_statfp               00468fcc f   LIBCMTD:fpctrl.obj
+ 0002:00021978       __trandisp1                00469038 f   LIBCMTD:87disp.obj
+ 0002:000219df       __trandisp2                0046909f f   LIBCMTD:87disp.obj
+ 0002:00021a6b       __rttospopde               0046912b     LIBCMTD:87disp.obj
+ 0002:00021a70       __rttospop                 00469130     LIBCMTD:87disp.obj
+ 0002:00021a72       __rtnospop                 00469132     LIBCMTD:87disp.obj
+ 0002:00021a74       __rttosnpop                00469134     LIBCMTD:87disp.obj
+ 0002:00021a75       __rtnospopde               00469135     LIBCMTD:87disp.obj
+ 0002:00021a7c       __rtzeropop                0046913c     LIBCMTD:87disp.obj
+ 0002:00021a7e       __rtzeronpop               0046913e     LIBCMTD:87disp.obj
+ 0002:00021a83       __rtonepop                 00469143     LIBCMTD:87disp.obj
+ 0002:00021a85       __rtonenpop                00469145     LIBCMTD:87disp.obj
+ 0002:00021a8a       __tosnan1                  0046914a     LIBCMTD:87disp.obj
+ 0002:00021ab5       __nosnan2                  00469175     LIBCMTD:87disp.obj
+ 0002:00021ab7       __tosnan2                  00469177     LIBCMTD:87disp.obj
+ 0002:00021adf       __nan2                     0046919f     LIBCMTD:87disp.obj
+ 0002:00021b1e       __rtindfpop                004691de     LIBCMTD:87disp.obj
+ 0002:00021b20       __rtindfnpop               004691e0     LIBCMTD:87disp.obj
+ 0002:00021b31       __rttosnpopde              004691f1     LIBCMTD:87disp.obj
+ 0002:00021b3b       __rtchsifneg               004691fb     LIBCMTD:87disp.obj
+ 0002:00021bb4       __startTwoArgErrorHandling 00469274 f   LIBCMTD:genexcep.obj
+ 0002:00021bcb       __startOneArgErrorHandling 0046928b f   LIBCMTD:genexcep.obj
+ 0002:00021c1c       __twoToTOS                 004692dc f   LIBCMTD:common.obj
+ 0002:00021c31       __load_CW                  004692f1 f   LIBCMTD:common.obj
+ 0002:00021c48       __convertTOStoQNaN         00469308 f   LIBCMTD:common.obj
+ 0002:00021c61       __fload_withFB             00469321 f   LIBCMTD:common.obj
+ 0002:00021ca4       __checkTOS_withFB          00469364 f   LIBCMTD:common.obj
+ 0002:00021cba       __fast_exit                0046937a f   LIBCMTD:common.obj
+ 0002:00021cc7       __math_exit                00469387 f   LIBCMTD:common.obj
+ 0002:00021cf1       __check_overflow_exit      004693b1 f   LIBCMTD:common.obj
+ 0002:00021d05       __check_range_exit         004693c5 f   LIBCMTD:common.obj
+ 0002:00021e0b       __ZeroTail                 004694cb f   LIBCMTD:intrncvt.obj
+ 0002:00021e4d       __IncMan                   0046950d f   LIBCMTD:intrncvt.obj
+ 0002:00021eaf       __RoundMan                 0046956f f   LIBCMTD:intrncvt.obj
+ 0002:00021f3d       __CopyMan                  004695fd f   LIBCMTD:intrncvt.obj
+ 0002:00021f61       __FillZeroMan              00469621 f   LIBCMTD:intrncvt.obj
+ 0002:00021f73       __IsZeroMan                00469633 f   LIBCMTD:intrncvt.obj
+ 0002:00021f97       __ShrMan                   00469657 f   LIBCMTD:intrncvt.obj
+ 0002:00022030       __ld12cvt                  004696f0 f   LIBCMTD:intrncvt.obj
+ 0002:000221de       __ld12tod                  0046989e f   LIBCMTD:intrncvt.obj
+ 0002:000221fc       __ld12tof                  004698bc f   LIBCMTD:intrncvt.obj
+ 0002:0002221a       __ld12told                 004698da f   LIBCMTD:intrncvt.obj
+ 0002:000222b5       __atodbl                   00469975 f   LIBCMTD:intrncvt.obj
+ 0002:000222ed       __atoldbl                  004699ad f   LIBCMTD:intrncvt.obj
+ 0002:00022326       __atoflt                   004699e6 f   LIBCMTD:intrncvt.obj
+ 0002:00022360       __fptostr                  00469a20 f   LIBCMTD:_fptostr.obj
+ 0002:00022499       ___dtold                   00469b59 f   LIBCMTD:cfout.obj
+ 0002:00022581       __fltout2                  00469c41 f   LIBCMTD:cfout.obj
+ 0002:00022600       __fptrap                   00469cc0 f   LIBCMTD:crt0fp.obj
+ 0002:00022612       __fpreset                  00469cd2 f   LIBCMTD:ieee87.obj
+ 0002:00022803       __statusfp                 00469ec3 f   LIBCMTD:ieee87.obj
+ 0002:0002281a       __clearfp                  00469eda f   LIBCMTD:ieee87.obj
+ 0002:00022833       __control87                00469ef3 f   LIBCMTD:ieee87.obj
+ 0002:00022872       __controlfp                00469f32 f   LIBCMTD:ieee87.obj
+ 0002:00022890       __lseek                    00469f50 f   LIBCMTD:lseek.obj
+ 0002:000229e0       __lseek_lk                 0046a0a0 f   LIBCMTD:lseek.obj
+ 0002:00022ac0       __ioinit                   0046a180 f   LIBCMTD:ioinit.obj
+ 0002:00022bc0       __ioterm                   0046a280 f   LIBCMTD:ioinit.obj
+ 0002:00022c70       __write                    0046a330 f   LIBCMTD:write.obj
+ 0002:00022dc0       __write_lk                 0046a480 f   LIBCMTD:write.obj
+ 0002:00023150       __getbuf                   0046a810 f   LIBCMTD:_getbuf.obj
+ 0002:00023240       __isatty                   0046a900 f   LIBCMTD:isatty.obj
+ 0002:00023280       ___iob_func                0046a940 f   LIBCMTD:_file.obj
+ 0002:00023290       ___initstdio               0046a950 f   LIBCMTD:_file.obj
+ 0002:00023410       ___endstdio                0046aad0 f   LIBCMTD:_file.obj
+ 0002:00023430       __lock_file                0046aaf0 f   LIBCMTD:_file.obj
+ 0002:00023480       __lock_file2               0046ab40 f   LIBCMTD:_file.obj
+ 0002:000234c0       __unlock_file              0046ab80 f   LIBCMTD:_file.obj
+ 0002:00023510       __unlock_file2             0046abd0 f   LIBCMTD:_file.obj
+ 0002:00023550       ___pwctype_func            0046ac10 f   LIBCMTD:ctype.obj
+ 0002:00023560       ___pctype_func             0046ac20 f   LIBCMTD:ctype.obj
+ 0002:00023570       _strlen                    0046ac30 f   LIBCMTD:strlen.obj
+ 0002:00023620       _mbtowc                    0046ace0 f   LIBCMTD:mbtowc.obj
+ 0002:000236c0       __aullrem                  0046ad80 f   LIBCMTD:ullrem.obj
+ 0002:00023760       _fputwc                    0046ae20 f   LIBCMTD:fputwc.obj
+ 0002:00023830       __putwc_lk                 0046aef0 f   LIBCMTD:fputwc.obj
+ 0002:00023a00       _putwc                     0046b0c0 f   LIBCMTD:fputwc.obj
+ 0002:00023a20       __itoa                     0046b0e0 f   LIBCMTD:xtoa.obj
+ 0002:00023b80       __ltoa                     0046b240 f   LIBCMTD:xtoa.obj
+ 0002:00023bd0       __ultoa                    0046b290 f   LIBCMTD:xtoa.obj
+ 0002:00023c00       __i64toa                   0046b2c0 f   LIBCMTD:xtoa.obj
+ 0002:00023d90       __ui64toa                  0046b450 f   LIBCMTD:xtoa.obj
+ 0002:00023dc0       _strcpy                    0046b480 f   LIBCMTD:strcat.obj
+ 0002:00023dd0       _strcat                    0046b490 f   LIBCMTD:strcat.obj
+ 0002:00023f00       _exit                      0046b5c0 f   LIBCMTD:crt0dat.obj
+ 0002:00023f20       __exit                     0046b5e0 f   LIBCMTD:crt0dat.obj
+ 0002:00023f40       __cexit                    0046b600 f   LIBCMTD:crt0dat.obj
+ 0002:00023f60       __c_exit                   0046b620 f   LIBCMTD:crt0dat.obj
+ 0002:000240e0       __lockexit                 0046b7a0 f   LIBCMTD:crt0dat.obj
+ 0002:00024100       __unlockexit               0046b7c0 f   LIBCMTD:crt0dat.obj
+ 0002:00024150       _signal                    0046b810 f   LIBCMTD:winsig.obj
+ 0002:000243f0       _raise                     0046bab0 f   LIBCMTD:winsig.obj
+ 0002:00024750       ___fpecode                 0046be10 f   LIBCMTD:winsig.obj
+ 0002:00024760       ___pxcptinfoptrs           0046be20 f   LIBCMTD:winsig.obj
+ 0002:00024770       _wctomb                    0046be30 f   LIBCMTD:wctomb.obj
+ 0002:000247c0       _iswctype                  0046be80 f   LIBCMTD:iswctype.obj
+ 0002:00024820       _is_wctype                 0046bee0 f   LIBCMTD:iswctype.obj
+ 0002:00024840       ___crtInitCritSecAndSpinCount 0046bf00 f   LIBCMTD:initcrit.obj
+ 0002:00024930       __amsg_exit                0046bff0 f   LIBCMTD:crt0.obj
+ 0002:00024960       ___crtTlsAlloc@4           0046c020 f   LIBCMTD:tidtable.obj
+ 0002:00024970       __mtinit                   0046c030 f   LIBCMTD:tidtable.obj
+ 0002:00024a30       __mtterm                   0046c0f0 f   LIBCMTD:tidtable.obj
+ 0002:00024a40       __initptd                  0046c100 f   LIBCMTD:tidtable.obj
+ 0002:00024a60       __getptd                   0046c120 f   LIBCMTD:tidtable.obj
+ 0002:00024b70       __freefls@4                0046c230 f   LIBCMTD:tidtable.obj
+ 0002:00024d50       __freeptd                  0046c410 f   LIBCMTD:tidtable.obj
+ 0002:00024de0       ___threadid                0046c4a0 f   LIBCMTD:tidtable.obj
+ 0002:00024df0       ___threadhandle            0046c4b0 f   LIBCMTD:tidtable.obj
+ 0002:00024dfc       __matherr                  0046c4bc f   LIBCMTD:matherr.obj
+ 0002:00024dff       __87except                 0046c4bf f   LIBCMTD:87except.obj
+ 0002:00024f49       ___addl                    0046c609 f   LIBCMTD:mantold.obj
+ 0002:00024f73       ___add_12                  0046c633 f   LIBCMTD:mantold.obj
+ 0002:00024feb       ___shl_12                  0046c6ab f   LIBCMTD:mantold.obj
+ 0002:00025028       ___shr_12                  0046c6e8 f   LIBCMTD:mantold.obj
+ 0002:00025064       ___mtold12                 0046c724 f   LIBCMTD:mantold.obj
+ 0002:00025165       ___strgtold12              0046c825 f   LIBCMTD:strgtold.obj
+ 0002:000256fe       ___STRINGTOLD              0046cdbe f   LIBCMTD:strgtold.obj
+ 0002:00025749       _$I10_OUTPUT               0046ce09 f   LIBCMTD:x10fout.obj
+ 0002:00025a60       __alloc_osfhnd             0046d120 f   LIBCMTD:osfinfo.obj
+ 0002:00025d80       __set_osfhnd               0046d440 f   LIBCMTD:osfinfo.obj
+ 0002:00025e00       __free_osfhnd              0046d4c0 f   LIBCMTD:osfinfo.obj
+ 0002:00025eb0       __get_osfhandle            0046d570 f   LIBCMTD:osfinfo.obj
+ 0002:00025f30       __open_osfhandle           0046d5f0 f   LIBCMTD:osfinfo.obj
+ 0002:00026070       __lock_fhandle             0046d730 f   LIBCMTD:osfinfo.obj
+ 0002:000261a0       __unlock_fhandle           0046d860 f   LIBCMTD:osfinfo.obj
+ 0002:000261d0       __lseeki64                 0046d890 f   LIBCMTD:lseeki64.obj
+ 0002:00026330       __lseeki64_lk              0046d9f0 f   LIBCMTD:lseeki64.obj
+ 0002:00026420       __fcloseall                0046dae0 f   LIBCMTD:closeall.obj
+ 0002:00026560       _fflush                    0046dc20 f   LIBCMTD:fflush.obj
+ 0002:00026610       __fflush_lk                0046dcd0 f   LIBCMTD:fflush.obj
+ 0002:00026660       __flush                    0046dd20 f   LIBCMTD:fflush.obj
+ 0002:00026740       __flushall                 0046de00 f   LIBCMTD:fflush.obj
+ 0002:00026960       __flswbuf                  0046e020 f   LIBCMTD:_flswbuf.obj
+ 0002:00026c70       ___CppXcptFilter           0046e330 f   LIBCMTD:winxfltr.obj
+ 0002:00026ca0       __XcptFilter               0046e360 f   LIBCMTD:winxfltr.obj
+ 0002:00026f40       __FF_MSGBANNER             0046e600 f   LIBCMTD:crt0msg.obj
+ 0002:00026f80       __NMSG_WRITE               0046e640 f   LIBCMTD:crt0msg.obj
+ 0002:00027030       __GET_RTERRMSG             0046e6f0 f   LIBCMTD:crt0msg.obj
+ 0002:000270a0       __beginthread              0046e760 f   LIBCMTD:thread.obj
+ 0002:00027300       __endthread                0046e9c0 f   LIBCMTD:thread.obj
+ 0002:00027350       __mtxthreadnotification@4  0046ea10 f   LIBCMTD:thread.obj
+ 0002:000273a0       ___updatetmbcinfo          0046ea60 f   LIBCMTD:mbctype.obj
+ 0002:000274a0       __setmbcp                  0046eb60 f   LIBCMTD:mbctype.obj
+ 0002:00027a70       __getmbcp                  0046f130 f   LIBCMTD:mbctype.obj
+ 0002:00027a90       ___initmbctable            0046f150 f   LIBCMTD:mbctype.obj
+ 0002:00027ac9       ___ld12mul                 0046f189 f   LIBCMTD:tenpow.obj
+ 0002:00027d73       ___multtenpow12            0046f433 f   LIBCMTD:tenpow.obj
+ 0002:00027e10       _fclose                    0046f4d0 f   LIBCMTD:fclose.obj
+ 0002:00027f00       __fclose_lk                0046f5c0 f   LIBCMTD:fclose.obj
+ 0002:00027fe0       __commit                   0046f6a0 f   LIBCMTD:commit.obj
+ 0002:00028140       __close                    0046f800 f   LIBCMTD:close.obj
+ 0002:00028270       __close_lk                 0046f930 f   LIBCMTD:close.obj
+ 0002:00028350       __freebuf                  0046fa10 f   LIBCMTD:_freebuf.obj
+ 0002:000283f2       _XapiGetKernelExportAddress@4 0046fab2 f   xapilibd:delaybnd.obj
+ 0002:0002843a       _DebugBreak@0              0046fafa f   xapilibd:kthunks.obj
+ 0002:0002843f       _GetSystemTimeAsFileTime@4 0046faff f   xapilibd:kthunks.obj
+ 0002:0002844b       _wvsprintfW@12             0046fb0b f   xapilibd:kthunks.obj
+ 0002:00028469       _wvsprintfA@12             0046fb29 f   xapilibd:kthunks.obj
+ 0002:00028487       _DebugPrint                0046fb47 f   xapilibd:kthunks.obj
+ 0002:000284cd       _wsprintfW                 0046fb8d f   xapilibd:kthunks.obj
+ 0002:000284e6       _wsprintfA                 0046fba6 f   xapilibd:kthunks.obj
+ 0002:000284ff       _UTF8ToUnicode@16          0046fbbf f   xapilibd:widechar.obj
+ 0002:000286aa       _UnicodeToUTF8@16          0046fd6a f   xapilibd:widechar.obj
+ 0002:00028790       _MultiByteToWideChar@24    0046fe50 f   xapilibd:widechar.obj
+ 0002:00028892       _WideCharToMultiByte@32    0046ff52 f   xapilibd:widechar.obj
+ 0002:000289ca       _IsBadReadPtr@8            0047008a f   xapilibd:process.obj
+ 0002:00028a48       _IsBadWritePtr@8           00470108 f   xapilibd:process.obj
+ 0002:00028acb       _IsBadCodePtr@4            0047018b f   xapilibd:process.obj
+ 0002:00028ae0       _IsBadStringPtrW@8         004701a0 f   xapilibd:process.obj
+ 0002:00028b54       _IsBadStringPtrA@8         00470214 f   xapilibd:process.obj
+ 0002:00028bc0       _TlsAlloc@0                00470280 f   xapilibd:tls.obj
+ 0002:00028c29       _TlsGetValue@4             004702e9 f   xapilibd:tls.obj
+ 0002:00028c6f       _TlsSetValue@8             0047032f f   xapilibd:tls.obj
+ 0002:00028cc3       _TlsFree@4                 00470383 f   xapilibd:tls.obj
+ 0002:00028d96       _RtlUnwind@16              00470456 f   xboxkrnl:xboxkrnl.exe
+ 0002:00028d9c       _KeBugCheck@4              0047045c f   xboxkrnl:xboxkrnl.exe
+ 0002:00028da2       _RtlAnsiStringToUnicodeString@12 00470462 f   xboxkrnl:xboxkrnl.exe
+ 0002:00028da8       _RtlUnicodeStringToAnsiString@12 00470468 f   xboxkrnl:xboxkrnl.exe
+ 0002:00028db0       _vswprintf                 00470470 f   LIBCMTD:vswprint.obj
+ 0002:00028f30       __vscwprintf               004705f0 f   LIBCMTD:vswprint.obj
+ 0002:00028fd0       _vsprintf                  00470690 f   LIBCMTD:vsprintf.obj
+ 0002:000290f0       __vscprintf                004707b0 f   LIBCMTD:vsprintf.obj
  0003:00000000       _Direct3DCreate8@4         00470860 f   d3d8d:enum.obj
  0003:00000040       _Direct3D_GetAdapterIdentifier@12 004708a0 f   d3d8d:enum.obj
  0003:00000090       _Direct3D_GetAdapterModeCount@4 004708f0 f   d3d8d:enum.obj
@@ -4609,9 +4609,9 @@
  0005:00007444       ??_C@_09HKABMOEO@TlsFree?$CI?$CJ?$AA@ 004ea104     xapilibd:tls.obj
  0005:00007450       ??_C@_0DL@KNEMIDJC@d?3?2xbox?9dec03?2private?2sdktools?2c@ 004ea110     LIBCMTD:vswprint.obj
  0005:0000790c       ___rtc_iaa                 004ea5cc     LIBCMTD:initsect.obj
- 0005:00007b14       ___rtc_izz                 004ea7d4     LIBCMTD:initsect.obj
- 0005:00007c18       ___rtc_taa                 004ea8d8     LIBCMTD:initsect.obj
- 0005:00007e20       ___rtc_tzz                 004eaae0     LIBCMTD:initsect.obj
+ 0005:00007b1c       ___rtc_izz                 004ea7dc     LIBCMTD:initsect.obj
+ 0005:00007c20       ___rtc_taa                 004ea8e0     LIBCMTD:initsect.obj
+ 0005:00007e30       ___rtc_tzz                 004eaaf0     LIBCMTD:initsect.obj
  0006:00000000       ___xri_a                   004eac00     xapilibd:xapi0dat.obj
  0006:00000104       ___pmtinit                 004ead04     LIBCMTD:tidtable.obj
  0006:00000208       ___rtc_init                004eae08     xapilibd:xapi0dat.obj
@@ -4712,19 +4712,20 @@
  0006:00042958       _kSurrogateHighStart       0052d558     xapilibd:widechar.obj
  0006:0004295c       _kSurrogateLowStart        0052d55c     xapilibd:widechar.obj
  0006:000429a0       _XapiTlsAllocBitmap        0052d5a0     xapilibd:tls.obj
- 0006:00042ae0       ?qwTime@@3T_LARGE_INTEGER@@A 0052d6e0     Example_Project.obj
- 0006:00042ae8       ?fSecsPerTick@@3MA         0052d6e8     Example_Project.obj
- 0006:00042aec       ?fElapsedTime@@3MA         0052d6ec     Example_Project.obj
- 0006:00042af0       ?qwAppTime@@3T_LARGE_INTEGER@@A 0052d6f0     Example_Project.obj
- 0006:00042af8       ?fTime@@3MA                0052d6f8     Example_Project.obj
- 0006:00042afc       ?fElapsedAppTime@@3MA      0052d6fc     Example_Project.obj
- 0006:00042b00       ?fAppTime@@3MA             0052d700     Example_Project.obj
- 0006:00042b08       ?qwElapsedTime@@3T_LARGE_INTEGER@@A 0052d708     Example_Project.obj
- 0006:00042b10       ?qwElapsedAppTime@@3T_LARGE_INTEGER@@A 0052d710     Example_Project.obj
- 0006:00042b18       ?qwLastTime@@3T_LARGE_INTEGER@@A 0052d718     Example_Project.obj
- 0006:00042b20       ?g_pD3D@@3PAUDirect3D@@A   0052d720     Example_Project.obj
- 0006:00042b24       ?g_pd3dDevice@@3PAUD3DDevice@@A 0052d724     Example_Project.obj
- 0006:00042b28       ?g_pVB@@3PAUD3DVertexBuffer@@A 0052d728     Example_Project.obj
+ 0006:00042ae0       ?g_pD3D@@3PAUDirect3D@@A   0052d6e0     Example_Project.obj
+ 0006:00042ae4       ?g_pd3dDevice@@3PAUD3DDevice@@A 0052d6e4     Example_Project.obj
+ 0006:00042ae8       ?g_pVB@@3PAUD3DVertexBuffer@@A 0052d6e8     Example_Project.obj
+ 0006:00042af0       ?qwTime@@3T_LARGE_INTEGER@@A 0052d6f0     Time.obj
+ 0006:00042af8       ?fSecsPerTick@@3MA         0052d6f8     Time.obj
+ 0006:00042afc       ?fElapsedTime@@3MA         0052d6fc     Time.obj
+ 0006:00042b00       ?qwAppTime@@3T_LARGE_INTEGER@@A 0052d700     Time.obj
+ 0006:00042b08       ?fTime@@3MA                0052d708     Time.obj
+ 0006:00042b0c       ?fElapsedAppTime@@3MA      0052d70c     Time.obj
+ 0006:00042b10       ?fAppTime@@3MA             0052d710     Time.obj
+ 0006:00042b14       ?SecsPerTick@@3MA          0052d714     Time.obj
+ 0006:00042b18       ?qwElapsedTime@@3T_LARGE_INTEGER@@A 0052d718     Time.obj
+ 0006:00042b20       ?qwElapsedAppTime@@3T_LARGE_INTEGER@@A 0052d720     Time.obj
+ 0006:00042b28       ?qwLastTime@@3T_LARGE_INTEGER@@A 0052d728     Time.obj
  0006:00042b3c       __tls_index                0052d73c     xapilibd:xapitls.obj
  0006:00042b40       _XapiMuInfo                0052d740     xapilibd:pathmisc.obj
  0006:00042b48       _g_fMountedUtilityDrive    0052d748     xapilibd:pathmisc.obj
@@ -4799,8 +4800,8 @@
  0007:00000314       __imp__KeQuerySystemTime@4 0052e2f4     xboxkrnl:xboxkrnl.exe
  0007:00000318       __imp__HalReturnToFirmware@4 0052e2f8     xboxkrnl:xboxkrnl.exe
  0007:0000031c       __imp__MmFreeContiguousMemory@4 0052e2fc     xboxkrnl:xboxkrnl.exe
- 0007:00000320       _LaunchDataPage            0052e300     xboxkrnl:xboxkrnl.exe
  0007:00000320       __imp__LaunchDataPage      0052e300     xboxkrnl:xboxkrnl.exe
+ 0007:00000320       _LaunchDataPage            0052e300     xboxkrnl:xboxkrnl.exe
  0007:00000324       __imp__XboxHardwareInfo    0052e304     xboxkrnl:xboxkrnl.exe
  0007:00000324       _XboxHardwareInfo          0052e304     xboxkrnl:xboxkrnl.exe
  0007:00000328       __imp__HalRegisterShutdownNotification@8 0052e308     xboxkrnl:xboxkrnl.exe
@@ -4810,8 +4811,8 @@
  0007:00000338       __imp__NtRemoveIoCompletion@20 0052e318     xboxkrnl:xboxkrnl.exe
  0007:0000033c       __imp__MmSetAddressProtect@12 0052e31c     xboxkrnl:xboxkrnl.exe
  0007:00000340       __imp__MmQueryAddressProtect@4 0052e320     xboxkrnl:xboxkrnl.exe
- 0007:00000344       __imp__XboxKrnlVersion     0052e324     xboxkrnl:xboxkrnl.exe
  0007:00000344       _XboxKrnlVersion           0052e324     xboxkrnl:xboxkrnl.exe
+ 0007:00000344       __imp__XboxKrnlVersion     0052e324     xboxkrnl:xboxkrnl.exe
  0007:00000348       __imp__NtDuplicateObject@12 0052e328     xboxkrnl:xboxkrnl.exe
  0007:0000034c       __imp__RtlLeaveCriticalSection@4 0052e32c     xboxkrnl:xboxkrnl.exe
  0007:00000350       __imp__RtlEnterCriticalSection@4 0052e330     xboxkrnl:xboxkrnl.exe
@@ -4845,8 +4846,8 @@
  0007:000003b4       __imp__XcSHAFinal@8        0052e394     xboxkrnl:xboxkrnl.exe
  0007:000003b8       __imp__XcSHAUpdate@12      0052e398     xboxkrnl:xboxkrnl.exe
  0007:000003bc       __imp__XcSHAInit@4         0052e39c     xboxkrnl:xboxkrnl.exe
- 0007:000003c0       __imp__XeImageFileName     0052e3a0     xboxkrnl:xboxkrnl.exe
  0007:000003c0       _XeImageFileName           0052e3a0     xboxkrnl:xboxkrnl.exe
+ 0007:000003c0       __imp__XeImageFileName     0052e3a0     xboxkrnl:xboxkrnl.exe
  0007:000003c4       __imp__ExQueryNonVolatileSetting@20 0052e3a4     xboxkrnl:xboxkrnl.exe
  0007:000003c8       __imp__HalDiskCachePartitionCount 0052e3a8     xboxkrnl:xboxkrnl.exe
  0007:000003c8       _HalDiskCachePartitionCount 0052e3a8     xboxkrnl:xboxkrnl.exe
@@ -4873,14 +4874,14 @@
  0007:00000418       __imp__KeWaitForSingleObject@20 0052e3f8     xboxkrnl:xboxkrnl.exe
  0007:0000041c       __imp__NtCreateEvent@16    0052e3fc     xboxkrnl:xboxkrnl.exe
  0007:00000420       __imp__ObOpenObjectByName@16 0052e400     xboxkrnl:xboxkrnl.exe
- 0007:00000424       __imp__ExEventObjectType   0052e404     xboxkrnl:xboxkrnl.exe
  0007:00000424       _ExEventObjectType         0052e404     xboxkrnl:xboxkrnl.exe
+ 0007:00000424       __imp__ExEventObjectType   0052e404     xboxkrnl:xboxkrnl.exe
  0007:00000428       __imp__NtSetEvent@8        0052e408     xboxkrnl:xboxkrnl.exe
  0007:0000042c       __imp__NtClearEvent@4      0052e40c     xboxkrnl:xboxkrnl.exe
  0007:00000430       __imp__NtPulseEvent@8      0052e410     xboxkrnl:xboxkrnl.exe
  0007:00000434       __imp__NtCreateSemaphore@16 0052e414     xboxkrnl:xboxkrnl.exe
- 0007:00000438       _ExSemaphoreObjectType     0052e418     xboxkrnl:xboxkrnl.exe
  0007:00000438       __imp__ExSemaphoreObjectType 0052e418     xboxkrnl:xboxkrnl.exe
+ 0007:00000438       _ExSemaphoreObjectType     0052e418     xboxkrnl:xboxkrnl.exe
  0007:0000043c       __imp__NtReleaseSemaphore@12 0052e41c     xboxkrnl:xboxkrnl.exe
  0007:00000440       __imp__NtCreateMutant@12   0052e420     xboxkrnl:xboxkrnl.exe
  0007:00000444       _ExMutantObjectType        0052e424     xboxkrnl:xboxkrnl.exe
@@ -4902,8 +4903,8 @@
  0007:0000047c       __imp__NtReadFileScatter@32 0052e45c     xboxkrnl:xboxkrnl.exe
  0007:00000480       __imp__NtWriteFileGather@32 0052e460     xboxkrnl:xboxkrnl.exe
  0007:00000484       __imp__IoQueryVolumeInformation@20 0052e464     xboxkrnl:xboxkrnl.exe
- 0007:00000488       _IoFileObjectType          0052e468     xboxkrnl:xboxkrnl.exe
  0007:00000488       __imp__IoFileObjectType    0052e468     xboxkrnl:xboxkrnl.exe
+ 0007:00000488       _IoFileObjectType          0052e468     xboxkrnl:xboxkrnl.exe
  0007:0000048c       __imp__MmFreeSystemMemory@8 0052e46c     xboxkrnl:xboxkrnl.exe
  0007:00000490       __imp__MmAllocateSystemMemory@8 0052e470     xboxkrnl:xboxkrnl.exe
  0007:00000494       __imp__XcHMAC@28           0052e474     xboxkrnl:xboxkrnl.exe
@@ -4912,8 +4913,8 @@
  0007:0000049c       __imp__RtlCompareString@12 0052e47c     xboxkrnl:xboxkrnl.exe
  0007:000004a0       __imp__XboxSignatureKey    0052e480     xboxkrnl:xboxkrnl.exe
  0007:000004a0       _XboxSignatureKey          0052e480     xboxkrnl:xboxkrnl.exe
- 0007:000004a4       _XboxAlternateSignatureKeys 0052e484     xboxkrnl:xboxkrnl.exe
  0007:000004a4       __imp__XboxAlternateSignatureKeys 0052e484     xboxkrnl:xboxkrnl.exe
+ 0007:000004a4       _XboxAlternateSignatureKeys 0052e484     xboxkrnl:xboxkrnl.exe
  0007:000004a8       __imp__NtQueryDirectoryFile@40 0052e488     xboxkrnl:xboxkrnl.exe
  0007:000004ac       __imp__NtQueryFullAttributesFile@8 0052e48c     xboxkrnl:xboxkrnl.exe
  0007:000004b0       __imp__FscSetCacheSize@4   0052e490     xboxkrnl:xboxkrnl.exe

@@ -270,7 +270,7 @@
 				RelativePath=".\Example_Project.cpp">
 			</File>
 			<File
-				RelativePath=".\stdafx.cpp">
+				RelativePath=".\Time.cpp">
 			</File>
 		</Filter>
 		<Filter
@@ -278,7 +278,10 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
 			<File
-				RelativePath=".\stdafx.h">
+				RelativePath=".\Example_Project.h">
+			</File>
+			<File
+				RelativePath=".\Time.h">
 			</File>
 		</Filter>
 		<File
