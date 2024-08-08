@@ -1,5 +1,8 @@
 // Example_Project.cpp : Defines the entry point for the application.
 #include "Example_Project.h"
+// #include "Input.h" BORKED ATM, NEED FIX
+
+#define CONTROL_STARTBUTTON     4
 
 //-----------------------------------------------------------------------------
 // Name: Update()

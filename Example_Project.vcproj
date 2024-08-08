@@ -20,6 +20,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="./Xbox Samples/Common/Include"
 				PreprocessorDefinitions="_DEBUG;_XBOX"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
@@ -272,6 +273,9 @@
 				RelativePath=".\Example_Project.cpp">
 			</File>
 			<File
+				RelativePath=".\Input.cpp">
+			</File>
+			<File
 				RelativePath=".\Render.cpp">
 			</File>
 			<File
@@ -289,6 +293,9 @@
 					<Tool
 						Name="VCCustomBuildTool"/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\Input.h">
 			</File>
 			<File
 				RelativePath=".\Render.h">

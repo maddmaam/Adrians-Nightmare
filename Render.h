@@ -1,4 +1,4 @@
-// Time.h : include file for Time include files
+// Render.h : include file for Render include files
 #pragma once
 
 #include <xtl.h>

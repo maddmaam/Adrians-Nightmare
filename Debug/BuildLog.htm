@@ -11,38 +11,36 @@ Build Log
 </h3>
 </pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
 Command Lines
-</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating temporary file "z:\example-retro-project\Debug\RSP000009.rsp" with contents
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating temporary file "d:\example-retro-project\Debug\RSP000035.rsp" with contents
 [
-/Od /D "_DEBUG" /D "_XBOX" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /arch:SSE /Fp"Debug/Example_Project.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /ZI /TP
-".\Render.cpp"
-".\Example_Project.cpp"
+/Od /I "./Xbox Samples/Common/Include" /D "_DEBUG" /D "_XBOX" /D "_MBCS" /Gm /EHsc /RTC1 /MTd /arch:SSE /Fp"Debug/Example_Project.pch" /Fo"Debug/" /Fd"Debug/vc70.pdb" /W3 /c /ZI /TP
+".\Input.cpp"
 ]
-Creating command line "cl.exe @"z:\example-retro-project\Debug\RSP000009.rsp" /nologo"
-Creating temporary file "z:\example-retro-project\Debug\RSP00000A.rsp" with contents
+Creating command line "cl.exe @"d:\example-retro-project\Debug\RSP000035.rsp" /nologo"
+Creating temporary file "d:\example-retro-project\Debug\RSP000036.rsp" with contents
 [
 /OUT:"Debug/Example_Project.exe" /INCREMENTAL /NOLOGO /DEBUG /PDB:"Debug/Example_Project.pdb" /MAP /subsystem:xbox /MACHINE:I386 xapilibd.lib d3d8d.lib d3dx8d.lib xgraphicsd.lib dsoundd.lib dmusicd.lib xactengd.lib xsndtrkd.lib xvoiced.lib xonlined.lib xboxkrnl.lib xbdm.lib
 ".\Debug\Example_Project.obj"
-".\Debug\Time.obj"
 ".\Debug\Render.obj"
+".\Debug\Time.obj"
+".\Debug\Input.obj"
 ]
-Creating command line "link.exe @"z:\example-retro-project\Debug\RSP00000A.rsp""
-Creating temporary file "z:\example-retro-project\Debug\RSP00000B.rsp" with contents
+Creating command line "link.exe @"d:\example-retro-project\Debug\RSP000036.rsp""
+Creating temporary file "d:\example-retro-project\Debug\RSP000037.rsp" with contents
 [
-/OUT:"z:\example-retro-project\Debug\Example_Project.xbe" /stack:"65536" /debug /nolibwarn
+/OUT:"d:\example-retro-project\Debug\Example_Project.xbe" /stack:"65536" /debug /nolibwarn /testratings:4 /testname:"Example Project"
 ".\Debug\Example_Project.exe"
 ]
-Creating command line "imagebld.exe @"z:\example-retro-project\Debug\RSP00000B.rsp" /nologo"
-Creating temporary file "z:\example-retro-project\Debug\RSP00000C.rsp" with contents
+Creating command line "imagebld.exe @"d:\example-retro-project\Debug\RSP000037.rsp" /nologo"
+Creating temporary file "d:\example-retro-project\Debug\RSP000038.rsp" with contents
 [
-"z:\example-retro-project\Debug\Example_Project.xbe" "xe:\Example_Project\Example_Project.xbe"
+"d:\example-retro-project\Debug\Example_Project.xbe" "xe:\Example_Project\Example_Project.xbe"
 ]
-Creating command line "xbecopy.exe @"z:\example-retro-project\Debug\RSP00000C.rsp" /nologo"
+Creating command line "xbecopy.exe @"d:\example-retro-project\Debug\RSP000038.rsp" /nologo"
 </pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
 Output Window
 </font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Compiling...
-Render.cpp
-Example_Project.cpp
-Generating Code...
+Input.cpp
 Linking...
 Creating Xbox Image...
 Copying files to the Xbox...
@@ -50,6 +48,6 @@ xbecopy: error X1001: Could not connect to Xbox ''
 </pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
 Results
 </font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
-Build log was saved at "file://z:\example-retro-project\Debug\BuildLog.htm"
+Build log was saved at "file://d:\example-retro-project\Debug\BuildLog.htm"
 Example_Project - 1 error(s), 0 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
 </font></table></body></html>
