@@ -3,3 +3,4 @@
 
 #include <xtl.h>
 #include "Time.h"
+#include "Render.h"

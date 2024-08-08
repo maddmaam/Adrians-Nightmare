@@ -54,7 +54,9 @@
 				Name="XboxImageTool"
 				StackSize="65536"
 				IncludeDebugInfo="TRUE"
-				NoLibWarn="TRUE"/>
+				NoLibWarn="TRUE"
+				XboxGameRating="5"
+				TitleName="Example Project"/>
 		</Configuration>
 		<Configuration
 			Name="Profile|Xbox"
@@ -270,6 +272,9 @@
 				RelativePath=".\Example_Project.cpp">
 			</File>
 			<File
+				RelativePath=".\Render.cpp">
+			</File>
+			<File
 				RelativePath=".\Time.cpp">
 			</File>
 		</Filter>
@@ -279,14 +284,19 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
 			<File
 				RelativePath=".\Example_Project.h">
+				<FileConfiguration
+					Name="Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\Render.h">
 			</File>
 			<File
 				RelativePath=".\Time.h">
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\ReadMe.txt">
-		</File>
 	</Files>
 	<Globals>
 	</Globals>
