@@ -1,5 +1,6 @@
 // Example_Project.cpp : Defines the entry point for the application.
 #include "Example_Project.h"
+#include "Input.h"
 
 //-----------------------------------------------------------------------------
 // Name: Update()
@@ -27,7 +28,7 @@ void __cdecl main()
     // Initialize Direct3D
     if( FAILED( InitD3D() ) )
         return;
-	if( FAILED( InputInit() ) )
+	if( FAILED( InitInput() ) )
         return;
 
     // Initialize the vertex buffer
