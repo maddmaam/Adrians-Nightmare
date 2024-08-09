@@ -1,3 +1,6 @@
-#pragma once
+#ifndef GLOBAL_H
+#define GLOBAL_H
 
 #include <xtl.h>
+
+#endif

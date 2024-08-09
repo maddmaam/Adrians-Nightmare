@@ -1,12 +1,11 @@
 // Time.cpp : Defines time related things //TODO
-#include <Time.h>
-#include <xtl.h>
+#include "Time.h"
 
 float			SecsPerTick;
 LARGE_INTEGER	qwTime, qwLastTime, qwElapsedTime, qwAppTime, qwElapsedAppTime;
 float			fTime, fElapsedTime, fAppTime, fElapsedAppTime, fSecsPerTick;
 
-void InitTime()
+HRESULT InitTime()
 {
     // Get the frequency of the timer
 	LARGE_INTEGER qwTicksPerSec;
@@ -20,6 +19,8 @@ void InitTime()
     qwAppTime.QuadPart        = 0;
     qwElapsedTime.QuadPart    = 0;
     qwElapsedAppTime.QuadPart = 0;
+
+	return S_OK;
 }
 
 void UpdateTime()

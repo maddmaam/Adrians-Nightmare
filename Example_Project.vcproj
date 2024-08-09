@@ -276,11 +276,21 @@
 				RelativePath=".\Input.cpp">
 			</File>
 			<File
-				RelativePath=".\Render.cpp">
+				RelativePath=".\SystemIO.cpp">
 			</File>
 			<File
 				RelativePath=".\Time.cpp">
 			</File>
+			<Filter
+				Name="Rendering"
+				Filter="">
+				<File
+					RelativePath=".\Mesh.cpp">
+				</File>
+				<File
+					RelativePath=".\Rendering\Render.cpp">
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -301,10 +311,35 @@
 				RelativePath=".\Input.h">
 			</File>
 			<File
-				RelativePath=".\Render.h">
+				RelativePath=".\SystemIO.h">
 			</File>
 			<File
 				RelativePath=".\Time.h">
+			</File>
+			<Filter
+				Name="Rendering"
+				Filter="">
+				<File
+					RelativePath=".\Mesh.h">
+				</File>
+				<File
+					RelativePath=".\Rendering\Render.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="Resources"
+			Filter="">
+			<File
+				RelativePath=".\resource.rdf">
+				<FileConfiguration
+					Name="Debug|Xbox">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="bundler &quot;$(InputPath)&quot;"
+						CommandLine="bundler &quot;$(InputPath)&quot;"
+						Outputs="$(ProjectDir)Media\$(InputName).xpr;$(ProjectDir)$(InputName).h"/>
+				</FileConfiguration>
 			</File>
 		</Filter>
 	</Files>

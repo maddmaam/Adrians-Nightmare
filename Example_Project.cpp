@@ -1,6 +1,5 @@
 // Example_Project.cpp : Defines the entry point for the application.
 #include "Example_Project.h"
-#include "Input.h"
 
 //-----------------------------------------------------------------------------
 // Name: Update()
@@ -9,15 +8,24 @@
 void Update()
 {
 
-    D3DXMATRIX matRotate;
-    D3DXMATRIX matWorld;
-    g_pd3dDevice->GetTransform( D3DTS_WORLD, &matWorld );
-    FLOAT fZRotate = -fElapsedTime*D3DX_PI*0.5f;
-    D3DXMatrixRotationYawPitchRoll( &matRotate, 0.0f, 0.0f, fZRotate );
-    D3DXMatrixMultiply( &matWorld, &matWorld, &matRotate );
-    g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld );
 }
 
+//-----------------------------------------------------------------------------
+// Name: InitGeometry()
+// Desc: Load the mesh and build the material and texture arrays
+//-----------------------------------------------------------------------------
+HRESULT InitGeometry()
+{
+    // Load the packed resource (containing the app's textures)
+    if( FAILED( LoadPackedResource( "D:\\Media\\Resource.xpr" ) ) )
+        return E_FAIL;
+
+    // Load geometry from the XBG file
+    if( FAILED( LoadXBGFile( "D:\\Media\\Tiger.xbg" ) ) )
+        return E_FAIL;
+
+    return S_OK;
+}
 
 //-----------------------------------------------------------------------------
 // Name: main()
@@ -28,13 +36,16 @@ void __cdecl main()
     // Initialize Direct3D
     if( FAILED( InitD3D() ) )
         return;
+
 	if( FAILED( InitInput() ) )
+		return;
+
+    // Initialize Time
+	if( FAILED( InitTime() ) )
         return;
 
-    // Initialize the vertex buffer
-    InitVB();
-
-    InitTime();
+	if( FAILED( InitGeometry() ) )
+        return;
 
     while( TRUE )
     {
@@ -44,11 +55,5 @@ void __cdecl main()
         Update();   
         // Render the scene
         Render();
-
-        // Present the backbuffer contents to the display
-        g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
-
     }
 }
-
-
