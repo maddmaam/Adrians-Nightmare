@@ -1,7 +1,8 @@
-
 #pragma once
 
-/*#include <XBApp.h>
+
+
+#define CONTROL_STARTBUTTON     4
 
 class ControllerInputApp : public CXBApplication 
 {
@@ -11,4 +12,8 @@ class ControllerInputApp : public CXBApplication
 
 public:
 	ControllerInputApp();
-};*/ // Comment cause borked
+};
+
+void InitInput();
+
+// Comment cause borked

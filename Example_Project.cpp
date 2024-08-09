@@ -1,8 +1,5 @@
 // Example_Project.cpp : Defines the entry point for the application.
 #include "Example_Project.h"
-// #include "Input.h" BORKED ATM, NEED FIX
-
-#define CONTROL_STARTBUTTON     4
 
 //-----------------------------------------------------------------------------
 // Name: Update()
@@ -29,6 +26,8 @@ void __cdecl main()
 {
     // Initialize Direct3D
     if( FAILED( InitD3D() ) )
+        return;
+	if( FAILED( InputInit() ) )
         return;
 
     // Initialize the vertex buffer

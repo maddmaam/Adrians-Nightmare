@@ -295,6 +295,9 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\Global.h">
+			</File>
+			<File
 				RelativePath=".\Input.h">
 			</File>
 			<File

@@ -1,7 +1,7 @@
 // Render.h : include file for Render include files
 #pragma once
 
-#include <xtl.h>
+#include "Global.h"
 
 extern LPDIRECT3DDEVICE8 g_pd3dDevice;
 
