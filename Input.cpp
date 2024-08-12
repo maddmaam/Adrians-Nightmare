@@ -1,9 +1,12 @@
 #include "Input.h"
+#include "Rendering\Render.h"
 
 #define CONTROLLER1 1
 #define CONTROLLER2 1 << 1
 #define CONTROLLER3 1 << 2
 #define CONTROLLER4 1 << 3
+
+
 
 HRESULT InitInput()
 {
@@ -11,13 +14,26 @@ HRESULT InitInput()
 	return S_OK;
 }
 
+XINPUT_GAMEPAD insertedGamePad;
+
+void GetNumber1GamePad();
+
 /**
 * Checks whether a controller has been inserted and whether the start button has been pressed
 */
 bool StartButtonPressed()
 {
-	XINPUT_GAMEPAD insertedGamePad;
+	GetNumber1GamePad();
 
+	if (insertedGamePad.wButtons & XINPUT_GAMEPAD_START) 
+	{
+		return true;
+	}
+	return false;
+}
+
+void GetNumber1GamePad()
+{
 	DWORD controllerInsertions, controllerRemovals;
 	XGetDeviceChanges(XDEVICE_TYPE_GAMEPAD, &controllerInsertions, &controllerRemovals);
 
@@ -35,10 +51,18 @@ bool StartButtonPressed()
 
 		memcpy(&insertedGamePad, &currentInputStates, sizeof(XINPUT_GAMEPAD));
 	}
+}
 
-	if (insertedGamePad.wButtons & XINPUT_GAMEPAD_START) 
-	{
-		return true;
-	}
-	return false;
+
+void RotateWorldFromController()
+{
+	FLOAT fXRotate = insertedGamePad.sThumbLX*(timeGetTime()/50.f)*D3DX_PI*0.5f;
+	FLOAT fYRotate = insertedGamePad.sThumbLY*(timeGetTime()/50.f)*D3DX_PI*0.5f;
+
+	D3DXMatrixRotationYawPitchRoll(&matWorldY, -fXRotate, -fYRotate, 0.0f);
+
+	/**
+	*	D3DXMatrixMultiply( &g_matWorld, &g_matWorld, &matRotate );
+    *   m_pd3dDevice->SetTransform( D3DTS_WORLD, &g_matWorld );
+	*/
 }

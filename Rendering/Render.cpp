@@ -7,7 +7,10 @@
 //-----------------------------------------------------------------------------
 LPDIRECT3D8             g_pD3D       = NULL; // Used to create the D3DDevice
 LPDIRECT3DDEVICE8       g_pd3dDevice = NULL; // Our rendering device
-LPDIRECT3DVERTEXBUFFER8 g_pVB        = NULL; // Buffer to hold vertices
+LPDIRECT3DVERTEXBUFFER8 g_pVB        = NULL;
+D3DXMATRIX				matWorldX;// Buffer to hold vertices
+D3DXMATRIX				matWorldY;
+D3DXMATRIX				matWorldZ;
 
 
 // A structure for our custom vertex type
@@ -73,9 +76,8 @@ HRESULT InitD3D()
 VOID SetupMatrices()
 {
     // For our world matrix, we will just leave it as the identity
-    D3DXMATRIX matWorld;
-    D3DXMatrixRotationY( &matWorld, timeGetTime()/1000.0f );
-    g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld );
+    D3DXMatrixRotationY( &matWorldY, timeGetTime()/1000.0f );
+    g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorldY );
 
     // Set up our view matrix. A view matrix can be defined given an eye point,
     // a point to lookat, and a direction for which way is up. Here, we set the
