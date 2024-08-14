@@ -1,7 +1,7 @@
 // Example_Project.cpp : Defines the entry point for the application.
 #include "Example_Project.h"
 
-
+SceneManager sceneManager;
 
 //-----------------------------------------------------------------------------
 // Name: main()
@@ -20,18 +20,19 @@ void __cdecl main()
 	if( FAILED( InitTime() ) )
         return;
 
-	GameScene MenuScene;
+	sceneManager.addScene(new StartMenuScene()); //scene 0
+	sceneManager.addScene(new GameScene()); //scene 1
 
-	if( FAILED( MenuScene.Init() ) )
-        return;
+	//sceneManager.activeScene = new GameScene();
+	sceneManager.switchScene(0);
 
     while( TRUE )
     {
         // What time is it?
         UpdateTime();
         // Update the world
-        MenuScene.Update();   
+        sceneManager.activeScene->Update();   
         // Render the scene
-        MenuScene.Render();
+        sceneManager.activeScene->Render();
     }
 }

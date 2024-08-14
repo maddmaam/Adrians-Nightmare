@@ -7,5 +7,6 @@
 #include <d3d8.h>
 
 MESH_DATA LoadXMeshFile(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename);
+LPDIRECT3DTEXTURE8 LoadTexture(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename);
 
 #endif

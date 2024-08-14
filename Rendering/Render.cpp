@@ -11,17 +11,6 @@ D3DXMATRIX				matWorldY;
 D3DXMATRIX				matWorldZ;
 
 
-// A structure for our custom vertex type
-struct CUSTOMVERTEX
-{
-    FLOAT x, y, z; // The vertex position
-    DWORD color;   // The vertex color
-};
-
-// Our custom FVF, which describes our custom vertex structure
-#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ|D3DFVF_DIFFUSE)
-
-
 //-----------------------------------------------------------------------------
 // Name: InitD3D()
 // Desc: Initializes Direct3D
@@ -66,7 +55,7 @@ HRESULT InitD3D()
 VOID SetupMatrices()
 {
     // For our world matrix, we will just leave it as the identity
-	D3DXMatrixRotationYawPitchRoll( &matWorldY, timeGetTime()/100.0f, timeGetTime()/100.0f, timeGetTime()/100.0f);
+	D3DXMatrixRotationZ( &matWorldY, 0);
 	g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorldY);
 
     // Set up our view matrix. A view matrix can be defined given an eye point,
@@ -89,4 +78,33 @@ VOID SetupMatrices()
     D3DXMATRIX matProj;
     D3DXMatrixPerspectiveFovLH( &matProj, D3DX_PI/4, 1.0f, 1.0f, 100.0f );
     g_pd3dDevice->SetTransform( D3DTS_PROJECTION, &matProj );
+}
+
+void RenderTexture(CUSTOMVERTEX vertices[], LPDIRECT3DTEXTURE8 pTexture)
+{
+	LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer;
+	VOID* pVertices;
+
+	//Create the vertex buffer from our device
+	g_pd3dDevice->CreateVertexBuffer(3 * sizeof(CUSTOMVERTEX), 0, D3DFVF_CUSTOMVERTEX, D3DPOOL_DEFAULT, &g_pVertexBuffer);
+
+	//Get a pointer to the vertex buffer vertices and lock the vertex buffer
+	g_pVertexBuffer->Lock(0, sizeof(vertices), (BYTE**)&pVertices, 0);
+
+	//Copy our stored vertices values into the vertex buffer
+    memcpy(pVertices, vertices, sizeof(vertices));
+
+	//Unlock the vertex buffer
+    g_pVertexBuffer->Unlock();
+
+	//Unlock the vertex buffer
+    g_pVertexBuffer->Unlock();
+
+	//Rendering our triangle
+    g_pd3dDevice->SetStreamSource(0, g_pVertexBuffer, sizeof(CUSTOMVERTEX));
+    g_pd3dDevice->SetVertexShader(D3DFVF_CUSTOMVERTEX);
+
+    //Set our background to use our texture buffer
+    g_pd3dDevice->SetTexture(0, pTexture);
+    g_pd3dDevice->DrawPrimitive(D3DPT_TRIANGLELIST, 0, 1);
 }

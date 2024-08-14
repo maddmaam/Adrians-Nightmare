@@ -36,3 +36,10 @@ MESH_DATA LoadXMeshFile(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename)
 
 	return mesh;
 }
+
+LPDIRECT3DTEXTURE8 LoadTexture(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename)
+{
+	LPDIRECT3DTEXTURE8 tex;
+	D3DXCreateTextureFromFile(pd3dDevice, filename, &tex);
+	return (LPDIRECT3DTEXTURE8)tex;
+}
