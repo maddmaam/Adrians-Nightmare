@@ -2,16 +2,10 @@
 #define SYSTEMIO_H
 
 #include "Global.h"
+#include "Rendering\Mesh.h"
+#include <d3dx8.h>
+#include <d3d8.h>
 
-#define resource_NUM_RESOURCES 1UL
-
-extern BYTE* g_pResourceSysMemData;
-extern BYTE* g_pResourceVidMemData;
-
-VOID* FindResourceByName( const CHAR* strName );
-
-HRESULT LoadPackedResource( const CHAR* strResourceFilename );
-
-HRESULT LoadXBGFile( const CHAR* strMeshFilename );
+MESH_DATA LoadXMeshFile(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename);
 
 #endif

@@ -50,14 +50,17 @@
 			<Tool
 				Name="VCPreLinkEventTool"/>
 			<Tool
-				Name="XboxDeploymentTool"/>
+				Name="XboxDeploymentTool"
+				ExcludedFromBuild="TRUE"/>
 			<Tool
 				Name="XboxImageTool"
+				FileName="$(TargetDir)default.xbe"
 				StackSize="65536"
 				IncludeDebugInfo="TRUE"
 				NoLibWarn="TRUE"
+				TitleID=""
 				XboxGameRating="5"
-				TitleName="Example Project"/>
+				TitleName="ExampleProject"/>
 		</Configuration>
 		<Configuration
 			Name="Profile|Xbox"
@@ -276,6 +279,9 @@
 				RelativePath=".\Input.cpp">
 			</File>
 			<File
+				RelativePath=".\Scene.cpp">
+			</File>
+			<File
 				RelativePath=".\SystemIO.cpp">
 			</File>
 			<File
@@ -285,10 +291,20 @@
 				Name="Rendering"
 				Filter="">
 				<File
-					RelativePath=".\Mesh.cpp">
+					RelativePath=".\Rendering\Mesh.cpp">
 				</File>
 				<File
 					RelativePath=".\Rendering\Render.cpp">
+				</File>
+			</Filter>
+			<Filter
+				Name="Scenes"
+				Filter="">
+				<File
+					RelativePath=".\GameScene.cpp">
+				</File>
+				<File
+					RelativePath=".\StartMenuScene.cpp">
 				</File>
 			</Filter>
 		</Filter>
@@ -298,17 +314,18 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
 			<File
 				RelativePath=".\Example_Project.h">
-				<FileConfiguration
-					Name="Debug|Xbox">
-					<Tool
-						Name="VCCustomBuildTool"/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\Global.h">
 			</File>
 			<File
 				RelativePath=".\Input.h">
+			</File>
+			<File
+				RelativePath=".\Resource.h">
+			</File>
+			<File
+				RelativePath=".\Scene.h">
 			</File>
 			<File
 				RelativePath=".\SystemIO.h">
@@ -320,10 +337,20 @@
 				Name="Rendering"
 				Filter="">
 				<File
-					RelativePath=".\Mesh.h">
+					RelativePath=".\Rendering\Mesh.h">
 				</File>
 				<File
 					RelativePath=".\Rendering\Render.h">
+				</File>
+			</Filter>
+			<Filter
+				Name="Scenes"
+				Filter="">
+				<File
+					RelativePath=".\GameScene.h">
+				</File>
+				<File
+					RelativePath=".\StartMenuScene.h">
 				</File>
 			</Filter>
 		</Filter>

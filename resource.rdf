@@ -11,8 +11,17 @@ out_prefix         resource
 
 Texture Tiger
 {
-   Source Media\tiger.bmp
+   Source Media\Tiger.bmp
    Format D3DFMT_X8R8G8B8
    Levels 1
 }
+
+/*
+Texture MenuScreen
+{
+   Source Media\MenuScreen.bmp
+   Format D3DFMT_X8R8G8B8
+   Levels 1
+}
+*/
 

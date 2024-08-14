@@ -1,6 +1,4 @@
 #include "Render.h"
-#include <xgraphics.h>
-#include "..\Mesh.h"
 
 //-----------------------------------------------------------------------------
 // Global variables
@@ -39,12 +37,11 @@ HRESULT InitD3D()
     ZeroMemory( &d3dpp, sizeof(d3dpp) );
     d3dpp.BackBufferWidth        = 640;
     d3dpp.BackBufferHeight       = 480;
-    d3dpp.BackBufferFormat       = D3DFMT_LIN_X8R8G8B8;
+    d3dpp.BackBufferFormat       = D3DFMT_X8R8G8B8;
     d3dpp.BackBufferCount        = 1;
     d3dpp.EnableAutoDepthStencil = TRUE;
-    d3dpp.AutoDepthStencilFormat = D3DFMT_D24S8;
+    d3dpp.AutoDepthStencilFormat = D3DFMT_D16;
     d3dpp.SwapEffect             = D3DSWAPEFFECT_DISCARD;
-    d3dpp.FullScreen_PresentationInterval = D3DPRESENT_INTERVAL_ONE_OR_IMMEDIATE;
 
     // Create the Direct3D device.
     if( FAILED( g_pD3D->CreateDevice( 0, D3DDEVTYPE_HAL, NULL,
@@ -52,18 +49,11 @@ HRESULT InitD3D()
                                       &d3dpp, &g_pd3dDevice ) ) )
         return E_FAIL;
 
-    // Set the projection matrix
-    D3DXMATRIX matProj;
-    D3DXMatrixPerspectiveFovLH( &matProj, D3DX_PI/4, 4.0f/3.0f, 1.0f, 200.0f );
-    g_pd3dDevice->SetTransform( D3DTS_PROJECTION, &matProj );
+    // Turn on the zbuffer
+    g_pd3dDevice->SetRenderState( D3DRS_ZENABLE, TRUE );
 
-    // Set the view matrix
-    D3DXVECTOR3 vEyePt    = D3DXVECTOR3( 0.0f, 0.0f,-7.0f );
-    D3DXVECTOR3 vLookatPt = D3DXVECTOR3( 0.0f, 0.0f, 0.0f );
-    D3DXVECTOR3 vUp       = D3DXVECTOR3( 0.0f, 1.0f, 0.0f );
-    D3DXMATRIX  matView;
-    D3DXMatrixLookAtLH( &matView, &vEyePt, &vLookatPt, &vUp );
-    g_pd3dDevice->SetTransform( D3DTS_VIEW, &matView );
+    // Turn on ambient lighting 
+    g_pd3dDevice->SetRenderState( D3DRS_AMBIENT, 0xffffffff );
 
     return S_OK;
 }
@@ -99,55 +89,4 @@ VOID SetupMatrices()
     D3DXMATRIX matProj;
     D3DXMatrixPerspectiveFovLH( &matProj, D3DX_PI/4, 1.0f, 1.0f, 100.0f );
     g_pd3dDevice->SetTransform( D3DTS_PROJECTION, &matProj );
-}
-
-//-----------------------------------------------------------------------------
-// Name: RenderFrame()
-// Desc: Renders a frame (save state, apply matrix, render children, restore).
-//-----------------------------------------------------------------------------
-HRESULT RenderFrame( LPDIRECT3DDEVICE8 pd3dDevice, XBMESH_FRAME* pFrame )
-{
-    // Apply the frame's local transform
-    D3DXMATRIX matSavedWorld, matWorld;
-    pd3dDevice->GetTransform( D3DTS_WORLD, &matSavedWorld );
-    D3DXMatrixMultiply( &matWorld, &pFrame->m_matTransform, &matSavedWorld );
-    pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld );
-
-    // Render the mesh data
-    if( pFrame->m_MeshData.m_dwNumSubsets ) 
-        RenderMesh( pd3dDevice, &pFrame->m_MeshData );
-
-    // Render any child frames
-    if( pFrame->m_pChild ) 
-        RenderFrame( pd3dDevice, pFrame->m_pChild );
-
-    // Restore the transformation matrix
-    pd3dDevice->SetTransform( D3DTS_WORLD, &matSavedWorld );
-    
-    // Render any sibling frames
-    if( pFrame->m_pNext )  
-        RenderFrame( pd3dDevice, pFrame->m_pNext );
-
-    return S_OK;
-}
-
-//-----------------------------------------------------------------------------
-// Name: Render()
-// Desc: Draws the scene
-//-----------------------------------------------------------------------------
-VOID Render()
-{
-    // Clear the backbuffer and the zbuffer
-    g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER, 
-                         D3DCOLOR_XRGB(0,0,255), 1.0f, 0 );
-    
-    // Setup the world, view, and projection matrices
-    SetupMatrices();
-
-    // Render the first frame in the mesh. This will render the entire 
-    // hierarchy (in any) of frames and meshes for the loaded geometry.
-    RenderFrame( g_pd3dDevice, g_pMeshFrames );
-
-    // Present the backbuffer contents to the display
-    g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
 }

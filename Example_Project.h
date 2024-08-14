@@ -4,8 +4,10 @@
 
 #include "Global.h"
 #include "Time.h"
-#include "Rendering\Render.h"
-#include "SystemIO.h"
 #include "Input.h"
+
+#include "Scene.h"
+#include "StartMenuScene.h"
+#include "GameScene.h"
 
 #endif

@@ -1,31 +1,7 @@
 // Example_Project.cpp : Defines the entry point for the application.
 #include "Example_Project.h"
 
-//-----------------------------------------------------------------------------
-// Name: Update()
-// Desc: Updates the world for the next frame
-//-----------------------------------------------------------------------------
-void Update()
-{
 
-}
-
-//-----------------------------------------------------------------------------
-// Name: InitGeometry()
-// Desc: Load the mesh and build the material and texture arrays
-//-----------------------------------------------------------------------------
-HRESULT InitGeometry()
-{
-    // Load the packed resource (containing the app's textures)
-    if( FAILED( LoadPackedResource( "D:\\Media\\Resource.xpr" ) ) )
-        return E_FAIL;
-
-    // Load geometry from the XBG file
-    if( FAILED( LoadXBGFile( "D:\\Media\\Tiger.xbg" ) ) )
-        return E_FAIL;
-
-    return S_OK;
-}
 
 //-----------------------------------------------------------------------------
 // Name: main()
@@ -44,7 +20,9 @@ void __cdecl main()
 	if( FAILED( InitTime() ) )
         return;
 
-	if( FAILED( InitGeometry() ) )
+	GameScene MenuScene;
+
+	if( FAILED( MenuScene.Init() ) )
         return;
 
     while( TRUE )
@@ -52,8 +30,8 @@ void __cdecl main()
         // What time is it?
         UpdateTime();
         // Update the world
-        Update();   
+        MenuScene.Update();   
         // Render the scene
-        Render();
+        MenuScene.Render();
     }
 }
