@@ -1,8 +1,6 @@
 // Example_Project.cpp : Defines the entry point for the application.
 #include "Example_Project.h"
 
-SceneManager sceneManager;
-
 //-----------------------------------------------------------------------------
 // Name: main()
 // Desc: The application's entry point

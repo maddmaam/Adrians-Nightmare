@@ -3,6 +3,8 @@
 
 #include "Global.h"
 #include "Scene.h"
+#include "Time.h"
+#include "Input.h"
 #include "Rendering\Render.h"
 #include "SystemIO.h"
 

@@ -24,4 +24,6 @@ public:
 	void switchScene(int sceneID);
 };
 
+extern SceneManager sceneManager;
+
 #endif

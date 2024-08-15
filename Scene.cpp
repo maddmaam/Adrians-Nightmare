@@ -12,3 +12,5 @@ void SceneManager::switchScene(int sceneID) {
         return;
 
 }
+
+SceneManager sceneManager;

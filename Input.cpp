@@ -57,6 +57,8 @@ void GetNumber1GamePad()
 
 void RotateWorldFromController()
 {
+	GetNumber1GamePad();
+
 	FLOAT fXRotate = insertedGamePad.sThumbLX*(timeGetTime()/50.f)*D3DX_PI*0.5f;
 	FLOAT fYRotate = insertedGamePad.sThumbLY*(timeGetTime()/50.f)*D3DX_PI*0.5f;
 

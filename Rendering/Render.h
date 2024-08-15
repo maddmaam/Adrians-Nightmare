@@ -13,20 +13,35 @@ extern D3DXMATRIX matWorldX;
 extern D3DXMATRIX matWorldY;
 extern D3DXMATRIX matWorldZ;
 
+extern LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer;
+
+#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ|D3DFVF_DIFFUSE|D3DFVF_TEX1)
+
 // A structure for our custom vertex type
 struct CUSTOMVERTEX
 {
+	/*CUSTOMVERTEX() {}
+	CUSTOMVERTEX(FLOAT startX, FLOAT startY, FLOAT startZ, DWORD startColour, FLOAT startTu, FLOAT startTv)
+	{
+		x = startX;
+		y = startY;
+		z = startZ;
+		colour = startColour;
+		tu = startTu;
+		tv = startTv;
+	}
+	~CUSTOMVERTEX() {}*/
+
     FLOAT x, y, z; // The transformed position for the vertex.
     DWORD colour; // The vertex colour.
     FLOAT tu, tv;
 };
 
-#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ|D3DFVF_DIFFUSE|D3DFVF_TEX1)
 
 HRESULT InitD3D();
 
 VOID SetupMatrices();
 
-void RenderTexture(CUSTOMVERTEX vertices[], LPDIRECT3DTEXTURE8 pTexture);
+void RenderTexture(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture);
 
 #endif
