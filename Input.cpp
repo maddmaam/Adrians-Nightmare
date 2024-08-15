@@ -49,6 +49,7 @@ void GetNumber1GamePad()
 		XINPUT_STATE currentInputStates;
 		XInputGetState(pluggedGamePad, &currentInputStates);
 
+		// Copy the input states to InsertedGamePad
 		memcpy(&insertedGamePad, &currentInputStates, sizeof(XINPUT_GAMEPAD));
 	}
 }
@@ -59,7 +60,9 @@ void RotateWorldFromController()
 	FLOAT fXRotate = insertedGamePad.sThumbLX*(timeGetTime()/50.f)*D3DX_PI*0.5f;
 	FLOAT fYRotate = insertedGamePad.sThumbLY*(timeGetTime()/50.f)*D3DX_PI*0.5f;
 
+	// This may just work now im not fully sure!
 	D3DXMatrixRotationYawPitchRoll(&matWorldY, -fXRotate, -fYRotate, 0.0f);
+	g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorldY); 
 
 	/**
 	*	D3DXMatrixMultiply( &g_matWorld, &g_matWorld, &matRotate );

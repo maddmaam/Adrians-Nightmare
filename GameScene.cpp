@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "Input.h"
 
 MESH_DATA mesh;
 
@@ -29,6 +30,8 @@ void GameScene::Render()
     
     // Setup the world, view, and projection matrices
     SetupMatrices();
+
+	RotateWorldFromController();
 
 	RenderMesh(g_pd3dDevice, mesh);
 

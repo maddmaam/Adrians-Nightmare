@@ -54,10 +54,6 @@ HRESULT InitD3D()
 //-----------------------------------------------------------------------------
 VOID SetupMatrices()
 {
-    // For our world matrix, we will just leave it as the identity
-	D3DXMatrixRotationZ( &matWorldY, 0);
-	g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorldY);
-
     // Set up our view matrix. A view matrix can be defined given an eye point,
     // a point to lookat, and a direction for which way is up. Here, we set the
     // eye five units back along the z-axis and up three units, look at the 
