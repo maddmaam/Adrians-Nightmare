@@ -43,7 +43,7 @@ void StartMenuScene::Render()
 
 void StartMenuScene::Update()
 {
-	//if (StartButtonPressed()) {
-		//sceneManager.switchScene(1);
-	//}
+	if (StartButtonPressed()) {
+		sceneManager.switchScene(1);
+	}
 }

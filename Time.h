@@ -5,7 +5,7 @@
 
 extern float SecsPerTick;
 extern LARGE_INTEGER qwTime, qwLastTime, qwElapsedTime, qwAppTime, qwElapsedAppTime;
-extern float fTime, fElapsedTime, fAppTime, fElapsedAppTime;
+extern float fTime, fElapsedTime, fAppTime, fElapsedAppTime, fSecsPerTick;
 
 HRESULT InitTime();
 

@@ -1,12 +1,15 @@
 #include "Input.h"
 #include "Rendering\Render.h"
+#include "Time.h"
 
 #define CONTROLLER1 1
 #define CONTROLLER2 1 << 1
 #define CONTROLLER3 1 << 2
 #define CONTROLLER4 1 << 3
 
+XINPUT_GAMEPAD insertedGamePad;
 
+void GetNumber1GamePad();
 
 HRESULT InitInput()
 {
@@ -14,9 +17,7 @@ HRESULT InitInput()
 	return S_OK;
 }
 
-XINPUT_GAMEPAD insertedGamePad;
 
-void GetNumber1GamePad();
 
 /**
 * Checks whether a controller has been inserted and whether the start button has been pressed
@@ -59,8 +60,11 @@ void RotateWorldFromController()
 {
 	GetNumber1GamePad();
 
-	FLOAT fXRotate = insertedGamePad.sThumbLX*(timeGetTime()/50.f)*D3DX_PI*0.5f;
-	FLOAT fYRotate = insertedGamePad.sThumbLY*(timeGetTime()/50.f)*D3DX_PI*0.5f;
+	static FLOAT fXRotate = 0; 
+	static FLOAT fYRotate = 0; 
+
+	fXRotate += insertedGamePad.sThumbRX *fSecsPerTick*D3DX_PI*1000.f;
+	fYRotate += insertedGamePad.sThumbRY *fSecsPerTick*D3DX_PI*1000.f;
 
 	// This may just work now im not fully sure!
 	D3DXMatrixRotationYawPitchRoll(&matWorldY, -fXRotate, -fYRotate, 0.0f);

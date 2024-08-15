@@ -9,7 +9,7 @@ MESH_DATA mesh;
 //-----------------------------------------------------------------------------
 HRESULT GameScene::Init()
 {
-	mesh = LoadXMeshFile(g_pd3dDevice, "D:\\Media\\Tiger.x");
+	mesh = LoadXMeshFile(g_pd3dDevice, "D:\\Media\\tiger.x");
 
     // Load geometry from the XBG file
     //if( FAILED( LoadXBGFile( "D:\\Media\\Tiger.xbg" ) ) )
@@ -31,9 +31,9 @@ void GameScene::Render()
     // Setup the world, view, and projection matrices
     SetupMatrices();
 
-	RotateWorldFromController();
-
 	RenderMesh(g_pd3dDevice, mesh);
+
+	RotateWorldFromController();
 
     // Present the backbuffer contents to the display
     g_pd3dDevice->Present( NULL, NULL, NULL, NULL );

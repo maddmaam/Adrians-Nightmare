@@ -41,7 +41,7 @@ HRESULT InitD3D()
     g_pd3dDevice->SetRenderState( D3DRS_ZENABLE, TRUE );
 
 	g_pd3dDevice->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
-    g_pd3dDevice->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_DIFFUSE);
+    g_pd3dDevice->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
 
 	g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
 
