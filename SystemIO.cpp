@@ -10,7 +10,7 @@ MESH_DATA LoadXMeshFile(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename)
 {
 	MESH_DATA mesh;
 
-	D3DXLoadMeshFromX( filename, D3DXMESH_SYSTEMMEM, pd3dDevice, NULL, &mesh.pMtrlBuffer, &mesh.numMaterials, &mesh.mesh);
+	D3DXLoadMeshFromX( filename, D3DXMESH_VB_DYNAMIC, pd3dDevice, NULL, &mesh.pMtrlBuffer, &mesh.numMaterials, &mesh.mesh);
 	
     //Create two arrays. One to hold the materials and only to hold the textures
     mesh.pMeshMaterials = new D3DMATERIAL8[mesh.numMaterials];
