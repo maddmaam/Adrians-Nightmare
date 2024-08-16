@@ -4,6 +4,7 @@
 #include "..\Global.h"
 #include <d3dx8.h>
 #include <d3d8.h>
+#include "Render.h"
 
 struct MESH_DATA 
 {
@@ -13,6 +14,8 @@ struct MESH_DATA
 	LPDIRECT3DTEXTURE8* pMeshTextures;
 	D3DXMATERIAL* matMaterials;
 	LPD3DXMESH mesh;
+
+	D3DXMATRIX matrix;
 };
 
 void RenderMesh(LPDIRECT3DDEVICE8 pd3dDevice, MESH_DATA mesh);

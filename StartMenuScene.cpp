@@ -2,12 +2,12 @@
 
 CUSTOMVERTEX cvVertices[] =
 {
-	{ -1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(0,0,0), 0.0f, 1.0f },  //Front face
-    { -1.0f,  1.0f, 0.0f, D3DCOLOR_XRGB(0,0,0), 0.0f, 0.0f },
-    {  1.0f,  1.0f, 0.0f, D3DCOLOR_XRGB(0,0,0), 1.0f, 0.0f },
-    {  1.0f,  1.0f, 0.0f, D3DCOLOR_XRGB(0,0,0), 1.0f, 0.0f },
-    {  1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(0,0,0), 1.0f, 1.0f },
-    { -1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(0,0,0), 0.0f, 1.0f }
+	{ -1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 0.0f, 1.0f },  //Front face
+    { -1.0f,  1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 0.0f, 0.0f },
+    {  1.0f,  1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 1.0f, 0.0f },
+    {  1.0f,  1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 1.0f, 0.0f },
+    {  1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 1.0f, 1.0f },
+    { -1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 0.0f, 1.0f }
 };
 LPDIRECT3DTEXTURE8 Texture;
 
@@ -17,7 +17,7 @@ LPDIRECT3DTEXTURE8 Texture;
 //-----------------------------------------------------------------------------
 HRESULT StartMenuScene::Init()
 {
-	Texture = LoadTexture(g_pd3dDevice, "D:\\Media\\mainTexture.bmp");	
+	Texture = LoadTexture(g_pd3dDevice, "D:\\Media\\startMenu.bmp");	
 
 	return S_OK;
 }

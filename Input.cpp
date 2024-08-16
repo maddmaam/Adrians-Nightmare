@@ -2,6 +2,8 @@
 #include "Rendering\Render.h"
 #include "Time.h"
 
+#include <stdio.h>
+
 #define CONTROLLER1 1
 #define CONTROLLER2 1 << 1
 #define CONTROLLER3 1 << 2
@@ -51,27 +53,18 @@ void GetNumber1GamePad()
 		XInputGetState(pluggedGamePad, &currentInputStates);
 
 		// Copy the input states to InsertedGamePad
-		memcpy(&insertedGamePad, &currentInputStates, sizeof(XINPUT_GAMEPAD));
+		memcpy(&insertedGamePad, &currentInputStates.Gamepad, sizeof(XINPUT_GAMEPAD));
 	}
 }
 
-
-void RotateWorldFromController()
+inputVector getControllerAxis()
 {
 	GetNumber1GamePad();
 
-	static FLOAT fXRotate = 0; 
-	static FLOAT fYRotate = 0; 
+	inputVector out;
 
-	fXRotate += insertedGamePad.sThumbRX *fSecsPerTick*D3DX_PI*1000.f;
-	fYRotate += insertedGamePad.sThumbRY *fSecsPerTick*D3DX_PI*1000.f;
+	out.x = insertedGamePad.sThumbRX *fSecsPerTick*D3DX_PI*1000.f;
+	out.y = insertedGamePad.sThumbRY *fSecsPerTick*D3DX_PI*500.f;
 
-	// This may just work now im not fully sure!
-	D3DXMatrixRotationYawPitchRoll(&matWorldY, -fXRotate, -fYRotate, 0.0f);
-	g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorldY); 
-
-	/**
-	*	D3DXMatrixMultiply( &g_matWorld, &g_matWorld, &matRotate );
-    *   m_pd3dDevice->SetTransform( D3DTS_WORLD, &g_matWorld );
-	*/
+	return out;
 }

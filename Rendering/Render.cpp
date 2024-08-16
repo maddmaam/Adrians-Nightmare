@@ -1,4 +1,6 @@
 #include "Render.h"
+#include <xfont.h>
+#include <stdio.h>
 
 //-----------------------------------------------------------------------------
 // Global variables
@@ -6,11 +8,7 @@
 LPDIRECT3D8             g_pD3D       = NULL; // Used to create the D3DDevice
 LPDIRECT3DDEVICE8       g_pd3dDevice = NULL; // Our rendering device
 LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer = NULL;
-D3DXMATRIX				matWorldX;// Buffer to hold vertices
-D3DXMATRIX				matWorldY;
-D3DXMATRIX				matWorldZ;
-
-#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ|D3DFVF_DIFFUSE|D3DFVF_TEX1)
+D3DXMATRIX				matrixWorld;// Buffer to hold vertices
 
 //-----------------------------------------------------------------------------
 // Name: InitD3D()
@@ -40,14 +38,21 @@ HRESULT InitD3D()
     // Turn on the zbuffer
     g_pd3dDevice->SetRenderState( D3DRS_ZENABLE, TRUE );
 
+	g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
+
 	g_pd3dDevice->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
     g_pd3dDevice->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
 
-	g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
+
 
     return S_OK;
 }
 
+VOID InitLighting() 
+{
+	g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
+	g_pd3dDevice->SetRenderState(D3DRS_AMBIENT, D3DCOLOR_XRGB(255,255,255));
+}
 
 //-----------------------------------------------------------------------------
 // Name: SetupMatrices()
@@ -59,8 +64,8 @@ VOID SetupMatrices()
     // a point to lookat, and a direction for which way is up. Here, we set the
     // eye five units back along the z-axis and up three units, look at the 
     // origin, and define "up" to be in the y-direction.
-    const D3DXVECTOR3 vEyePos( 0.0f, 0.0f, -8.0f );
-    const D3DXVECTOR3 vLookAt( 0.0f, 0.0f, 0.0f );
+    const D3DXVECTOR3 vEyePos( 0.0f, 2.0f, -12.0f );
+    const D3DXVECTOR3 vLookAt( 0.0f, 2.0f, 0.0f );
     const D3DXVECTOR3 vUp    ( 0.0f, 1.0f, 0.0f );
     D3DXMATRIX matView;
     D3DXMatrixLookAtLH( &matView, &vEyePos, &vLookAt, &vUp );
@@ -103,4 +108,29 @@ void RenderTexture(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture)
     g_pd3dDevice->DrawPrimitive(D3DPT_TRIANGLELIST, 0, 2);
 
 	g_pVertexBuffer->Release();
+}
+
+void DisplayText(char * szStr, long xpos, long ypos)
+{
+    //Create some DirectX text buffers
+    XFONT*                        pFont; 
+    LPDIRECT3DSURFACE8      pBackBuffer;
+
+	//InitialiseFonts
+	g_pd3dDevice->GetBackBuffer( 0,D3DBACKBUFFER_TYPE_MONO,&pBackBuffer);
+
+    XFONT_OpenDefaultFont( &pFont );
+
+    WCHAR szbuff[200] = {0};
+    swprintf(szbuff, L"%S", szStr);
+
+    pFont->SetTextColor(D3DCOLOR_XRGB(30,255,20));
+
+    //Display our text.
+    pFont->TextOut( pBackBuffer, szbuff, -1, (long)xpos, (long)ypos );
+
+
+    //Release our TextBuffers
+    pFont->Release();
+    pBackBuffer->Release();
 }

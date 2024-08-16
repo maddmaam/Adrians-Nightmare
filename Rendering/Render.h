@@ -9,9 +9,7 @@
 #include "Mesh.h"
 
 extern LPDIRECT3DDEVICE8 g_pd3dDevice;
-extern D3DXMATRIX matWorldX;
-extern D3DXMATRIX matWorldY;
-extern D3DXMATRIX matWorldZ;
+extern D3DXMATRIX matrixWorld;
 
 extern LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer;
 
@@ -40,8 +38,14 @@ struct CUSTOMVERTEX
 
 HRESULT InitD3D();
 
+VOID InitLighting();
+
 VOID SetupMatrices();
 
 void RenderTexture(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture);
+
+VOID createLight();
+
+void DisplayText(char * szStr, long xpos=100, long ypos=100 );
 
 #endif

@@ -34,6 +34,8 @@ MESH_DATA LoadXMeshFile(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename)
         };
     }
 
+	D3DXMatrixIdentity(&mesh.matrix);
+
 	return mesh;
 }
 
