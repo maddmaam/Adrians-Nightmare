@@ -18,7 +18,7 @@ void CSound::Create(char* filename)
 {
 	if ((m_pLoader == NULL) && (m_pPerformance == NULL))
 	{
-		DisplayText("Setting Up Sound", 100L, 100L);
+		DisplayText("Setting Up Sound", 100L, 50L);
 		SetupSound();
 	}
 	LoadSound(filename);
@@ -31,7 +31,7 @@ void CSound::LoadSound(LPSTR filename)
 
 void CSound::PlaySound()
 {
-	//m_pPerformance->PlaySegmentEx( m_pSoundSegment, NULL, NULL, 0, 0, NULL, NULL, NULL );
+	m_pPerformance->PlaySegmentEx( m_pSoundSegment, NULL, NULL, 0, 0, NULL, NULL, NULL );
 }
 
 void CSound::SetupSound()
@@ -41,8 +41,8 @@ void CSound::SetupSound()
 
 	IDirectMusicHeap* pPhysicalHeap;
 	DirectMusicCreateDefaultPhysicalHeap(&pPhysicalHeap);
-
-	DirectMusicInitializeEx( pNormalHeap, pPhysicalHeap, MyFactory);
+	//pNormalHeap, pPhysicalHeap, MyFactory
+	DirectMusicInitialize();
 
 	pNormalHeap->Release();
 	pPhysicalHeap->Release();
