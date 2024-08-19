@@ -2,6 +2,8 @@
 #ifndef _SOUND_H_
 #define _SOUND_H_
 
+#include <stdio.h>
+
 #include <xtl.h>
 #include <DMusicI.h>
 
@@ -21,6 +23,8 @@ public:
 protected:
 	static IDirectMusicLoader* m_pLoader;
 	static IDirectMusicPerformance8* m_pPerformance;
+	static IDirectMusicAudioPath8* m_pMusicAudioPath;
+	static IDirectMusicAudioPath8*   m_p3DAudioPath1;
 
 	void LoadSound(char* filename);
 	void SetupSound();

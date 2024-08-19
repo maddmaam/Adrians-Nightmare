@@ -19,6 +19,23 @@ HRESULT StartMenuScene::Init()
 {
 	Texture = LoadTexture(g_pd3dDevice, "D:\\Media\\startMenu.bmp");	
 
+	//TEMP
+	g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(150,0,0), 1.0f, 0 );
+	g_pd3dDevice->BeginScene();
+
+	//SetupMatrices();
+
+	RenderTexture(cvVertices, Texture);
+
+	g_Sound.Create("D:\\Media\\becky.wma");
+	g_Sound.PlaySound();
+
+	g_pd3dDevice->EndScene();
+    // Present the backbuffer contents to the display
+    g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
+
+	
+
 	return S_OK;
 }
 
@@ -29,16 +46,7 @@ HRESULT StartMenuScene::Init()
 void StartMenuScene::Render()
 {
 	// Clear the backbuffer and the zbuffer
-    g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(150,0,0), 1.0f, 0 );
-	g_pd3dDevice->BeginScene();
-
-	//SetupMatrices();
-
-	RenderTexture(cvVertices, Texture);
-
-	g_pd3dDevice->EndScene();
-    // Present the backbuffer contents to the display
-    g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
+	//DisplayText("TEST", 10L, 10L);
 }
 
 void StartMenuScene::Update()

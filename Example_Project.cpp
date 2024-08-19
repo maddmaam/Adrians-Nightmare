@@ -18,7 +18,10 @@ void __cdecl main()
 	if( FAILED( InitTime() ) )
         return;
 
-	sceneManager.addScene(new StartMenuScene()); //scene 0
+	StartMenuScene StartMenu;
+	StartMenuScene* StartMenuPtr = &StartMenu;
+
+	sceneManager.addScene(StartMenuPtr); //scene 0
 	sceneManager.addScene(new GameScene()); //scene 1
 
 	//sceneManager.activeScene = new GameScene();
