@@ -15,7 +15,7 @@ protected:
 
 public:
 	CSound();
-	void Create(char* filename);
+	void Create(LPSTR filename);
 	void PlaySound();
 	void Release();
 	void StopSound();

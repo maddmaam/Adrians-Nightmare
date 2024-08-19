@@ -27,14 +27,13 @@ HRESULT StartMenuScene::Init()
 
 	RenderTexture(cvVertices, Texture);
 
-	g_Sound.Create("D:\\Media\\becky.wma");
-	g_Sound.PlaySound();
+	g_Sound.Create("becky.wma");
 
 	g_pd3dDevice->EndScene();
     // Present the backbuffer contents to the display
     g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
 
-	
+	g_Sound.PlaySound();
 
 	return S_OK;
 }
@@ -46,7 +45,7 @@ HRESULT StartMenuScene::Init()
 void StartMenuScene::Render()
 {
 	// Clear the backbuffer and the zbuffer
-	//DisplayText("TEST", 10L, 10L);
+
 }
 
 void StartMenuScene::Update()

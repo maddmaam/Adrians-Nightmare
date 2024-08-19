@@ -1,5 +1,6 @@
 #include "Sound.h"
 #include "Rendering\Render.h"
+#include "myfactory.h"
 
 IDirectMusicLoader* CSound::m_pLoader = NULL;
 IDirectMusicPerformance8* CSound::m_pPerformance = NULL;
@@ -10,6 +11,7 @@ CSound::CSound(void)
 {
 	m_pLoader = NULL;
 	m_pPerformance = NULL;
+	m_pSoundSegment = NULL;
 }
 
 void CSound::Create(char* filename)
@@ -22,15 +24,14 @@ void CSound::Create(char* filename)
 	LoadSound(filename);
 }
 
-void CSound::LoadSound(char* filename)
+void CSound::LoadSound(LPSTR filename)
 {
-	m_pLoader->LoadObjectFromFile(CLSID_DirectMusicSegment, IID_IDirectMusicSegment8, filename, (VOID**) &m_pSoundSegment);
+	m_pLoader->LoadObjectFromFile(CLSID_DirectMusicSegment, IID_IDirectMusicSegment8, filename, (VOID**)&m_pSoundSegment);
 }
 
 void CSound::PlaySound()
 {
-	m_pPerformance->PlaySegmentEx( m_pSoundSegment, NULL, NULL, DMUS_SEGF_SECONDARY,
-                                               0, NULL, NULL, m_p3DAudioPath1 );
+	//m_pPerformance->PlaySegmentEx( m_pSoundSegment, NULL, NULL, 0, 0, NULL, NULL, NULL );
 }
 
 void CSound::SetupSound()
@@ -41,25 +42,18 @@ void CSound::SetupSound()
 	IDirectMusicHeap* pPhysicalHeap;
 	DirectMusicCreateDefaultPhysicalHeap(&pPhysicalHeap);
 
-	DirectMusicInitializeEx( pNormalHeap, pPhysicalHeap, &DirectMusicDefaultFactory);
+	DirectMusicInitializeEx( pNormalHeap, pPhysicalHeap, MyFactory);
 
 	pNormalHeap->Release();
 	pPhysicalHeap->Release();
 
-	DirectMusicCreateInstance( CLSID_DirectMusicLoader, NULL, IID_IDirectMusicLoader8, (VOID**) &m_pLoader);
-
-	DirectMusicCreateInstance(CLSID_DirectMusicPerformance, NULL, IID_IDirectMusicPerformance8, (VOID**) &m_pPerformance);
+	DirectMusicCreateInstance( CLSID_DirectMusicLoader, NULL, IID_IDirectMusicLoader8, (VOID**)&m_pLoader);
+	DirectMusicCreateInstance(CLSID_DirectMusicPerformance, NULL, IID_IDirectMusicPerformance8, (VOID**)&m_pPerformance);
 
 	m_pPerformance->InitAudioX( DMUS_APATH_SHARED_STEREOPLUSREVERB, 64, 128, 0);
 
-	m_pPerformance->GetDefaultAudioPath( &m_pMusicAudioPath );
+	m_pLoader->SetSearchDirectory( GUID_DirectMusicAllTypes, "D:\\Media", FALSE );
 
-	m_pMusicAudioPath->SetVolume( (100*100)-10000, 0 );
-
-	DirectSoundUseLightHRTF();
-
-	m_pPerformance->CreateStandardAudioPath ( DMUS_APATH_DYNAMIC_3D, 64,
-                                             TRUE, &m_p3DAudioPath1 );
 }
 
 void CSound::Release()

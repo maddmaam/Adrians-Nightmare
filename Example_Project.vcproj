@@ -325,6 +325,9 @@
 				RelativePath=".\Input.h">
 			</File>
 			<File
+				RelativePath=".\myfactory.h">
+			</File>
+			<File
 				RelativePath=".\Resource.h">
 			</File>
 			<File
