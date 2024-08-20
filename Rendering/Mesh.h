@@ -15,7 +15,8 @@ struct MESH_DATA
 	D3DXMATERIAL* matMaterials;
 	LPD3DXMESH mesh;
 
-	D3DXMATRIX matrix;
+	D3DXMATRIX translationMatrix;
+	D3DXMATRIX rotationMatrix;
 };
 
 void RenderMesh(LPDIRECT3DDEVICE8 pd3dDevice, MESH_DATA mesh);

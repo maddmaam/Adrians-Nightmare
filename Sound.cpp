@@ -2,36 +2,76 @@
 #include "Rendering\Render.h"
 #include "myfactory.h"
 
-IDirectMusicLoader* CSound::m_pLoader = NULL;
-IDirectMusicPerformance8* CSound::m_pPerformance = NULL;
-IDirectMusicAudioPath8* CSound::m_pMusicAudioPath = NULL;
-IDirectMusicAudioPath8*   CSound::m_p3DAudioPath1 = NULL;
-
 CSound::CSound(void)
 {
-	m_pLoader = NULL;
-	m_pPerformance = NULL;
 	m_pSoundSegment = NULL;
+	m_pPerformance = NULL;
 }
 
 void CSound::Create(char* filename)
 {
-	if ((m_pLoader == NULL) && (m_pPerformance == NULL))
+	if (g_pLoader == NULL)
 	{
-		DisplayText("Setting Up Sound", 100L, 50L);
 		SetupSound();
+	}
+	if(m_pPerformance == NULL)
+	{
+		SetupPerformer();
 	}
 	LoadSound(filename);
 }
 
 void CSound::LoadSound(LPSTR filename)
 {
-	m_pLoader->LoadObjectFromFile(CLSID_DirectMusicSegment, IID_IDirectMusicSegment8, filename, (VOID**)&m_pSoundSegment);
+	HRESULT result;
+	if( FAILED(result = g_pLoader->LoadObjectFromFile(CLSID_DirectMusicSegment, IID_IDirectMusicSegment8 , filename, (VOID**)&m_pSoundSegment)))
+	{
+		char szbuff[100];
+		sprintf(szbuff, "File Load Failed: %x", result);
+		DisplayText(szbuff, 100L, 70L);
+	}
 }
 
-void CSound::PlaySound()
+void CSound::PlaySound(IDirectMusicAudioPath8* path)
 {
-	m_pPerformance->PlaySegmentEx( m_pSoundSegment, NULL, NULL, 0, 0, NULL, NULL, NULL );
+	HRESULT result;
+	if( FAILED(result = m_pPerformance->PlaySegmentEx( m_pSoundSegment, NULL, NULL, 0, 0, &m_pSegmentState, NULL, path)))
+	{
+		char szbuff[100];
+		sprintf(szbuff, "Play Segment Failed: %x", result);
+		DisplayText(szbuff, 100L, 70L);
+	}
+
+	
+}
+HRESULT CSound::isPlayingRaw()
+{
+	return m_pPerformance->IsPlaying(m_pSoundSegment, NULL);
+}
+
+bool CSound::isPlaying()
+{
+	if(m_pPerformance->IsPlaying(m_pSoundSegment, NULL) == 1) {
+		return true;
+	}
+	return false;
+}
+
+void CSound::setLoop(DWORD dwRepeats)
+{
+	m_pSoundSegment->SetRepeats(dwRepeats);
+}
+
+void CSound::SetupPerformer()
+{
+	DirectMusicCreateInstance(CLSID_DirectMusicPerformance, NULL, IID_IDirectMusicPerformance8, (VOID**)&m_pPerformance);
+	if( FAILED(m_pPerformance->InitAudioX(DMUS_APATH_SHARED_STEREOPLUSREVERB, 32, 128, 0)))
+	{
+		DisplayText("InitAudioX Failed", 100L, 60L);
+	}
+	
+	m_pPerformance->GetDefaultAudioPath( &g_MusicAudioPath );
+	m_pPerformance->CreateStandardAudioPath(DMUS_APATH_SHARED_STEREOPLUSREVERB, 32, TRUE, &g_SfxPath);
 }
 
 void CSound::SetupSound()
@@ -41,18 +81,16 @@ void CSound::SetupSound()
 
 	IDirectMusicHeap* pPhysicalHeap;
 	DirectMusicCreateDefaultPhysicalHeap(&pPhysicalHeap);
+
 	//pNormalHeap, pPhysicalHeap, MyFactory
-	DirectMusicInitialize();
+	DirectMusicInitializeEx(pNormalHeap, pPhysicalHeap, MyFactory );
 
 	pNormalHeap->Release();
 	pPhysicalHeap->Release();
 
-	DirectMusicCreateInstance( CLSID_DirectMusicLoader, NULL, IID_IDirectMusicLoader8, (VOID**)&m_pLoader);
-	DirectMusicCreateInstance(CLSID_DirectMusicPerformance, NULL, IID_IDirectMusicPerformance8, (VOID**)&m_pPerformance);
+	DirectMusicCreateInstance(CLSID_DirectMusicLoader, NULL, IID_IDirectMusicLoader8, (VOID**)&g_pLoader);
 
-	m_pPerformance->InitAudioX( DMUS_APATH_SHARED_STEREOPLUSREVERB, 64, 128, 0);
-
-	m_pLoader->SetSearchDirectory( GUID_DirectMusicAllTypes, "D:\\Media", FALSE );
+	g_pLoader->SetSearchDirectory(GUID_DirectMusicAllTypes, "D:\\Media\\", FALSE); 
 
 }
 

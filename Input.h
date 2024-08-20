@@ -4,14 +4,17 @@
 
 HRESULT InitInput();
 
-struct inputVector {
-	float x;
-	float y;
+struct inputVectors {
+	float lX;
+	float lY;
+	float rX;
+	float rY;
 };
 
 bool StartButtonPressed();
+bool buttonPressed(int button);
 
-inputVector getControllerAxis();
+inputVectors getControllerAxis();
 
 void RotateWorldFromController();
 

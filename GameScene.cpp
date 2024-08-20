@@ -11,10 +11,11 @@ CUSTOMVERTEX groundVertices[] =
     { -30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 10.0f }
 };
 
-MESH_DATA mesh;
+MESH_DATA adrianMesh;
+MESH_DATA cfCardMesh;
 LPDIRECT3DTEXTURE8 groundTexture;
 
-inputVector screenRotation;
+inputVectors screenRotation;
 
 //-----------------------------------------------------------------------------
 // Name: Init()
@@ -22,16 +23,19 @@ inputVector screenRotation;
 //-----------------------------------------------------------------------------
 HRESULT GameScene::Init()
 {
-	mesh = LoadXMeshFile(g_pd3dDevice, "D:\\Media\\adrian.x");
+	adrianMesh = LoadXMeshFile(g_pd3dDevice, "D:\\Media\\adrian.x");
+	cfCardMesh = LoadXMeshFile(g_pd3dDevice, "D:\\Media\\cfcard.x");
+	
+	D3DXMatrixTranslation(&cfCardMesh.translationMatrix, 5, 1, 0);
+
 	groundTexture = LoadTexture(g_pd3dDevice, "D:\\Media\\grass.bmp");
 	
 	InitLighting();
 
 	D3DXMatrixIdentity(&matrixWorld);
-	// Load geometry from the XBG file
-    //if( FAILED( LoadXBGFile( "D:\\Media\\Tiger.xbg" ) ) )
-    //    return E_FAIL;
 	
+	adrianCry.Create("adrianCry.wav");
+
 	return S_OK;
 }
 
@@ -50,18 +54,19 @@ void GameScene::Render()
 
 	//ground
 
-	screenRotation.x += getControllerAxis().x;
-	screenRotation.y += getControllerAxis().y;
+	screenRotation.rX += getControllerAxis().lX * 2;
+	screenRotation.rY += getControllerAxis().lY;
 
-	if(screenRotation.y < -1.0)
-		screenRotation.y = -0.99f;
-	if(screenRotation.y > 0.1)
-		screenRotation.y = 0.09f;
+	if(screenRotation.rY < -1.0)
+		screenRotation.rY = -1.0f;
+	if(screenRotation.rY > 0.1)
+		screenRotation.rY = 0.1f;
 
-	D3DXMatrixRotationYawPitchRoll(&matrixWorld, screenRotation.x, cos(screenRotation.x) * screenRotation.y, sin(screenRotation.x) * screenRotation.y);
+	D3DXMatrixRotationYawPitchRoll(&matrixWorld, screenRotation.rX, cos(screenRotation.rX) * screenRotation.rY, sin(screenRotation.rX) * screenRotation.rY);
 	g_pd3dDevice->SetTransform( D3DTS_WORLD, &matrixWorld); 
 	
-	RenderMesh(g_pd3dDevice, mesh);
+	RenderMesh(g_pd3dDevice, adrianMesh);
+	RenderMesh(g_pd3dDevice, cfCardMesh);
 
 	RenderTexture(groundVertices, groundTexture);
 
@@ -71,4 +76,10 @@ void GameScene::Render()
 
 void GameScene::Update()
 {
+	if(buttonPressed(XINPUT_GAMEPAD_X && !adrianCry.isPlaying())){
+		adrianCry.PlaySound(g_SfxPath);
+	}
+
+	D3DXMatrixTranslation(&adrianMesh.translationMatrix, getControllerAxis().rX * 20, 0, getControllerAxis().rY * 20);
+	D3DXMatrixRotationYawPitchRoll(&cfCardMesh.rotationMatrix, fTime, 90, 0);
 }

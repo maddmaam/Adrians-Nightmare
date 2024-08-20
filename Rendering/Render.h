@@ -46,6 +46,6 @@ void RenderTexture(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture);
 
 VOID createLight();
 
-void DisplayText(char * szStr, long xpos=100, long ypos=100 );
+void DisplayText(char * szStr, long xpos=100, long ypos=100, D3DCOLOR color = D3DCOLOR_XRGB(30,255,20));
 
 #endif

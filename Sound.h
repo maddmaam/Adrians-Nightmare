@@ -7,27 +7,32 @@
 #include <xtl.h>
 #include <DMusicI.h>
 
+static IDirectMusicLoader* g_pLoader;
+
+static IDirectMusicAudioPath8* g_MusicAudioPath;
+static IDirectMusicAudioPath8* g_SfxPath;
 
 class CSound
 {
 protected:
+	IDirectMusicPerformance8* m_pPerformance;
 	IDirectMusicSegment8* m_pSoundSegment;
+	IDirectMusicSegmentState* m_pSegmentState;
 
 public:
 	CSound();
 	void Create(LPSTR filename);
-	void PlaySound();
+	void PlaySound(IDirectMusicAudioPath8* path);
 	void Release();
 	void StopSound();
+	bool isPlaying();
+	HRESULT isPlayingRaw();
+	void setLoop(DWORD dwRepeats);
 
 protected:
-	static IDirectMusicLoader* m_pLoader;
-	static IDirectMusicPerformance8* m_pPerformance;
-	static IDirectMusicAudioPath8* m_pMusicAudioPath;
-	static IDirectMusicAudioPath8*   m_p3DAudioPath1;
-
 	void LoadSound(char* filename);
 	void SetupSound();
+	void SetupPerformer();
 };
 
 #endif

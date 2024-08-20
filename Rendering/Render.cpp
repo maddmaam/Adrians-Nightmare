@@ -110,7 +110,7 @@ void RenderTexture(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture)
 	g_pVertexBuffer->Release();
 }
 
-void DisplayText(char * szStr, long xpos, long ypos)
+void DisplayText(char * szStr, long xpos, long ypos, D3DCOLOR color )
 {
     //Create some DirectX text buffers
     XFONT*                        pFont; 
@@ -124,7 +124,7 @@ void DisplayText(char * szStr, long xpos, long ypos)
     WCHAR szbuff[200] = {0};
     swprintf(szbuff, L"%S", szStr);
 
-    pFont->SetTextColor(D3DCOLOR_XRGB(30,255,20));
+    pFont->SetTextColor(color);
 
     //Display our text.
     pFont->TextOut( pBackBuffer, szbuff, -1, (long)xpos, (long)ypos );

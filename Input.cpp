@@ -35,6 +35,17 @@ bool StartButtonPressed()
 	return false;
 }
 
+bool buttonPressed(int button)
+{
+	GetNumber1GamePad();
+
+	if (insertedGamePad.bAnalogButtons[button]) 
+	{
+		return true;
+	}
+	return false;
+}
+
 void GetNumber1GamePad()
 {
 	DWORD controllerInsertions, controllerRemovals;
@@ -57,14 +68,17 @@ void GetNumber1GamePad()
 	}
 }
 
-inputVector getControllerAxis()
+inputVectors getControllerAxis()
 {
 	GetNumber1GamePad();
 
-	inputVector out;
+	inputVectors out;
 
-	out.x = insertedGamePad.sThumbRX *fSecsPerTick*D3DX_PI*1000.f;
-	out.y = insertedGamePad.sThumbRY *fSecsPerTick*D3DX_PI*500.f;
+	out.rX = insertedGamePad.sThumbRX *fSecsPerTick*D3DX_PI*500.f;
+	out.rY = insertedGamePad.sThumbRY *fSecsPerTick*D3DX_PI*500.f;
+
+	out.lX = insertedGamePad.sThumbLX *fSecsPerTick*D3DX_PI*500.f;
+	out.lY = insertedGamePad.sThumbLY *fSecsPerTick*D3DX_PI*500.f;
 
 	return out;
 }
