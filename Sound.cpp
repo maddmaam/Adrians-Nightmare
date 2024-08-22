@@ -69,9 +69,6 @@ void CSound::SetupPerformer()
 	{
 		DisplayText("InitAudioX Failed", 100L, 60L);
 	}
-	
-	m_pPerformance->GetDefaultAudioPath( &g_MusicAudioPath );
-	m_pPerformance->CreateStandardAudioPath(DMUS_APATH_SHARED_STEREOPLUSREVERB, 32, TRUE, &g_SfxPath);
 }
 
 void CSound::SetupSound()
@@ -92,6 +89,8 @@ void CSound::SetupSound()
 
 	g_pLoader->SetSearchDirectory(GUID_DirectMusicAllTypes, "D:\\Media\\", FALSE); 
 
+	m_pPerformance->GetDefaultAudioPath( &g_MusicAudioPath );
+	m_pPerformance->CreateStandardAudioPath(DMUS_APATH_SHARED_STEREOPLUSREVERB, 32, TRUE, &g_SfxPath);
 }
 
 void CSound::Release()

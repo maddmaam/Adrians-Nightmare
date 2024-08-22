@@ -11,6 +11,7 @@ void __cdecl main()
     if( FAILED( InitD3D() ) )
         return;
 
+	// Initialize Input
 	if( FAILED( InitInput() ) )
 		return;
 
@@ -18,22 +19,30 @@ void __cdecl main()
 	if( FAILED( InitTime() ) )
         return;
 
+	// Create pointer to the Start menu scene
 	StartMenuScene StartMenu;
 	StartMenuScene* StartMenuPtr = &StartMenu;
 
-	sceneManager.addScene(StartMenuPtr); //scene 0
-	sceneManager.addScene(new GameScene()); //scene 1
+	// Create pointer to the Game scene 
+	GameScene Game;
+	GameScene* GamePtr = &Game;
 
-	//sceneManager.activeScene = new GameScene();
+
+	// Add scenes to SceneManager
+	sceneManager.addScene(StartMenuPtr); //scene 0
+	sceneManager.addScene(GamePtr); //scene 1
+
+	// switch to the Start menu scene
 	sceneManager.switchScene(0);
 
+	// Loop for forever
     while( TRUE )
     {
-        // What time is it?
+        // Update Time
         UpdateTime();
-        // Update the world
+        // Update the Scene
         sceneManager.activeScene->Update();   
-        // Render the scene
+        // Render the Scene
         sceneManager.activeScene->Render();
     }
 }

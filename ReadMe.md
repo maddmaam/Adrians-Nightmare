@@ -1,7 +1,7 @@
-# Xbox APPLICATION : Example Project Overview
+# Xbox Application : Example Project Overview
 
 This file contains a summary of what you will find in each of the files that
-make up your application.
+make up your Xbox application.
 
 ### Example_Project.vcproj
     This is the main project file. 
@@ -10,19 +10,19 @@ make up your application.
 
 ### Example_Project.cpp
     This is the main application source file.
+    Manages scenes and holds the main game loop.
 
 
 ## Classes
 
 
 ### Time, Time.h
-    holds time information and stuff
+    Holds information about time, such as the total game time, and the time since last frame (deltaTime).
     
 ### Rendering, Rendering.h
-    used to render !
+    TODO
 
-### other, other.h
-    something else...
+
 
 
 ## Other notes:
