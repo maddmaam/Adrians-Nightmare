@@ -16,14 +16,22 @@ make up your Xbox application.
 ## Classes
 
 
-### Time, Time.h
+### Time.cpp, Time.h
     Holds information about time, such as the total game time, and the time since last frame (deltaTime).
     
-### Rendering, Rendering.h
-    TODO
+### Rendering.cpp, Rendering.h
+    Handles various rendering tasks, such as setting up matrices, rendering text aan initialising DirectX.
 
+### Mesh.cpp, Mesh.h
+    Holds Data for meshes and has the render code.
 
+### SystemIO.cpp, SystemIO.h
+    Handles File loading
 
+### Sound.cpp, Sound.h
+    handles loading and playing audio files
+
+## Other Files
 
 ## Other notes:
 

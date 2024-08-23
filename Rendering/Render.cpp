@@ -7,8 +7,8 @@
 //-----------------------------------------------------------------------------
 LPDIRECT3D8             g_pD3D       = NULL; // Used to create the D3DDevice
 LPDIRECT3DDEVICE8       g_pd3dDevice = NULL; // Our rendering device
-LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer = NULL;
-D3DXMATRIX				matrixWorld;// Buffer to hold vertices
+LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer = NULL; // vertex buffer for texture rendering
+D3DXMATRIX				worldMatrix;// Buffer to hold vertices
 
 //-----------------------------------------------------------------------------
 // Name: InitD3D()
@@ -38,17 +38,21 @@ HRESULT InitD3D()
     // Turn on the zbuffer
     g_pd3dDevice->SetRenderState( D3DRS_ZENABLE, TRUE );
 
+	// Turn off lighting by default
 	g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, FALSE);
 
+	// Set up Texture settings
 	g_pd3dDevice->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);
     g_pd3dDevice->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
-
-
 
     return S_OK;
 }
 
-VOID InitLighting() 
+//-----------------------------------------------------------------------------
+// Name: EnableLighting()
+// Desc: Initializes Lighting for a scene
+//-----------------------------------------------------------------------------
+VOID EnableLighting() 
 {
 	g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
 	g_pd3dDevice->SetRenderState(D3DRS_AMBIENT, D3DCOLOR_XRGB(255,255,255));
@@ -82,9 +86,12 @@ VOID SetupMatrices()
     g_pd3dDevice->SetTransform( D3DTS_PROJECTION, &matProj );
 }
 
-void RenderTexture(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture)
+//-----------------------------------------------------------------------------
+// Name: RenderVertices()
+// Desc: Renders a set of vertices
+//-----------------------------------------------------------------------------
+void RenderVertices(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture)
 {
-
 	VOID* pVertices;
 
 	//Create the vertex buffer from our device
@@ -110,25 +117,29 @@ void RenderTexture(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture)
 	g_pVertexBuffer->Release();
 }
 
+//-----------------------------------------------------------------------------
+// Name: DisplayText()
+// Desc: Displays Text used for debugging
+//-----------------------------------------------------------------------------
 void DisplayText(char * szStr, long xpos, long ypos, D3DCOLOR color )
 {
-    //Create some DirectX text buffers
-    XFONT*                        pFont; 
-    LPDIRECT3DSURFACE8      pBackBuffer;
+    // Create DirectX text buffers
+    XFONT* pFont; 
+    LPDIRECT3DSURFACE8 pBackBuffer;
 
-	//InitialiseFonts
+	// Initialise fonts
 	g_pd3dDevice->GetBackBuffer( 0,D3DBACKBUFFER_TYPE_MONO,&pBackBuffer);
-
     XFONT_OpenDefaultFont( &pFont );
 
+	// Pushes string to a buffer
     WCHAR szbuff[200] = {0};
     swprintf(szbuff, L"%S", szStr);
 
+	// Sets the texts color
     pFont->SetTextColor(color);
 
     //Display our text.
     pFont->TextOut( pBackBuffer, szbuff, -1, (long)xpos, (long)ypos );
-
 
     //Release our TextBuffers
     pFont->Release();

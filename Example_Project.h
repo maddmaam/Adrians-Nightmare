@@ -4,11 +4,6 @@
 
 #include "Global.h"
 #include "Time.h"
-#include "Input.h"
-
 #include "Scene.h"
-#include "StartMenuScene.h"
-#include "GameScene.h"
-
 
 #endif

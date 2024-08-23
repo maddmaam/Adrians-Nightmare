@@ -1,12 +1,12 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
 
-#include "Global.h"
-#include "Scene.h"
-#include "Rendering\Render.h"
-#include "SystemIO.h"
-#include "Time.h"
-#include "Sound.h"
+#include "..\Global.h"
+#include "..\Scene.h"
+#include "..\Rendering\Render.h"
+#include "..\SystemIO.h"
+#include "..\Time.h"
+#include "..\Sound.h"
 
 class GameScene : public Scene {
 public:

@@ -4,14 +4,15 @@
 
 #include <stdio.h>
 
-#include <xtl.h>
+#include "Global.h"
 #include <DMusicI.h>
-
-static IDirectMusicLoader* g_pLoader;
 
 static IDirectMusicAudioPath8* g_MusicAudioPath;
 static IDirectMusicAudioPath8* g_SfxPath;
 
+HRESULT InitSound();
+
+// Class that holds and plays Audio
 class CSound
 {
 protected:
@@ -23,15 +24,12 @@ public:
 	CSound();
 	void Create(LPSTR filename);
 	void PlaySound(IDirectMusicAudioPath8* path);
-	void Release();
-	void StopSound();
+	void StopSound(); //TODO not implemented? I guess?
 	bool isPlaying();
-	HRESULT isPlayingRaw();
 	void setLoop(DWORD dwRepeats);
+	void Release();
 
 protected:
-	void LoadSound(char* filename);
-	void SetupSound();
 	void SetupPerformer();
 };
 

@@ -307,10 +307,10 @@
 				Name="Scenes"
 				Filter="">
 				<File
-					RelativePath=".\GameScene.cpp">
+					RelativePath=".\Scenes\GameScene.cpp">
 				</File>
 				<File
-					RelativePath=".\StartMenuScene.cpp">
+					RelativePath=".\Scenes\StartMenuScene.cpp">
 				</File>
 			</Filter>
 		</Filter>
@@ -359,10 +359,10 @@
 				Name="Scenes"
 				Filter="">
 				<File
-					RelativePath=".\GameScene.h">
+					RelativePath=".\Scenes\GameScene.h">
 				</File>
 				<File
-					RelativePath=".\StartMenuScene.h">
+					RelativePath=".\Scenes\StartMenuScene.h">
 				</File>
 			</Filter>
 		</Filter>

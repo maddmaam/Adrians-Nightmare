@@ -1,13 +1,13 @@
 #ifndef STARTMENUSCENE_H
 #define STARTMENUSCENE_H
 
-#include "Global.h"
-#include "Scene.h"
-#include "Time.h"
-#include "Input.h"
-#include "Rendering\Render.h"
-#include "SystemIO.h"
-#include "Sound.h"
+#include "..\Global.h"
+#include "..\Scene.h"
+#include "..\Time.h"
+#include "..\Input.h"
+#include "..\Rendering\Render.h"
+#include "..\SystemIO.h"
+#include "..\Sound.h"
 
 class StartMenuScene : public Scene {
 public:

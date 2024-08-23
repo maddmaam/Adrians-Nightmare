@@ -1,48 +1,90 @@
 #include "SystemIO.h"
 #include <stdio.h>
-#include "Rendering\Mesh.h"
+
+IDirectMusicLoader* g_pLoader = NULL;
+
+//-----------------------------------------------------------------------------
+// Name: InitIO()
+// Desc: Initialize IO and file loading
+//-----------------------------------------------------------------------------
+HRESULT InitIO()
+{
+	// Create audio file loader
+	HRESULT result;
+	if( FAILED(result = DirectMusicCreateInstance(CLSID_DirectMusicLoader, NULL, IID_IDirectMusicLoader8, (VOID**)&g_pLoader)))
+	{
+		return result;
+	}
+	if( FAILED(result = g_pLoader->SetSearchDirectory(GUID_DirectMusicAllTypes, "D:\\Media\\", FALSE)))
+	{
+		return result;
+	}
+
+	return S_OK;
+}
+
+//-----------------------------------------------------------------------------
+// Name: LoadSound()
+// Desc: Loads a sound file
+//-----------------------------------------------------------------------------
+HRESULT LoadSound(LPSTR filename, IDirectMusicSegment8** pSoundSegment)
+{
+	HRESULT result;
+	if( FAILED(result = g_pLoader->LoadObjectFromFile(CLSID_DirectMusicSegment, IID_IDirectMusicSegment8 , filename, (VOID**) pSoundSegment)))
+	{
+		return result;
+	}
+	return S_OK;
+}
 
 //-----------------------------------------------------------------------------
 // Name: LoadXMeshFile()
-// Desc: 
+// Desc: loads a .x file into a MESH_DATA struct
 //-----------------------------------------------------------------------------
-MESH_DATA LoadXMeshFile(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename)
+HRESULT LoadXMeshFile(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename, MESH_DATA* outMesh)
 {
-	MESH_DATA mesh;
 
-	D3DXLoadMeshFromX( filename, D3DXMESH_VB_DYNAMIC, pd3dDevice, NULL, &mesh.pMtrlBuffer, &mesh.numMaterials, &mesh.mesh);
+	HRESULT result;
+	if( FAILED(result = D3DXLoadMeshFromX( filename, D3DXMESH_VB_DYNAMIC, pd3dDevice, NULL, &outMesh->pMtrlBuffer, (PDWORD)&(outMesh->numMaterials), &(outMesh->mesh))))
+	{
+		return result;
+	}
 	
     //Create two arrays. One to hold the materials and only to hold the textures
-    mesh.pMeshMaterials = new D3DMATERIAL8[mesh.numMaterials];
-    mesh.pMeshTextures  = new LPDIRECT3DTEXTURE8[mesh.numMaterials];
-    mesh.matMaterials = (D3DXMATERIAL*)mesh.pMtrlBuffer->GetBufferPointer();
+    outMesh->pMeshMaterials = new D3DMATERIAL8[outMesh->numMaterials];
+    outMesh->pMeshTextures  = new LPDIRECT3DTEXTURE8[outMesh->numMaterials];
+    outMesh->matMaterials = (D3DXMATERIAL*)outMesh->pMtrlBuffer->GetBufferPointer();
 
-    // Loads of allocation etc here!
-    for(DWORD i = 0; i < mesh.numMaterials; i++)
+    // Loop through each described material
+    for(DWORD i = 0; i < outMesh->numMaterials; i++)
     {
 		//Copy the material
-        mesh.pMeshMaterials[i] = mesh.matMaterials[i].MatD3D;
+        outMesh->pMeshMaterials[i] = outMesh->matMaterials[i].MatD3D;
 
         //Set the ambient color for the material (D3DX does not do this)
-        mesh.pMeshMaterials[i].Ambient = mesh.pMeshMaterials[i].Diffuse;
+        outMesh->pMeshMaterials[i].Ambient = outMesh->pMeshMaterials[i].Diffuse;
 
         //Create the texture
-
-        if(FAILED(D3DXCreateTextureFromFile(pd3dDevice, mesh.matMaterials[i].pTextureFilename, &mesh.pMeshTextures[i])))
+        if(FAILED(D3DXCreateTextureFromFile(pd3dDevice, outMesh->matMaterials[i].pTextureFilename, &(outMesh->pMeshTextures[i]))))
         {
-			mesh.pMeshTextures[i] = NULL;
+			outMesh->pMeshTextures[i] = NULL;
         };
     }
 
-	D3DXMatrixIdentity(&mesh.rotationMatrix);
-	D3DXMatrixIdentity(&mesh.translationMatrix);
+	// Setup default Matrices
+	D3DXMatrixIdentity( &outMesh->rotationMatrix);
+	D3DXMatrixIdentity( &outMesh->translationMatrix);
+	D3DXMatrixIdentity( &outMesh->scaleMatrix);
 
-	return mesh;
+	return S_OK;
 }
 
-LPDIRECT3DTEXTURE8 LoadTexture(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename)
+//-----------------------------------------------------------------------------
+// Name: LoadTexture()
+// Desc: loads a texture file
+//-----------------------------------------------------------------------------
+HRESULT LoadTexture(LPDIRECT3DDEVICE8 pd3dDevice, LPSTR filename, LPDIRECT3DTEXTURE8 *tex)
 {
-	LPDIRECT3DTEXTURE8 tex;
-	D3DXCreateTextureFromFile(pd3dDevice, filename, &tex);
-	return (LPDIRECT3DTEXTURE8)tex;
+	D3DXCreateTextureFromFile(pd3dDevice, filename, tex);
+	return S_OK;
 }

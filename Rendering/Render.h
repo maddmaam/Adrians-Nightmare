@@ -6,45 +6,29 @@
 #include <xgraphics.h>
 #include <d3dx8.h>
 #include <d3d8.h>
-#include "Mesh.h"
 
 extern LPDIRECT3DDEVICE8 g_pd3dDevice;
-extern D3DXMATRIX matrixWorld;
-
 extern LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer;
+extern D3DXMATRIX worldMatrix;
 
+// Defining a macro for our custom vertex structure
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ|D3DFVF_DIFFUSE|D3DFVF_TEX1)
 
 // A structure for our custom vertex type
 struct CUSTOMVERTEX
 {
-	/*CUSTOMVERTEX() {}
-	CUSTOMVERTEX(FLOAT startX, FLOAT startY, FLOAT startZ, DWORD startColour, FLOAT startTu, FLOAT startTv)
-	{
-		x = startX;
-		y = startY;
-		z = startZ;
-		colour = startColour;
-		tu = startTu;
-		tv = startTv;
-	}
-	~CUSTOMVERTEX() {}*/
-
     FLOAT x, y, z; // The transformed position for the vertex.
     DWORD colour; // The vertex colour.
-    FLOAT tu, tv;
+    FLOAT tu, tv; // texture mapping positions
 };
-
 
 HRESULT InitD3D();
 
-VOID InitLighting();
+VOID EnableLighting();
 
 VOID SetupMatrices();
 
-void RenderTexture(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture);
-
-VOID createLight();
+void RenderVertices(CUSTOMVERTEX* cvVertices,  LPDIRECT3DTEXTURE8 pTexture);
 
 void DisplayText(char * szStr, long xpos=100, long ypos=100, D3DCOLOR color = D3DCOLOR_XRGB(30,255,20));
 

@@ -1,14 +1,14 @@
 #include "GameScene.h"
-#include "Input.h"
+#include "..\Input.h"
 
 CUSTOMVERTEX groundVertices[] =
 {
-	{ -30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 10.0f },  //Front face
+	{ -30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 20.0f },  //Front face
     { -30.0f, 0.0f,  30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f,  0.0f },
-    {  30.0f, 0.0f,  30.0f, D3DCOLOR_XRGB(255,255,255), 10.0f,  0.0f },
-    {  30.0f, 0.0f,  30.0f, D3DCOLOR_XRGB(255,255,255), 10.0f,  0.0f },
-    {  30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255), 10.0f, 10.0f },
-    { -30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 10.0f }
+    {  30.0f, 0.0f,  30.0f, D3DCOLOR_XRGB(255,255,255), 20.0f,  0.0f },
+    {  30.0f, 0.0f,  30.0f, D3DCOLOR_XRGB(255,255,255), 20.0f,  0.0f },
+    {  30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255), 20.0f, 20.0f },
+    { -30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 20.0f }
 };
 
 MESH_DATA adrianMesh;
@@ -23,16 +23,16 @@ inputVectors screenRotation;
 //-----------------------------------------------------------------------------
 HRESULT GameScene::Init()
 {
-	adrianMesh = LoadXMeshFile(g_pd3dDevice, "D:\\Media\\adrian.x");
-	cfCardMesh = LoadXMeshFile(g_pd3dDevice, "D:\\Media\\cfcard.x");
+	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\adrian.x", &adrianMesh);
+	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\cfcard.x", &cfCardMesh);
 	
 	D3DXMatrixTranslation(&cfCardMesh.translationMatrix, 5, 1, 0);
 
-	groundTexture = LoadTexture(g_pd3dDevice, "D:\\Media\\grass.bmp");
+	LoadTexture(g_pd3dDevice, "D:\\Media\\grass.bmp", &groundTexture);
 	
-	InitLighting();
+	EnableLighting();
 
-	D3DXMatrixIdentity(&matrixWorld);
+	D3DXMatrixIdentity(&worldMatrix);
 	
 	adrianCry.Create("adrianCry.wav");
 
@@ -62,13 +62,13 @@ void GameScene::Render()
 	if(screenRotation.rY > 0.1)
 		screenRotation.rY = 0.1f;
 
-	D3DXMatrixRotationYawPitchRoll(&matrixWorld, screenRotation.rX, cos(screenRotation.rX) * screenRotation.rY, sin(screenRotation.rX) * screenRotation.rY);
-	g_pd3dDevice->SetTransform( D3DTS_WORLD, &matrixWorld); 
+	D3DXMatrixRotationYawPitchRoll(&worldMatrix, screenRotation.rX, cos(screenRotation.rX) * screenRotation.rY, sin(screenRotation.rX) * screenRotation.rY);
+	g_pd3dDevice->SetTransform( D3DTS_WORLD, &worldMatrix); 
 	
 	RenderMesh(g_pd3dDevice, adrianMesh);
 	RenderMesh(g_pd3dDevice, cfCardMesh);
 
-	RenderTexture(groundVertices, groundTexture);
+	RenderVertices(groundVertices, groundTexture);
 
     // Present the backbuffer contents to the display
     g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
