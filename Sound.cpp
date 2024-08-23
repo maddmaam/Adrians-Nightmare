@@ -69,6 +69,21 @@ void CSound::PlaySound(IDirectMusicAudioPath8* path)
 }
 
 //-----------------------------------------------------------------------------
+// Name: CSound::PlaySound()
+// Desc: Play the Sound
+//-----------------------------------------------------------------------------
+void CSound::StopSound()
+{
+	HRESULT result;
+	if( FAILED(result = m_pPerformance->StopEx(NULL, 0, 0)))
+	{
+		char szbuff[100];
+		sprintf(szbuff, "Stop Segment Failed: %x", result);
+		DisplayText(szbuff, 100L, 70L); //TODO update to Debugger
+	}
+}
+
+//-----------------------------------------------------------------------------
 // Name: CSound::isPlaying()
 // Desc: Checks if the sound is currently playing
 //-----------------------------------------------------------------------------
@@ -102,7 +117,9 @@ void CSound::SetupPerformer()
 	}
 
 	m_pPerformance->GetDefaultAudioPath( &g_MusicAudioPath );
+	g_MusicAudioPath->SetVolume(0, 0);
 	m_pPerformance->CreateStandardAudioPath(DMUS_APATH_SHARED_STEREOPLUSREVERB, 32, TRUE, &g_SfxPath);
+	g_SfxPath->SetVolume(0, 0);
 }
 
 //-----------------------------------------------------------------------------

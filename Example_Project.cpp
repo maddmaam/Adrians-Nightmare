@@ -53,8 +53,17 @@ void __cdecl main()
         // Update Time
         UpdateTime();
         // Update the Scene
-        sceneManager.activeScene->Update();   
+        sceneManager.activeScene->Update();
+
+		// Clear the backbuffer and the zbuffer
+		g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0,0,0), 1.0f, 0 );
+		g_pd3dDevice->BeginScene();
+
         // Render the Scene
         sceneManager.activeScene->Render();
+
+		// Present the backbuffer contents to the display
+		g_pd3dDevice->EndScene();
+		g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
     }
 }

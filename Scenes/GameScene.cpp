@@ -3,19 +3,19 @@
 
 CUSTOMVERTEX groundVertices[] =
 {
-	{ -30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 20.0f },  //Front face
-    { -30.0f, 0.0f,  30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f,  0.0f },
-    {  30.0f, 0.0f,  30.0f, D3DCOLOR_XRGB(255,255,255), 20.0f,  0.0f },
-    {  30.0f, 0.0f,  30.0f, D3DCOLOR_XRGB(255,255,255), 20.0f,  0.0f },
-    {  30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255), 20.0f, 20.0f },
-    { -30.0f, 0.0f, -30.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 20.0f }
+	{ -100.0f, 0.0f, -100.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 50.0f },  //Front face
+    { -100.0f, 0.0f,  100.0f, D3DCOLOR_XRGB(255,255,255),  0.0f,  0.0f },
+    {  100.0f, 0.0f,  100.0f, D3DCOLOR_XRGB(255,255,255), 50.0f,  0.0f },
+    {  100.0f, 0.0f,  100.0f, D3DCOLOR_XRGB(255,255,255), 50.0f,  0.0f },
+    {  100.0f, 0.0f, -100.0f, D3DCOLOR_XRGB(255,255,255), 50.0f, 50.0f },
+    { -100.0f, 0.0f, -100.0f, D3DCOLOR_XRGB(255,255,255),  0.0f, 50.0f }
 };
 
-MESH_DATA adrianMesh;
-MESH_DATA cfCardMesh;
-LPDIRECT3DTEXTURE8 groundTexture;
-
 inputVectors screenRotation;
+
+float xpos;
+float ypos;
+int index = 3;
 
 //-----------------------------------------------------------------------------
 // Name: Init()
@@ -23,18 +23,29 @@ inputVectors screenRotation;
 //-----------------------------------------------------------------------------
 HRESULT GameScene::Init()
 {
-	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\adrian.x", &adrianMesh);
-	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\cfcard.x", &cfCardMesh);
-	
-	D3DXMatrixTranslation(&cfCardMesh.translationMatrix, 5, 1, 0);
-
-	LoadTexture(g_pd3dDevice, "D:\\Media\\grass.bmp", &groundTexture);
-	
 	EnableLighting();
+	EnableFog();
 
-	D3DXMatrixIdentity(&worldMatrix);
+	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\adrian.x", &AdrianMesh);
+	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\cfcard.x", &CfCardMesh);
 	
-	adrianCry.Create("adrianCry.wav");
+	LoadTexture(g_pd3dDevice, "D:\\Media\\grass.bmp", &GroundTexture);
+
+	Ambience.Create("ambience.wav");
+
+	AdrianCry[0].Create("adrianCry.wav");
+	AdrianCry[1].Create("CMinus.wav");
+	AdrianCry[2].Create("Ethics.wav");
+	AdrianCry[3].Create("HeyTeam.wav");
+	AdrianCry[4].Create("Subreddits.wav");
+
+	HeyTeam.Create("HeyTeam.wav");
+	HeyTeam.PlaySound(g_SfxPath);
+
+	Ambience.PlaySound(g_MusicAudioPath);
+
+	// Set CfCard Position
+	D3DXMatrixTranslation(&CfCardMesh.translationMatrix, 5, 1, 0);
 
 	return S_OK;
 }
@@ -45,41 +56,62 @@ HRESULT GameScene::Init()
 //-----------------------------------------------------------------------------
 void GameScene::Render()
 {
-	// Clear the backbuffer and the zbuffer
-    g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER, 
-                         D3DCOLOR_XRGB(50,0,0), 1.0f, 0 );
-    
     // Setup the world, view, and projection matrices
     SetupMatrices();
 
-	//ground
-
-	screenRotation.rX += getControllerAxis().lX * 2;
-	screenRotation.rY += getControllerAxis().lY;
+	// Set up camera changes
+	screenRotation.rX -= getControllerAxis().rX * 2;
+	screenRotation.rY += getControllerAxis().rY;
 
 	if(screenRotation.rY < -1.0)
 		screenRotation.rY = -1.0f;
 	if(screenRotation.rY > 0.1)
 		screenRotation.rY = 0.1f;
 
+	D3DXMatrixTranslation(&worldTranslationMatrix, -xpos, 0, -ypos);
 	D3DXMatrixRotationYawPitchRoll(&worldMatrix, screenRotation.rX, cos(screenRotation.rX) * screenRotation.rY, sin(screenRotation.rX) * screenRotation.rY);
-	g_pd3dDevice->SetTransform( D3DTS_WORLD, &worldMatrix); 
+
+	worldMatrix = worldTranslationMatrix * worldMatrix;
+
 	
-	RenderMesh(g_pd3dDevice, adrianMesh);
-	RenderMesh(g_pd3dDevice, cfCardMesh);
+	RenderMesh(g_pd3dDevice, AdrianMesh);
+	RenderMesh(g_pd3dDevice, CfCardMesh);
 
-	RenderVertices(groundVertices, groundTexture);
-
-    // Present the backbuffer contents to the display
-    g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
+	RenderVertices(groundVertices, GroundTexture);
 }
-
+//-----------------------------------------------------------------------------
+// Name: Update()
+// Desc: Updates the scene
+//-----------------------------------------------------------------------------
 void GameScene::Update()
 {
-	if(buttonPressed(XINPUT_GAMEPAD_X && !adrianCry.isPlaying())){
-		adrianCry.PlaySound(g_SfxPath);
+	if(buttonPressed(XINPUT_GAMEPAD_A) && AdrianCry[index].isPlaying()){
+		index = ((index + 1) % (sizeof(AdrianCry) / sizeof(CSound)));
+		AdrianCry[index].PlaySound(g_SfxPath);
 	}
 
-	D3DXMatrixTranslation(&adrianMesh.translationMatrix, getControllerAxis().rX * 20, 0, getControllerAxis().rY * 20);
-	D3DXMatrixRotationYawPitchRoll(&cfCardMesh.rotationMatrix, fTime, 90, 0);
+	xpos += 3 * ((cos(screenRotation.rX) * getControllerAxis().lX) - (sin(screenRotation.rX) * getControllerAxis().lY));
+	ypos += 3 * ((sin(screenRotation.rX) * getControllerAxis().lX) + (cos(screenRotation.rX) * getControllerAxis().lY));
+
+	// Update Adrian mesh Position
+	D3DXMatrixTranslation(&AdrianMesh.translationMatrix, xpos, 0, ypos);
+	// Update CfCard Rotation
+	D3DXMatrixRotationYawPitchRoll(&CfCardMesh.rotationMatrix, fTime, 70, 0);
+}
+
+//-----------------------------------------------------------------------------
+// Name: Cleanup()
+// Desc: Cleans the scene
+//-----------------------------------------------------------------------------
+void GameScene::Cleanup()
+{
+	Ambience.StopSound();
+	GroundTexture->Release();
+
+	for(int i = 0; i < (sizeof(AdrianCry) / sizeof(CSound)); i++)
+	{
+		AdrianCry[i].Release();
+	}
+	HeyTeam.Release();
+	Ambience.Release();
 }

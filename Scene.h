@@ -12,6 +12,7 @@ public:
 	virtual HRESULT Init() = S_OK;
 	virtual void Render() = 0;
 	virtual void Update() = 0;
+	virtual void Cleanup() = 0;
 };
 
 class SceneManager

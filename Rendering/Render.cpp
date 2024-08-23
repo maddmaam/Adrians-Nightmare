@@ -8,7 +8,8 @@
 LPDIRECT3D8             g_pD3D       = NULL; // Used to create the D3DDevice
 LPDIRECT3DDEVICE8       g_pd3dDevice = NULL; // Our rendering device
 LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer = NULL; // vertex buffer for texture rendering
-D3DXMATRIX				worldMatrix;// Buffer to hold vertices
+D3DXMATRIX				worldMatrix;
+D3DXMATRIX				worldTranslationMatrix;
 
 //-----------------------------------------------------------------------------
 // Name: InitD3D()
@@ -56,6 +57,38 @@ VOID EnableLighting()
 {
 	g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, TRUE);
 	g_pd3dDevice->SetRenderState(D3DRS_AMBIENT, D3DCOLOR_XRGB(255,255,255));
+}
+
+//-----------------------------------------------------------------------------
+// Name: EnableFog()
+// Desc: Initializes Fog for a scene
+//-----------------------------------------------------------------------------
+VOID EnableFog() 
+{
+	DWORD Color = D3DCOLOR_XRGB(0,0,0);
+	DWORD Mode = D3DFOG_LINEAR;
+	float Start   = 20.0f;    // For linear mode
+    float End     = 40.0f;
+    float Density = 0.66f;   // For exponential modes
+ 
+    // Enable fog blending.
+    g_pd3dDevice->SetRenderState(D3DRS_FOGENABLE, TRUE);
+ 
+    // Set the fog color.
+    g_pd3dDevice->SetRenderState(D3DRS_FOGCOLOR, Color);
+    
+    // Set fog parameters.
+    if( Mode == D3DFOG_LINEAR )
+    {
+        g_pd3dDevice->SetRenderState(D3DRS_FOGTABLEMODE, Mode);
+        g_pd3dDevice->SetRenderState(D3DRS_FOGSTART, *(DWORD *)(&Start));
+        g_pd3dDevice->SetRenderState(D3DRS_FOGEND,   *(DWORD *)(&End));
+    }
+    else
+    {
+        g_pd3dDevice->SetRenderState(D3DRS_FOGTABLEMODE, Mode);
+        g_pd3dDevice->SetRenderState(D3DRS_FOGDENSITY, *(DWORD *)(&Density));
+    }
 }
 
 //-----------------------------------------------------------------------------

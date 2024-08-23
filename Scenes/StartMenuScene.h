@@ -14,9 +14,12 @@ public:
 	HRESULT Init();
 	void Render();
 	void Update();
+	void Cleanup();
 
 private:
-	CSound g_Sound;
+	CSound GameMusic;
+	LPDIRECT3DTEXTURE8 MainTexture;
+	LPDIRECT3DTEXTURE8 MainTextureNoText;
 };
 
 #endif

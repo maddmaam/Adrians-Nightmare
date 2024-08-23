@@ -1,5 +1,6 @@
 #include "StartMenuScene.h"
 
+// Vertices for our image screen
 CUSTOMVERTEX cvVertices[] =
 {
 	{ -1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 0.0f, 1.0f },  //Front face
@@ -9,7 +10,6 @@ CUSTOMVERTEX cvVertices[] =
     {  1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 1.0f, 1.0f },
     { -1.0f, -1.0f, 0.0f, D3DCOLOR_XRGB(255,255,255), 0.0f, 1.0f }
 };
-LPDIRECT3DTEXTURE8 Texture;
 
 //-----------------------------------------------------------------------------
 // Name: Init()
@@ -17,24 +17,14 @@ LPDIRECT3DTEXTURE8 Texture;
 //-----------------------------------------------------------------------------
 HRESULT StartMenuScene::Init()
 {
-	LoadTexture(g_pd3dDevice, "D:\\Media\\startMenu.bmp", &Texture);
+	LoadTexture(g_pd3dDevice, "D:\\Media\\startMenu.bmp", &MainTexture);
+	LoadTexture(g_pd3dDevice, "D:\\Media\\startMenu_noText.bmp", &MainTextureNoText);
 
-	// Clear the backbuffer and the zbuffer
-	g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(150,0,0), 1.0f, 0 );
-	g_pd3dDevice->BeginScene();
+	// Sets up background audio
+	GameMusic.Create("adriansnightmare.wav");
+	GameMusic.setLoop(DMUS_SEG_REPEAT_INFINITE);
+	GameMusic.PlaySound(g_MusicAudioPath);
 
-	RenderVertices(cvVertices, Texture);
-
-	g_Sound.Create("ambience.wav");
-
-	//g_Sound.setLoop(DMUS_SEG_REPEAT_INFINITE);
-	g_Sound.PlaySound(g_MusicAudioPath);
-
-	g_pd3dDevice->EndScene();
-    // Present the backbuffer contents to the display
-    g_pd3dDevice->Present( NULL, NULL, NULL, NULL );
-
-	
 
 	return S_OK;
 }
@@ -43,20 +33,37 @@ HRESULT StartMenuScene::Init()
 // Name: Render()
 // Desc: Draws the scene
 //-----------------------------------------------------------------------------
-bool test = false;
-
 void StartMenuScene::Render()
 {
-	/*g_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(150,0,0), 1.0f, 0 );
-	g_pd3dDevice->BeginScene();
-	RenderVertices(cvVertices, Texture);
-	g_pd3dDevice->EndScene();
-	g_pd3dDevice->Present( NULL, NULL, NULL, NULL ); */
+	int value = int(fTime * 2) % 2;
+	if(value == 0)
+	{
+		RenderVertices(cvVertices, MainTexture);
+	} else
+	{
+		RenderVertices(cvVertices, MainTextureNoText);
+	}
 }
 
+
+//-----------------------------------------------------------------------------
+// Name: Update()
+// Desc: Updates the scene
+//-----------------------------------------------------------------------------
 void StartMenuScene::Update()
 {
 	if (StartButtonPressed()) {
 		sceneManager.switchScene(1);
 	}
+}
+
+//-----------------------------------------------------------------------------
+// Name: Cleanup()
+// Desc: Cleans the scene
+//-----------------------------------------------------------------------------
+void StartMenuScene::Cleanup()
+{
+	GameMusic.StopSound();
+	MainTexture->Release();
+	GameMusic.Release();
 }

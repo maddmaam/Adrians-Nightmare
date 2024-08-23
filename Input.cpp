@@ -1,84 +1,109 @@
 #include "Input.h"
-#include "Rendering\Render.h"
 #include "Time.h"
 
 #include <stdio.h>
 
-#define CONTROLLER1 1
-#define CONTROLLER2 1 << 1
-#define CONTROLLER3 1 << 2
-#define CONTROLLER4 1 << 3
+XINPUT_GAMEPAD insertedGamePads[4];
 
-XINPUT_GAMEPAD insertedGamePad;
-
-void GetNumber1GamePad();
-
+//-----------------------------------------------------------------------------
+// Name: InitInput()
+// Desc: Initialises Input and Devices
+//-----------------------------------------------------------------------------
 HRESULT InitInput()
 {
 	XInitDevices(0, 0);
 	return S_OK;
 }
 
-
-
-/**
-* Checks whether a controller has been inserted and whether the start button has been pressed
-*/
-bool StartButtonPressed()
-{
-	GetNumber1GamePad();
-
-	if (insertedGamePad.wButtons & XINPUT_GAMEPAD_START) 
-	{
-		return true;
-	}
-	return false;
-}
-
-bool buttonPressed(int button)
-{
-	GetNumber1GamePad();
-
-	if (insertedGamePad.bAnalogButtons[button]) 
-	{
-		return true;
-	}
-	return false;
-}
-
-void GetNumber1GamePad()
+//-----------------------------------------------------------------------------
+// Name: GetGamePads()
+// Desc: Reads Data from the Gamepads
+//-----------------------------------------------------------------------------
+void GetGamePads()
 {
 	DWORD controllerInsertions, controllerRemovals;
 	XGetDeviceChanges(XDEVICE_TYPE_GAMEPAD, &controllerInsertions, &controllerRemovals);
 
-	static HANDLE pluggedGamePad;
+	static HANDLE pluggedGamePads[4];
 
-	if (controllerInsertions & CONTROLLER1)
-	{
-		pluggedGamePad = XInputOpen(XDEVICE_TYPE_GAMEPAD, 0, XDEVICE_NO_SLOT, NULL); 
-	}
+	// Loop over every gamepad
+	for(int i = 0; i < (sizeof(insertedGamePads) / sizeof(XINPUT_GAMEPAD)); i++){
+		if (controllerInsertions & (1 << i))
+		{
+			pluggedGamePads[i] = XInputOpen(XDEVICE_TYPE_GAMEPAD, i, XDEVICE_NO_SLOT, NULL); 
+		}
+	
 
-	if (pluggedGamePad)
-	{
-		XINPUT_STATE currentInputStates;
-		XInputGetState(pluggedGamePad, &currentInputStates);
+		if (pluggedGamePads[i])
+		{
+			XINPUT_STATE currentInputStates;
+			XInputGetState(pluggedGamePads[i], &currentInputStates);
 
-		// Copy the input states to InsertedGamePad
-		memcpy(&insertedGamePad, &currentInputStates.Gamepad, sizeof(XINPUT_GAMEPAD));
+			// Copy the input states to InsertedGamePad
+			memcpy(&insertedGamePads[i], &currentInputStates.Gamepad, sizeof(XINPUT_GAMEPAD));
+		}
 	}
 }
 
+//-----------------------------------------------------------------------------
+// Name: StartButtonPressed()
+// Desc: Checks whether the start button has been pressed
+//-----------------------------------------------------------------------------
+bool StartButtonPressed()
+{
+	GetGamePads();
+
+	if (insertedGamePads[CONTROLLER1].wButtons & XINPUT_GAMEPAD_START) 
+	{
+		return true;
+	}
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+// Name: buttonPressed()
+// Desc: Checks whether a button on the controller has been pressed
+//-----------------------------------------------------------------------------
+bool buttonPressed(int button)
+{
+	GetGamePads();
+
+	if (insertedGamePads[CONTROLLER1].bAnalogButtons[button]) 
+	{
+		return true;
+	}
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+// Name: getControllerAxis()
+// Desc: Returns the controllers joystick axis
+//-----------------------------------------------------------------------------
 inputVectors getControllerAxis()
 {
-	GetNumber1GamePad();
+	GetGamePads();
 
+	float deadZone = 0.03f;
 	inputVectors out;
 
-	out.rX = insertedGamePad.sThumbRX *fSecsPerTick*D3DX_PI*500.f;
-	out.rY = insertedGamePad.sThumbRY *fSecsPerTick*D3DX_PI*500.f;
+	out.rX = insertedGamePads[CONTROLLER1].sThumbRX *fSecsPerTick*D3DX_PI*500.f;
+	out.rY = insertedGamePads[CONTROLLER1].sThumbRY *fSecsPerTick*D3DX_PI*500.f;
 
-	out.lX = insertedGamePad.sThumbLX *fSecsPerTick*D3DX_PI*500.f;
-	out.lY = insertedGamePad.sThumbLY *fSecsPerTick*D3DX_PI*500.f;
+	if(out.rX < deadZone && out.rX > -deadZone)
+		out.rX = 0;
+
+	if(out.rY < deadZone && out.rY > -deadZone )
+		out.rY = 0;
+
+
+	out.lX = insertedGamePads[CONTROLLER1].sThumbLX *fSecsPerTick*D3DX_PI*500.f;
+	out.lY = insertedGamePads[CONTROLLER1].sThumbLY *fSecsPerTick*D3DX_PI*500.f;
+
+	if(out.lX < deadZone && out.lX > -deadZone)
+		out.lX = 0;
+
+	if(out.lY < deadZone && out.lY > -deadZone)
+		out.lY = 0;
 
 	return out;
 }

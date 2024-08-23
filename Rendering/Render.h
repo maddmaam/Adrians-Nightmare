@@ -10,6 +10,7 @@
 extern LPDIRECT3DDEVICE8 g_pd3dDevice;
 extern LPDIRECT3DVERTEXBUFFER8 g_pVertexBuffer;
 extern D3DXMATRIX worldMatrix;
+extern D3DXMATRIX worldTranslationMatrix;
 
 // Defining a macro for our custom vertex structure
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ|D3DFVF_DIFFUSE|D3DFVF_TEX1)
@@ -25,6 +26,7 @@ struct CUSTOMVERTEX
 HRESULT InitD3D();
 
 VOID EnableLighting();
+VOID EnableFog();
 
 VOID SetupMatrices();
 

@@ -13,8 +13,14 @@ public:
 	HRESULT Init();
 	void Render();
 	void Update();
+	void Cleanup();
 private:
-	CSound adrianCry;
+	MESH_DATA AdrianMesh;
+	MESH_DATA CfCardMesh;
+	CSound Ambience;
+	CSound AdrianCry[5];
+	CSound HeyTeam;
+	LPDIRECT3DTEXTURE8 GroundTexture;
 };
 
 #endif

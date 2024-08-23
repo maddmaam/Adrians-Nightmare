@@ -2,8 +2,14 @@
 
 #include "Global.h"
 
+#define CONTROLLER1 0
+#define CONTROLLER2 1
+#define CONTROLLER3 2
+#define CONTROLLER4 3
+
 HRESULT InitInput();
 
+// Temporary struct for controller axis
 struct inputVectors {
 	float lX;
 	float lY;
@@ -12,12 +18,10 @@ struct inputVectors {
 };
 
 bool StartButtonPressed();
+
 bool buttonPressed(int button);
 
 inputVectors getControllerAxis();
 
-void RotateWorldFromController();
-
-extern XINPUT_GAMEPAD insertedGamePad;
 
 // Comment cause borked
