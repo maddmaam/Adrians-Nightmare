@@ -25,9 +25,18 @@ HRESULT GameScene::Init()
 {
 	EnableLighting();
 	EnableFog();
+	// Enable Alpha Blending
+	g_pd3dDevice->SetRenderState( D3DRS_ALPHABLENDENABLE, TRUE );
+	g_pd3dDevice->SetRenderState( D3DRS_BLENDOP, D3DBLENDOP_ADD );
+	g_pd3dDevice->SetRenderState( D3DRS_SRCBLEND, D3DBLEND_SRCALPHA );
+	g_pd3dDevice->SetRenderState( D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA );
+
+	// Disable Backface Culling
+	g_pd3dDevice->SetRenderState( D3DRS_CULLMODE, D3DCULL_NONE );
 
 	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\adrian.x", &AdrianMesh);
 	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\cfcard.x", &CfCardMesh);
+	LoadXMeshFile(g_pd3dDevice, "D:\\Media\\tree.x", &TreeMesh);
 	
 	LoadTexture(g_pd3dDevice, "D:\\Media\\grass.bmp", &GroundTexture);
 
@@ -46,6 +55,8 @@ HRESULT GameScene::Init()
 
 	// Set CfCard Position
 	D3DXMatrixTranslation(&CfCardMesh.translationMatrix, 5, 1, 0);
+	// Set Tree Position
+	D3DXMatrixTranslation(&TreeMesh.translationMatrix, -5, 0, -5);
 
 	return S_OK;
 }
@@ -73,11 +84,11 @@ void GameScene::Render()
 
 	worldMatrix = worldTranslationMatrix * worldMatrix;
 
-	
+	RenderVertices(groundVertices, GroundTexture);
+
 	RenderMesh(g_pd3dDevice, AdrianMesh);
 	RenderMesh(g_pd3dDevice, CfCardMesh);
-
-	RenderVertices(groundVertices, GroundTexture);
+	RenderMesh(g_pd3dDevice, TreeMesh);
 }
 //-----------------------------------------------------------------------------
 // Name: Update()

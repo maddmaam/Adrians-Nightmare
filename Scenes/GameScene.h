@@ -17,6 +17,7 @@ public:
 private:
 	MESH_DATA AdrianMesh;
 	MESH_DATA CfCardMesh;
+	MESH_DATA TreeMesh;
 	CSound Ambience;
 	CSound AdrianCry[5];
 	CSound HeyTeam;
